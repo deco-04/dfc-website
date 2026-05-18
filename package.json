@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
@@ -12,8 +12,10 @@
     "e2e": "playwright test",
     "e2e:headed": "playwright test --headed",
     "typecheck": "tsc --noEmit",
-    "build:cf": "next build && next-on-pages",
-    "preview": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.6",
@@ -23,13 +25,13 @@
     "framer-motion": "^12.39.0",
     "groq": "^5.25.1",
     "lucide-react": "^1.16.0",
-    "next": "14.2.35",
+    "next": "15.5.18",
     "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.16",
+    "@opennextjs/cloudflare": "^1.19.10",
     "@playwright/test": "^1.60.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -38,7 +40,7 @@
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^8",
-    "eslint-config-next": "14.2.35",
+    "eslint-config-next": "15.5.18",
     "jsdom": "^29.1.1",
     "postcss": "^8",
     "prettier": "^3.8.3",
