@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-body text-onyx bg-linen antialiased;
+    font-size: 17px;
+    line-height: 1.65;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  ::selection { @apply bg-sage text-linen; }
+  :focus-visible { outline: 2px solid theme('colors.flatiron'); outline-offset: 3px; }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .display    { @apply font-display tracking-tight; }
+  .eyebrow    { @apply font-body text-[12px] uppercase tracking-caps font-semibold text-walnut-deep; }
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='5'/><feColorMatrix values='0 0 0 0 0.17  0 0 0 0 0.10  0 0 0 0 0.06  0 0 0 0 0.10 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+    opacity: 0.40;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .grain::before { display: none; }
   }
 }
