@@ -7,6 +7,7 @@ import { Process } from '@/components/process';
 import { Gallery } from '@/components/gallery';
 import { Testimonial } from '@/components/testimonial';
 import { Climate } from '@/components/climate';
+import { ServiceArea } from '@/components/service-area';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Gallery />
         <Testimonial />
         <Climate />
+        <ServiceArea />
       </main>
     </>
   );
