@@ -8,6 +8,7 @@ import { Gallery } from '@/components/gallery';
 import { Testimonial } from '@/components/testimonial';
 import { Climate } from '@/components/climate';
 import { ServiceArea } from '@/components/service-area';
+import { SplitCards } from '@/components/split-cards';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Testimonial />
         <Climate />
         <ServiceArea />
+        <SplitCards />
       </main>
     </>
   );
