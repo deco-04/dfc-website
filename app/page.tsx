@@ -4,6 +4,7 @@ import { Marquee } from '@/components/marquee';
 import { Manifesto } from '@/components/manifesto';
 import { Services } from '@/components/services';
 import { Process } from '@/components/process';
+import { Gallery } from '@/components/gallery';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Manifesto />
         <Services />
         <Process />
+        <Gallery />
       </main>
     </>
   );
