@@ -9,6 +9,7 @@ import { Testimonial } from '@/components/testimonial';
 import { Climate } from '@/components/climate';
 import { ServiceArea } from '@/components/service-area';
 import { SplitCards } from '@/components/split-cards';
+import { Faq } from '@/components/faq';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Climate />
         <ServiceArea />
         <SplitCards />
+        <Faq />
       </main>
     </>
   );
