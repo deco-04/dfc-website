@@ -27,7 +27,7 @@ export function Hero() {
           <h1 className="display text-sage text-[clamp(3.5rem,9vw,9rem)] leading-[0.95]">
             Flooring,
             <br />
-            <span className="italic text-sage-deep pl-8">installed right</span>
+            <span className="italic text-sage-deep">installed right</span>
             <br />
             the first time.
           </h1>
