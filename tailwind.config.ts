@@ -33,6 +33,15 @@ const config: Config = {
         site: '1280px',
         prose: '65ch',
       },
+      keyframes: {
+        marquee: {
+          '0%':   { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 70s linear infinite',
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 import { Nav } from '@/components/nav';
 import { Hero } from '@/components/hero';
+import { Marquee } from '@/components/marquee';
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Marquee />
       </main>
     </>
   );
