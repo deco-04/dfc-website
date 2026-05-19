@@ -11,8 +11,12 @@ export function ReviewWidget() {
     document.body.appendChild(s);
   }, []);
 
-  const locationId = process.env.NEXT_PUBLIC_GHL_LOCATION_ID!;
-  const widgetId = process.env.NEXT_PUBLIC_GHL_REVIEW_WIDGET!;
+  // GHL widget IDs ship in the public bundle (NEXT_PUBLIC_ prefix), so we
+  // safely hardcode the production values as fallbacks when the Cloudflare
+  // env vars are not configured. The env vars still take precedence so
+  // staging/preview can override with test IDs.
+  const locationId = process.env.NEXT_PUBLIC_GHL_LOCATION_ID || 'I2MlUYbmAZIuOBANuXp4';
+  const widgetId = process.env.NEXT_PUBLIC_GHL_REVIEW_WIDGET || '6a0b62ffa01ac8417c67e5ef';
 
   return (
     <iframe

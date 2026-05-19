@@ -32,7 +32,9 @@ export function Process() {
       <header className="max-w-prose mb-12">
         <div className="eyebrow mb-4">How we work</div>
         <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
-          <span className="italic">Five movements.</span> No surprises.
+          <span className="italic">Five movements.</span>
+          <br />
+          No surprises.
         </h2>
       </header>
 
