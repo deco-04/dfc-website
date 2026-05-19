@@ -17,7 +17,7 @@ export function Manifesto() {
           </p>
           <p className="font-body leading-relaxed text-onyx/85 max-w-prose mt-6">
             Most contractors will sell you the floor, then hire someone else to install it,
-            then disappear when the seams creep or the moisture bubbles. We don't sell anything.
+            then disappear when the seams creep or the moisture bubbles. We don&rsquo;t sell anything.
             You buy the material at the price you can find, with the contractor discounts we pass through
             to you. We measure, we prep, we install, we warrant the work in writing.
           </p>

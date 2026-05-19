@@ -31,7 +31,7 @@ export function Climate() {
               Dry winters. Strong UV. Snowmelt at the entry. Temperature swings between basement and main floor.
               Materials that survive Denver are not the same materials that survive Houston or Seattle.
               We test moisture before we quote and acclimate hardwood on site so your floor expands and contracts
-              where it should, not where it shouldn't.
+              where it should, not where it shouldn&rsquo;t.
             </p>
           </div>
           <dl className="grid grid-cols-2 gap-x-8 gap-y-6">
