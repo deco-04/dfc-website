@@ -32,8 +32,10 @@ export function Hero() {
             the first time.
           </h1>
           <p className="font-body text-[clamp(1.05rem,1.3vw,1.25rem)] leading-relaxed mt-8 max-w-prose">
-            A Denver and Aurora install crew for hardwood, LVP, laminate, and tile.{' '}
-            <em className="text-walnut-deep">You choose the materials. We do the install and make it last.</em>
+            A Denver and Aurora install crew for hardwood, LVP, laminate, and tile.
+          </p>
+          <p className="font-body italic text-[clamp(1.05rem,1.3vw,1.25rem)] leading-relaxed mt-3 text-walnut-deep max-w-prose">
+            You choose the materials. We do the install and make it last.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Link
