@@ -10,13 +10,6 @@
         "alt": "Hardwood Jason Entry"
       },
       {
-        "slug": "hardwood-jason-living",
-        "src_3x4": "/photos/hardwood-jason-living--portrait_3x4.jpg",
-        "src_4x3": "/photos/hardwood-jason-living--landscape_4x3.jpg",
-        "src_16x9": "/photos/hardwood-jason-living--landscape_16x9.jpg",
-        "alt": "Hardwood Jason Living"
-      },
-      {
         "slug": "hardwood-petra-stairs",
         "src_3x4": "/photos/hardwood-petra-stairs--portrait_3x4.jpg",
         "src_4x3": "/photos/hardwood-petra-stairs--landscape_4x3.jpg",
@@ -36,13 +29,6 @@
         "src_4x3": "/photos/hardwood-eddie-sanding--landscape_4x3.jpg",
         "src_16x9": "/photos/hardwood-eddie-sanding--landscape_16x9.jpg",
         "alt": "Hardwood Eddie Sanding"
-      },
-      {
-        "slug": "hardwood-eddie-setup",
-        "src_3x4": "/photos/hardwood-eddie-setup--portrait_3x4.jpg",
-        "src_4x3": "/photos/hardwood-eddie-setup--landscape_4x3.jpg",
-        "src_16x9": "/photos/hardwood-eddie-setup--landscape_16x9.jpg",
-        "alt": "Hardwood Eddie Setup"
       }
     ]
   },
@@ -78,13 +64,6 @@
         "alt": "Lvp Michael Sage"
       },
       {
-        "slug": "lvp-michael-kitchen",
-        "src_3x4": "/photos/lvp-michael-kitchen--portrait_3x4.jpg",
-        "src_4x3": "/photos/lvp-michael-kitchen--landscape_4x3.jpg",
-        "src_16x9": "/photos/lvp-michael-kitchen--landscape_16x9.jpg",
-        "alt": "Lvp Michael Kitchen"
-      },
-      {
         "slug": "lvp-eddie-hallway",
         "src_3x4": "/photos/lvp-eddie-hallway--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-eddie-hallway--landscape_4x3.jpg",
@@ -99,11 +78,25 @@
         "alt": "Lvp Rustic Room"
       },
       {
-        "slug": "lvp-rustic-hall",
-        "src_3x4": "/photos/lvp-rustic-hall--portrait_3x4.jpg",
-        "src_4x3": "/photos/lvp-rustic-hall--landscape_4x3.jpg",
-        "src_16x9": "/photos/lvp-rustic-hall--landscape_16x9.jpg",
-        "alt": "Lvp Rustic Hall"
+        "slug": "lvp-kelly-stairs",
+        "src_3x4": "/photos/lvp-kelly-stairs--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-kelly-stairs--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-kelly-stairs--landscape_16x9.jpg",
+        "alt": "Lvp Kelly Stairs"
+      },
+      {
+        "slug": "lvp-trey-openplan",
+        "src_3x4": "/photos/lvp-trey-openplan--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-trey-openplan--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-trey-openplan--landscape_16x9.jpg",
+        "alt": "Lvp Trey Openplan"
+      },
+      {
+        "slug": "lvp-photos-living",
+        "src_3x4": "/photos/lvp-photos-living--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-photos-living--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-photos-living--landscape_16x9.jpg",
+        "alt": "Lvp Photos Living"
       }
     ]
   },
@@ -125,18 +118,18 @@
         "alt": "Tile Hapa Sushi 1"
       },
       {
-        "slug": "tile-hapa-sushi-2",
-        "src_3x4": "/photos/tile-hapa-sushi-2--portrait_3x4.jpg",
-        "src_4x3": "/photos/tile-hapa-sushi-2--landscape_4x3.jpg",
-        "src_16x9": "/photos/tile-hapa-sushi-2--landscape_16x9.jpg",
-        "alt": "Tile Hapa Sushi 2"
-      },
-      {
         "slug": "tile-shower",
         "src_3x4": "/photos/tile-shower--portrait_3x4.jpg",
         "src_4x3": "/photos/tile-shower--landscape_4x3.jpg",
         "src_16x9": "/photos/tile-shower--landscape_16x9.jpg",
         "alt": "Tile Shower"
+      },
+      {
+        "slug": "tile-kelly-entry",
+        "src_3x4": "/photos/tile-kelly-entry--portrait_3x4.jpg",
+        "src_4x3": "/photos/tile-kelly-entry--landscape_4x3.jpg",
+        "src_16x9": "/photos/tile-kelly-entry--landscape_16x9.jpg",
+        "alt": "Tile Kelly Entry"
       }
     ]
   },
@@ -191,32 +184,11 @@
         "alt": "Basement Kallie Shower"
       },
       {
-        "slug": "basement-kallie-niches",
-        "src_3x4": "/photos/basement-kallie-niches--portrait_3x4.jpg",
-        "src_4x3": "/photos/basement-kallie-niches--landscape_4x3.jpg",
-        "src_16x9": "/photos/basement-kallie-niches--landscape_16x9.jpg",
-        "alt": "Basement Kallie Niches"
-      },
-      {
-        "slug": "basement-kallie-detail",
-        "src_3x4": "/photos/basement-kallie-detail--portrait_3x4.jpg",
-        "src_4x3": "/photos/basement-kallie-detail--landscape_4x3.jpg",
-        "src_16x9": "/photos/basement-kallie-detail--landscape_16x9.jpg",
-        "alt": "Basement Kallie Detail"
-      },
-      {
         "slug": "basement-david-bathroom",
         "src_3x4": "/photos/basement-david-bathroom--portrait_3x4.jpg",
         "src_4x3": "/photos/basement-david-bathroom--landscape_4x3.jpg",
         "src_16x9": "/photos/basement-david-bathroom--landscape_16x9.jpg",
         "alt": "Basement David Bathroom"
-      },
-      {
-        "slug": "basement-david-terrazzo",
-        "src_3x4": "/photos/basement-david-terrazzo--portrait_3x4.jpg",
-        "src_4x3": "/photos/basement-david-terrazzo--landscape_4x3.jpg",
-        "src_16x9": "/photos/basement-david-terrazzo--landscape_16x9.jpg",
-        "alt": "Basement David Terrazzo"
       },
       {
         "slug": "basement-natalie-wide",
