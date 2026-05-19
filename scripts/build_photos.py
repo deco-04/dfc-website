@@ -35,14 +35,49 @@ FLATIRON = (155, 82, 54)
 # None = use full image.
 # warmth = +R/-B shift (0 = none, ~6 = subtle warmth)
 PHOTOS = {
-    "hero-stairs":      dict(crop_box=(0.00, 0.00, 1.00, 0.72), warmth=4,  contrast=1.06),
-    "kitchen-oak":      dict(crop_box=None,                     warmth=2,  contrast=1.05),
-    "dining-laminate":  dict(crop_box=None,                     warmth=3,  contrast=1.04),
-    "lvp-rustic-room":  dict(crop_box=None,                     warmth=2,  contrast=1.08),
-    "lvp-rustic-hall":  dict(crop_box=None,                     warmth=2,  contrast=1.07),
-    "tile-gray":        dict(crop_box=(0.00, 0.18, 1.00, 1.00), warmth=1,  contrast=1.05),  # crop the cluttered countertop
-    "living-laminate":  dict(crop_box=(0.00, 0.30, 1.00, 1.00), warmth=2,  contrast=1.04),  # focus floor, drop ceiling/TV clutter
-    "patio-warm":       dict(crop_box=None,                     warmth=2,  contrast=1.04),
+    # Hardwood Refinishing (6)
+    "hardwood-jason-entry":     dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "hardwood-jason-living":    dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "hardwood-petra-stairs":    dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "hardwood-petra-kitchen":   dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "hardwood-eddie-sanding":   dict(crop_box=(0.00, 0.25, 1.00, 1.00), warmth=3,  contrast=1.06),  # focus on the floor below
+    "hardwood-eddie-setup":     dict(crop_box=(0.00, 0.40, 1.00, 1.00), warmth=3,  contrast=1.06),  # crop out person + equipment top
+
+    # Luxury Vinyl Plank (8)
+    "lvp-cherelle-bedroom":     dict(crop_box=None,                     warmth=2,  contrast=1.06),
+    "lvp-christopher-hallway":  dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-landon-teal":          dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-michael-sage":         dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-michael-kitchen":      dict(crop_box=(0.00, 0.20, 1.00, 1.00), warmth=2,  contrast=1.05),  # crop top clutter (bench/jackets)
+    "lvp-eddie-hallway":        dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-rustic-room":          dict(crop_box=None,                     warmth=2,  contrast=1.08),
+    "lvp-rustic-hall":          dict(crop_box=None,                     warmth=2,  contrast=1.07),
+
+    # Tile & Shower (4)
+    "tile-gray-kitchen":        dict(crop_box=(0.00, 0.18, 1.00, 1.00), warmth=1,  contrast=1.05),  # crop cluttered countertop
+    "tile-hapa-sushi-1":        dict(crop_box=None,                     warmth=2,  contrast=1.06),
+    "tile-hapa-sushi-2":        dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "tile-shower":              dict(crop_box=None,                     warmth=2,  contrast=1.05),
+
+    # Staircases (5)
+    "staircases-walnut-after":  dict(crop_box=(0.00, 0.00, 1.00, 0.72), warmth=4,  contrast=1.06),  # drop "After" handwriting
+    "staircases-dark-treads":   dict(crop_box=(0.00, 0.00, 1.00, 0.78), warmth=3,  contrast=1.06),  # drop "After" handwriting
+    "staircases-classic-oak":   dict(crop_box=None,                     warmth=3,  contrast=1.05),
+    "staircases-top-view":      dict(crop_box=None,                     warmth=3,  contrast=1.06),
+    "staircases-spindle":       dict(crop_box=None,                     warmth=3,  contrast=1.05),
+
+    # Basement Remodel (6)
+    "basement-kallie-shower":   dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "basement-kallie-niches":   dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "basement-kallie-detail":   dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "basement-david-bathroom":  dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "basement-david-terrazzo":  dict(crop_box=(0.00, 0.15, 1.00, 1.00), warmth=2,  contrast=1.05),  # crop top wall + plumbing rough-in
+    "basement-natalie-wide":    dict(crop_box=None,                     warmth=2,  contrast=1.06),
+
+    # Laminate (3)
+    "laminate-irena-stairs":    dict(crop_box=(0.00, 0.18, 1.00, 1.00), warmth=2,  contrast=1.05),  # crop person at top
+    "laminate-warm-dining":     dict(crop_box=None,                     warmth=3,  contrast=1.04),
+    "laminate-pale-landing":    dict(crop_box=None,                     warmth=2,  contrast=1.04),
 }
 
 def warm_shift(img, amount):
@@ -193,7 +228,7 @@ draw = ImageDraw.Draw(canvas)
 # Right column: photo plate (540 wide)
 right_w = 540
 right_x = W - right_w
-photo = Image.open(OUT / "hero-stairs--portrait_3x4.jpg").convert("RGB")
+photo = Image.open(OUT / "staircases-walnut-after--portrait_3x4.jpg").convert("RGB")
 ph_ratio = right_w / H
 photo_cropped = crop_to_ratio(photo, ph_ratio).resize((right_w, H), Image.LANCZOS)
 canvas.paste(photo_cropped, (right_x, 0))
@@ -259,7 +294,7 @@ print(f"\nOG image: {og_path}  {og_path.stat().st_size//1024} KB")
 
 # Square 1200x1200 variant
 square = Image.new("RGB", (1200, 1200), LINEN)
-sphoto = Image.open(OUT / "hero-stairs--portrait_3x4.jpg").convert("RGB")
+sphoto = Image.open(OUT / "staircases-walnut-after--portrait_3x4.jpg").convert("RGB")
 sphoto_c = crop_to_ratio(sphoto, 1.0).resize((1200, 1200), Image.LANCZOS)
 square.paste(sphoto_c, (0, 0))
 # Bottom band with mono + text
