@@ -5,6 +5,7 @@ import { Manifesto } from '@/components/manifesto';
 import { Services } from '@/components/services';
 import { Process } from '@/components/process';
 import { Gallery } from '@/components/gallery';
+import { Testimonial } from '@/components/testimonial';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Services />
         <Process />
         <Gallery />
+        <Testimonial />
       </main>
     </>
   );
