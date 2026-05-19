@@ -10,6 +10,8 @@ import { Climate } from '@/components/climate';
 import { ServiceArea } from '@/components/service-area';
 import { SplitCards } from '@/components/split-cards';
 import { Faq } from '@/components/faq';
+import { BottomCta } from '@/components/bottom-cta';
+import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
@@ -27,7 +29,9 @@ export default function Home() {
         <ServiceArea />
         <SplitCards />
         <Faq />
+        <BottomCta />
       </main>
+      <Footer />
     </>
   );
 }
