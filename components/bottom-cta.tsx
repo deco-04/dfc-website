@@ -1,4 +1,6 @@
+'use client';
 import Link from 'next/link';
+import { trackPhoneClick } from '@/lib/analytics';
 
 function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
   return (
@@ -32,7 +34,7 @@ export function BottomCta() {
           </Link>
         </div>
         <p className="font-body text-[12px] uppercase tracking-caps text-onyx/60 mt-10">
-          Call or text <a href="tel:7205991664" className="text-sage border-b border-sage">720-599-1664</a>{' '}
+          Call or text <a href="tel:7205991664" onClick={trackPhoneClick} className="text-sage border-b border-sage">720-599-1664</a>{' '}
           · 11068 E Louisiana Pl, Aurora, CO 80012
         </p>
       </div>

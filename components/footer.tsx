@@ -1,5 +1,7 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { trackPhoneClick } from '@/lib/analytics';
 
 export function Footer() {
   return (
@@ -53,6 +55,10 @@ function FootCol({ title, links }: { title: string; links: { href: string; label
           l.external ? (
             <li key={l.label}>
               <a href={l.href} target="_blank" rel="noopener" className="hover:text-linen transition-colors">{l.label}</a>
+            </li>
+          ) : l.href.startsWith('tel:') ? (
+            <li key={l.label}>
+              <a href={l.href} onClick={trackPhoneClick} className="hover:text-linen transition-colors">{l.label}</a>
             </li>
           ) : (
             <li key={l.label}>

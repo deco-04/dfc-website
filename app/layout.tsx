@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import { fraunces, inter } from './fonts';
 import './globals.css';
 
@@ -50,7 +51,11 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body className="grain">{children}</body>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KPW5V5BS'} />
+      <body className="grain">
+        {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID || 'G-FDHRQ4PKT7'} />
+      </body>
     </html>
   );
 }

@@ -1,5 +1,7 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { trackPhoneClick } from '@/lib/analytics';
 
 // Inline SVG to avoid lucide-react v1 SSR hydration bug
 function PhoneIcon({ className }: { className?: string }) {
@@ -29,6 +31,7 @@ export function NavMinimal() {
         </Link>
         <a
           href="tel:7205991664"
+          onClick={trackPhoneClick}
           className="inline-flex items-center gap-2 bg-flatiron text-linen px-4 py-2.5 rounded-full font-body text-[13px] font-bold tracking-capsTight whitespace-nowrap"
         >
           <PhoneIcon className="w-4 h-4" />
