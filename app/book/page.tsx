@@ -1,6 +1,8 @@
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlCalendar } from '@/components/ghl-calendar';
+import { JsonLd } from '@/components/json-ld';
+import { buildLocalBusinessSchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Book a free on-site estimate',
@@ -12,6 +14,7 @@ export default function BookPage() {
   const calendarId = process.env.NEXT_PUBLIC_GHL_CALENDAR_BOOK || 'aEgakNOq8nqb7Iz4ag0z';
   return (
     <>
+      <JsonLd data={buildLocalBusinessSchema()} />
       <NavMinimal />
       <main className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
         <header className="mb-10 text-center">

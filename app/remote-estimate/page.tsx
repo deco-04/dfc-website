@@ -1,6 +1,8 @@
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlForm } from '@/components/ghl-form';
+import { JsonLd } from '@/components/json-ld';
+import { buildLocalBusinessSchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Send us your floorplan',
@@ -12,6 +14,7 @@ export default function RemoteEstimatePage() {
   const formId = process.env.NEXT_PUBLIC_GHL_FORM_REMOTE || 'THPaKoZtHXFieIRS9zE2';
   return (
     <>
+      <JsonLd data={buildLocalBusinessSchema()} />
       <NavMinimal />
       <main className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
         <header className="mb-10 text-center">

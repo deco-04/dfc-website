@@ -12,10 +12,16 @@ import { SplitCards } from '@/components/split-cards';
 import { Faq } from '@/components/faq';
 import { BottomCta } from '@/components/bottom-cta';
 import { Footer } from '@/components/footer';
+import { JsonLd } from '@/components/json-ld';
+import { buildLocalBusinessSchema, buildFaqSchema, buildReviewSchema } from '@/lib/schema';
+import { FAQS } from '@/components/faq.data';
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildFaqSchema(FAQS)} />
+      <JsonLd data={buildReviewSchema()} />
       <Nav />
       <main>
         <Hero />

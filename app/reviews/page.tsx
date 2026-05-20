@@ -1,6 +1,8 @@
 import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { ReviewWidget } from '@/components/review-widget';
+import { JsonLd } from '@/components/json-ld';
+import { buildLocalBusinessSchema, buildReviewSchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Reviews',
@@ -11,6 +13,8 @@ export const metadata = {
 export default function ReviewsPage() {
   return (
     <>
+      <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildReviewSchema()} />
       <Nav />
       <main className="max-w-3xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <header className="mb-12 text-center">
