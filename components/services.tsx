@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SPECIMENS } from './services.data';
 
 export function Services() {
@@ -27,8 +28,18 @@ export function Services() {
                 aria-hidden
               />
               <div className="col-span-1 md:col-start-3">
-                <h3 className="display text-sage text-2xl md:text-3xl">{s.name}</h3>
+                <h3 className="display text-sage text-2xl md:text-3xl">
+                  <Link href={`/floors/${s.slug}`} className="hover:text-sage-deep transition-colors underline-offset-4 hover:underline">
+                    {s.name}
+                  </Link>
+                </h3>
                 <p className="font-body text-onyx/85 mt-2 max-w-prose">{s.body}</p>
+                <Link
+                  href={`/floors/${s.slug}`}
+                  className="font-body text-[12px] uppercase tracking-caps font-semibold text-sage-deep mt-3 inline-block hover:text-flatiron transition-colors"
+                >
+                  More about {s.name.toLowerCase()} &rarr;
+                </Link>
               </div>
               <span className="font-body text-[10px] uppercase tracking-caps text-walnut-deep md:text-right col-span-2 md:col-span-1">
                 {s.tag}
