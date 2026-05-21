@@ -34,8 +34,11 @@ export function BottomCta() {
           </Link>
         </div>
         <p className="font-body text-[12px] uppercase tracking-caps text-onyx/60 mt-10">
-          Call or text <a href="tel:7205991664" onClick={trackPhoneClick} className="text-sage border-b border-sage">720-599-1664</a>{' '}
-          · 11068 E Louisiana Pl, Aurora, CO 80012
+          Call or text <a href="tel:7205991664" onClick={trackPhoneClick} className="text-sage border-b border-sage">720-599-1664</a>
+          <span className="mx-2 text-walnut-deep/40">·</span>
+          Mon&ndash;Fri 8a&ndash;6p
+          <span className="mx-2 text-walnut-deep/40">·</span>
+          Denver metro
         </p>
       </div>
     </section>

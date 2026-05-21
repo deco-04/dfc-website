@@ -1,0 +1,131 @@
+import { Nav } from '@/components/nav';
+import { Footer } from '@/components/footer';
+import { JsonLd } from '@/components/json-ld';
+import { buildLocalBusinessSchema } from '@/lib/schema';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'Work with us',
+  description:
+    'Hire on as a crew member, partner as a supplier or designer, or build a long-term referral relationship with Denver Flooring Collective.',
+  path: '/work-with-us',
+});
+
+// GHL form ID will be provided by Andre. Hardcoded fallback is the contact
+// form so the page is never blank. Swap NEXT_PUBLIC_GHL_FORM_PARTNER when
+// the dedicated partner form lands.
+const PLACEHOLDER_FORM_ID =
+  process.env.NEXT_PUBLIC_GHL_FORM_PARTNER || 'pN1j2f72dFaRTfGfVWSe';
+
+export default function WorkWithUsPage() {
+  return (
+    <>
+      <JsonLd data={buildLocalBusinessSchema()} />
+      <Nav />
+      <main className="max-w-site mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <header className="max-w-3xl mx-auto text-center mb-16">
+          <div className="eyebrow mb-4">Work with us</div>
+          <h1 className="display text-sage text-[clamp(2.75rem,7vw,6rem)] leading-[0.98]">
+            Build the crew.
+            <br />
+            <span className="italic text-sage-deep">Build the network.</span>
+          </h1>
+          <p className="font-body text-onyx/85 mt-8 max-w-prose mx-auto text-lg leading-relaxed">
+            Three ways to work with Denver Flooring Collective. Pick the one that fits and we will follow up within 24 hours.
+          </p>
+        </header>
+
+        {/* Three-card layout */}
+        <section className="grid md:grid-cols-3 gap-4 lg:gap-6 max-w-5xl mx-auto mb-20">
+          <article className="bg-linen-warm border-l-4 border-sage p-8 lg:p-10">
+            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-walnut-deep mb-3">
+              For installers
+            </div>
+            <h2 className="display text-sage text-2xl lg:text-3xl mb-3">
+              Join the <span className="italic">crew</span>.
+            </h2>
+            <p className="font-body text-onyx/80 text-sm leading-relaxed">
+              Skilled hardwood, LVP, tile, and refinishing installers. Year-round Denver work, same crew every project, paid on time, no chasing per-square-foot pennies.
+            </p>
+            <p className="font-body text-walnut-deep text-xs uppercase tracking-caps mt-5">
+              Hiring continuously
+            </p>
+          </article>
+
+          <article className="bg-linen-warm border-l-4 border-walnut-deep p-8 lg:p-10">
+            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-walnut-deep mb-3">
+              For suppliers
+            </div>
+            <h2 className="display text-sage text-2xl lg:text-3xl mb-3">
+              Become a <span className="italic">partner</span>.
+            </h2>
+            <p className="font-body text-onyx/80 text-sm leading-relaxed">
+              Local flooring distributors, tile yards, finishing-supply houses. We move volume across hardwood, LVP, laminate, and tile every month. We expect contractor pricing and we pass it through.
+            </p>
+            <p className="font-body text-walnut-deep text-xs uppercase tracking-caps mt-5">
+              Always open to new suppliers
+            </p>
+          </article>
+
+          <article className="bg-espresso text-linen border-l-4 border-flatiron p-8 lg:p-10">
+            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-flatiron mb-3">
+              For designers &amp; contractors
+            </div>
+            <h2 className="display text-linen text-2xl lg:text-3xl mb-3">
+              Build a <span className="italic text-camel">referral</span> line.
+            </h2>
+            <p className="font-body text-linen/80 text-sm leading-relaxed">
+              Interior designers, GCs, remodelers, real estate agents. Send us flooring jobs we are right for, get a $100 referral on each project that lands. Standing line of communication with Andrew.
+            </p>
+            <p className="font-body text-flatiron text-xs uppercase tracking-caps mt-5">
+              $100 per landed referral
+            </p>
+          </article>
+        </section>
+
+        {/* Form */}
+        <section className="max-w-3xl mx-auto">
+          <header className="text-center mb-8">
+            <div className="eyebrow mb-3">Tell us about you</div>
+            <h2 className="display text-sage text-3xl lg:text-4xl">
+              One form. <span className="italic">Three paths</span>.
+            </h2>
+            <p className="font-body text-onyx/75 mt-3 max-w-prose mx-auto">
+              Fill the form below. Andrew reviews every submission personally and follows up within 24 hours.
+            </p>
+          </header>
+
+          {/*
+            TODO(Andre): replace PLACEHOLDER_FORM_ID with the dedicated partner-inquiry
+            GHL form once you share the new form ID. Until then this falls back to the
+            generic contact form so the page is never broken.
+          */}
+          <div className="bg-linen-warm p-6 lg:p-8">
+            <iframe
+              src={`https://api.leadconnectorhq.com/widget/form/${PLACEHOLDER_FORM_ID}`}
+              style={{ width: '100%', height: '100%', minHeight: '1500px', border: 'none', borderRadius: '20px' }}
+              id={`inline-${PLACEHOLDER_FORM_ID}`}
+              data-layout='{"id":"INLINE"}'
+              data-trigger-type="alwaysShow"
+              data-activation-type="alwaysActivated"
+              data-deactivation-type="neverDeactivate"
+              data-form-name="Partner / Hire Inquiry"
+              data-height="1500"
+              data-layout-iframe-id={`inline-${PLACEHOLDER_FORM_ID}`}
+              data-form-id={PLACEHOLDER_FORM_ID}
+              title="Partner or hire inquiry"
+            />
+          </div>
+
+          <p className="font-body text-[11px] uppercase tracking-caps text-onyx/55 mt-6 text-center">
+            Prefer a direct line? Text or call{' '}
+            <a href="tel:7205991664" className="text-sage border-b border-sage">
+              720-599-1664
+            </a>
+          </p>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

@@ -55,8 +55,9 @@ export default function ContactPage() {
             <ContactRow icon={<PhoneIcon />} title="Call or text">
               <a href="tel:7205991664" className="text-sage border-b border-sage">720-599-1664</a>
             </ContactRow>
-            <ContactRow icon={<MapPinIcon />} title="Office">
-              11068 E Louisiana Pl<br />Aurora, CO 80012
+            <ContactRow icon={<MapPinIcon />} title="Service area">
+              Denver metro &amp; the Front Range<br />
+              <span className="text-onyx/60 text-sm">14 cities listed on the homepage</span>
             </ContactRow>
             <ContactRow icon={<ClockIcon />} title="Hours">
               Mon&ndash;Fri 8a&ndash;6p<br />Saturdays by appointment

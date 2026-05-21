@@ -25,11 +25,12 @@ function PhoneIcon({ className }: { className?: string }) {
 }
 
 const links = [
-  { href: '#services',    label: 'Install' },
-  { href: '#process',     label: 'Process' },
-  { href: '#projects',    label: 'Projects' },
-  { href: '#commercial',  label: 'Commercial' },
-  { href: '#faq',         label: 'FAQ' },
+  { href: '/#services',     label: 'Install' },
+  { href: '/#process',      label: 'Process' },
+  { href: '/#projects',     label: 'Projects' },
+  { href: '/reviews',       label: 'Reviews' },
+  { href: '/work-with-us',  label: 'Work with us' },
+  { href: '/#faq',          label: 'FAQ' },
 ];
 
 export function Nav() {

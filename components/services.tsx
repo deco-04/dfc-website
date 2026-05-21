@@ -37,14 +37,18 @@ export function Services() {
           ))}
         </ol>
 
-        <p className="font-body text-[12px] uppercase tracking-caps text-onyx/65 mt-8 flex flex-wrap items-center gap-3 pt-6 border-t border-walnut-deep/20 border-dashed">
-          <span className="font-display italic text-walnut-deep text-lg normal-case tracking-normal">Also in scope</span>
-          <span>Staircases</span><span className="text-walnut-deep">·</span>
-          <span>Baseboards &amp; trim</span><span className="text-walnut-deep">·</span>
-          <span>Subfloor &amp; concrete leveling</span><span className="text-walnut-deep">·</span>
-          <span>Demolition &amp; haul-away</span><span className="text-walnut-deep">·</span>
-          <span>Small repairs &amp; patchwork</span>
-        </p>
+        <div className="mt-10 pt-6 border-t border-walnut-deep/20 border-dashed">
+          <div className="font-display italic text-walnut-deep text-lg mb-3">
+            Also in scope
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 font-body text-sm text-onyx/75">
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Staircases</li>
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Baseboards &amp; trim</li>
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Subfloor &amp; concrete leveling</li>
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Demolition &amp; haul-away</li>
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Small repairs &amp; patchwork</li>
+          </ul>
+        </div>
       </div>
     </section>
   );
