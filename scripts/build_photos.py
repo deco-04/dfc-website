@@ -160,32 +160,15 @@ for name, cfg in PHOTOS.items():
     process(name, cfg)
 
 # --------------------------------------------------------------------------
-# Categorized manifest emitter
+# Manifest is NOT regenerated here.
 # --------------------------------------------------------------------------
-import json
-
-CATEGORIES = {
-    "hardwood":   {"label": "Hardwood Refinishing",   "items": []},
-    "lvp":        {"label": "Luxury Vinyl Plank",     "items": []},
-    "tile":       {"label": "Tile & Shower",          "items": []},
-    "staircases": {"label": "Staircases",             "items": []},
-    "basement":   {"label": "Basement Remodel",       "items": []},
-    "laminate":   {"label": "Laminate",               "items": []},
-}
-
-for name in PHOTOS.keys():
-    cat = name.split("-")[0]
-    if cat in CATEGORIES:
-        CATEGORIES[cat]["items"].append({
-            "slug": name,
-            "src_3x4":  f"/photos/{name}--portrait_3x4.jpg",
-            "src_4x3":  f"/photos/{name}--landscape_4x3.jpg",
-            "src_16x9": f"/photos/{name}--landscape_16x9.jpg",
-            "alt": name.replace("-", " ").title(),
-        })
-
-(OUT / "manifest.json").write_text(json.dumps(CATEGORIES, indent=2))
-print(f"Manifest: {sum(len(c['items']) for c in CATEGORIES.values())} photos")
+# public/photos/manifest.json is a hand-curated file (some photos live in a
+# different category than their file name suggests, e.g. tile-hapa-sushi is
+# actually LVP, lvp-michael-sage is actually tile, etc). If we auto-generate
+# the manifest from PHOTOS slugs it overwrites the curation. So we leave the
+# manifest alone here. Edit manifest.json by hand, or after Sanity ships
+# (Tasks 35-37), Liza edits categories visually in Sanity Studio.
+print("Pipeline: photo processing complete. Manifest left untouched.")
 
 # --------------------------------------------------------------------------
 # Build OG image: 1200x630 Linen + left text + right photo plate
