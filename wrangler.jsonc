@@ -23,5 +23,16 @@
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
+	},
+	// Workers Observability captures runtime logs, errors, and request
+	// metrics to the Cloudflare dashboard at no extra cost (included with
+	// the free Workers tier). View at:
+	//   Cloudflare dashboard -> Workers & Pages -> dfc-website -> Logs
+	// Sampling rate 1.0 = log every invocation. Drop to 0.1 if invocation
+	// volume gets large enough that log storage costs matter. The free
+	// tier comfortably handles a marketing site's invocation count.
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1
 	}
 }

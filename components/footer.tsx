@@ -70,7 +70,7 @@ export function Footer() {
           { href: '/#manifesto',   label: 'Slow Materials' },
           { href: '/#process',     label: 'The Process' },
           { href: '/#projects',    label: 'Recent Plates' },
-          { href: '/#commercial',  label: 'Commercial' },
+          { href: '/serving',      label: 'Where we serve' },
           { href: '/reviews',      label: 'Reviews' },
           { href: '/work-with-us', label: 'Work with us' },
           { href: '/#faq',         label: 'Plain Questions' },
