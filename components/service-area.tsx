@@ -1,3 +1,5 @@
+import { CoverageMap } from './coverage-map';
+
 // Cities ordered alphabetically. Display size + grid columns tuned so the
 // longest names ("Cherry Hills Village", "Highlands Ranch") render on a
 // single line at every breakpoint.
@@ -30,8 +32,12 @@ export function ServiceArea() {
         <span className="italic">Front Range</span>.
       </h2>
       <p className="font-body text-onyx/70 max-w-prose mx-auto text-sm mb-10">
-        Within 25 miles of Aurora. Beyond that, we still travel &mdash; ask about minimum project size.
+        Within 25 miles of Aurora. Beyond that, we still travel. Ask about minimum project size.
       </p>
+
+      <div className="mb-12">
+        <CoverageMap />
+      </div>
 
       <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-4 sm:gap-x-8 max-w-4xl mx-auto py-8 border-y border-walnut-deep/20">
         {CITIES.map((c, i) => (
