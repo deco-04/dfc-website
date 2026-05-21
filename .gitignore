@@ -57,3 +57,4 @@ scripts/photos-src/
 # local-only audit/lighthouse runs + claude session
 /lighthouse-reports
 /.claude
+psi-*.json
