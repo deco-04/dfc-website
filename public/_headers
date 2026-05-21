@@ -1,4 +1,47 @@
-# https://developers.cloudflare.com/workers/static-assets/headers
-# https://opennext.js.org/cloudflare/caching#static-assets-caching
+# Cloudflare Pages-style headers file. Read by the OpenNext worker via
+# wrangler.jsonc -> ASSETS binding. Applied at the edge BEFORE the Worker
+# runs, so changes here ship instantly on next deploy.
+#
+# Standing security baseline per DECO portfolio rule
+# (feedback_app_security_baseline.md). Mirrored on every client site.
+#
+# Per-pattern blocks are evaluated top-down; first match wins on a given
+# header. Wildcards: `*` matches a single path segment.
+
+# Long-term immutable cache for hashed Next.js static assets.
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
+
+# Photo assets: cache 1 day in the browser, allow CDN to revalidate.
+/photos/*
+  Cache-Control: public,max-age=86400,stale-while-revalidate=604800
+
+/logo/*
+  Cache-Control: public,max-age=86400,stale-while-revalidate=604800
+
+/og/*
+  Cache-Control: public,max-age=86400,stale-while-revalidate=604800
+
+# Default security headers across every response (HTML + assets).
+# CSP allowlists every third party we actually embed:
+# - GHL form widget + script
+# - GHL booking widget
+# - GHL review widget (reputationhub.site)
+# - Google Tag Manager + GA4 (analytics)
+# - Sanity CDN (image-source paths if/when we wire images through Sanity)
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://link.msgsndr.com https://reputationhub.site https://www.googletagmanager.com https://www.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https: ; frame-src 'self' https://api.leadconnectorhq.com https://reputationhub.site https://www.googletagmanager.com; connect-src 'self' https://api.leadconnectorhq.com https://*.sanity.io https://www.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.leadconnectorhq.com; frame-ancestors 'self'; upgrade-insecure-requests
+
+# Noindex headers for routes that should never appear in search.
+# Belt-and-suspenders alongside the per-page `metadata.robots` setting.
+/thanks
+  X-Robots-Tag: noindex, follow
+/thanks/*
+  X-Robots-Tag: noindex, follow
+/lp/*
+  X-Robots-Tag: noindex, follow
