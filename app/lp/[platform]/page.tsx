@@ -6,7 +6,7 @@ import { TrustBar } from '@/components/trust-bar';
 import { ReviewWidget } from '@/components/review-widget';
 import { Gallery } from '@/components/gallery';
 import { Faq } from '@/components/faq';
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 const PLATFORMS = ['meta', 'google'] as const;
 type Platform = typeof PLATFORMS[number];
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ platform:
     description: 'Install-only flooring in Denver and Aurora. 600+ projects. 1-year warranty. Licensed and insured.',
     path: `/lp/${platform}`,
     noindex: true,
+    image: platform === 'google' ? OG_IMAGES.lpGoogle : OG_IMAGES.lpMeta,
   });
 }
 

@@ -20,8 +20,62 @@ const DEFAULT_OG_IMAGE = {
   url: '/og/dfc-share-1200x630.jpg',
   width: 1200,
   height: 630,
-  alt: 'A completed white-oak hardwood floor in a Denver-area home, installed by Denver Flooring Collective',
+  alt: 'Denver Flooring Collective. Install-only crew for hardwood, LVP, laminate, and tile. Licensed, insured, 5.0 on Google. 720-599-1664.',
 };
+
+/**
+ * Per-route OG image overrides. Each maps the page path to a generated
+ * landscape share image with copy specific to that route. All are produced
+ * by `pnpm run og` (scripts/build_og.py).
+ *
+ * Use:
+ *   pageMetadata({ ..., image: OG_IMAGES.reviews })
+ */
+export const OG_IMAGES = {
+  home: DEFAULT_OG_IMAGE,
+  reviews: {
+    url: '/og/dfc-reviews-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Real Denver flooring reviews. 5.0 on Google. 600+ projects completed.',
+  },
+  book: {
+    url: '/og/dfc-book-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Book a free Denver flooring estimate. On-site or remote. Same crew walks the space.',
+  },
+  remote: {
+    url: '/og/dfc-remote-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Send your floorplan. Get a written Denver flooring quote within 24 hours.',
+  },
+  partner: {
+    url: '/og/dfc-partner-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Work with Denver Flooring Collective. Installers, suppliers, referral partners.',
+  },
+  lpMeta: {
+    url: '/og/dfc-lp-meta-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Free Denver flooring estimate. 600+ projects, 1-year warranty, licensed and insured.',
+  },
+  lpGoogle: {
+    url: '/og/dfc-lp-google-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Free Denver flooring estimate. 600+ projects, 1-year warranty, licensed and insured.',
+  },
+  contact: {
+    url: '/og/dfc-contact-1200x630.jpg',
+    width: 1200,
+    height: 630,
+    alt: 'Text or call Denver Flooring Collective at 720-599-1664. We pick up.',
+  },
+} as const;
 
 type PageMetadataInput = {
   /** Page-specific title (no need to include " · Denver Flooring Collective" suffix — template adds it). */

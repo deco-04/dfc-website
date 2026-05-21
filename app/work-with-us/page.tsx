@@ -3,13 +3,14 @@ import { Footer } from '@/components/footer';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema } from '@/lib/schema';
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
   title: 'Work with us',
   description:
     'Hire on as a crew member, partner as a supplier or designer, or build a long-term referral relationship with Denver Flooring Collective.',
   path: '/work-with-us',
+  image: OG_IMAGES.partner,
 });
 
 // GHL form ID will be provided by Andre. Hardcoded fallback is the contact

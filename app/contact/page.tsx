@@ -3,7 +3,7 @@ import { Footer } from '@/components/footer';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema } from '@/lib/schema';
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 function PhoneIcon({ className = 'w-5 h-5' }: { className?: string }) {
   return (
@@ -35,6 +35,7 @@ export const metadata = pageMetadata({
   title: 'Contact us',
   description: 'Call, text, email, or fill the form. We answer fast and we do not high-pressure anyone into anything.',
   path: '/contact',
+  image: OG_IMAGES.contact,
 });
 
 export default function ContactPage() {

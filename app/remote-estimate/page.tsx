@@ -3,12 +3,13 @@ import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema } from '@/lib/schema';
-import { pageMetadata } from '@/lib/seo';
+import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
   title: 'Send us your floorplan',
   description: 'Skip the on-site visit. Send photos, measurements, and a floorplan and we will review it together over a call or video, no charge.',
   path: '/remote-estimate',
+  image: OG_IMAGES.remote,
 });
 
 export default function RemoteEstimatePage() {
