@@ -52,6 +52,16 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+      <head>
+        {/* Preconnect to third parties that show up on most pages: GHL form
+            widget, GHL booking widget, GHL review widget, GTM, GA4. Buys us
+            ~100-300ms on the first interaction-bound network round trip. */}
+        <link rel="preconnect" href="https://api.leadconnectorhq.com" crossOrigin="" />
+        <link rel="preconnect" href="https://link.msgsndr.com" crossOrigin="" />
+        <link rel="preconnect" href="https://reputationhub.site" crossOrigin="" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KPW5V5BS'} />
       <body className="grain">
         {children}

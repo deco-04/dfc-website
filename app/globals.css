@@ -26,7 +26,33 @@
     mix-blend-mode: multiply;
     opacity: 0.18;
   }
+  /* CSS-only fade-in for above-the-fold content. Avoids the LCP cost of
+     dynamic-importing framer-motion just to fade in a hero. Both .fade-in
+     and .fade-in-delayed are designed to never delay LCP: the content is
+     painted at full opacity within ~1 frame on slow devices and the fade
+     is a visual nicety on top. */
+  .fade-in,
+  .fade-in-delayed {
+    opacity: 0;
+    animation-name: dfc-fade-in;
+    animation-duration: 0.9s;
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    will-change: opacity, transform;
+  }
+  .fade-in-delayed { animation-delay: 0.2s; }
+  @keyframes dfc-fade-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .grain::before { display: none; }
+    .fade-in, .fade-in-delayed {
+      opacity: 1;
+      animation: none;
+      transform: none;
+    }
   }
 }

@@ -1,35 +1,45 @@
-'use client';
-import dynamic from 'next/dynamic';
+// CSS-only fade-in primitives.
+//
+// Was: dynamic(() => import('framer-motion'), { ssr: false, loading: () => null }).
+// That made every FadeDiv-wrapped subtree (including the hero's H1, paragraph,
+// CTAs, stats AND the priority hero image) render as `null` on first paint
+// until framer-motion finished downloading + hydrating. On a cold load that
+// pushed LCP past 10s and contributed to CLS as elements popped in.
+//
+// Now: server-rendered wrappers that use the .fade-in / .fade-in-delayed CSS
+// classes defined in globals.css. Zero JS cost, content appears immediately,
+// the fade happens via @keyframes. Visually equivalent.
+
 import type { ReactNode } from 'react';
 
-// Lazy-load framer-motion to keep it out of the initial JS bundle
-const MotionDiv = dynamic(
-  () => import('framer-motion').then((mod) => mod.motion.div),
-  { ssr: false, loading: () => null }
-);
-const MotionFigure = dynamic(
-  () => import('framer-motion').then((mod) => mod.motion.figure),
-  { ssr: false, loading: () => null }
-);
-
-const fadeIn = {
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 1, ease: [0.2, 0.8, 0.2, 1] as const },
-};
-
-const fadeInDelayed = {
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 1, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] as const },
-};
-
-export function FadeDiv({ children, className, delayed = false }: { children: ReactNode; className?: string; delayed?: boolean }) {
-  const props = delayed ? fadeInDelayed : fadeIn;
-  return <MotionDiv className={className} {...props}>{children}</MotionDiv>;
+export function FadeDiv({
+  children,
+  className = '',
+  delayed = false,
+}: {
+  children: ReactNode;
+  className?: string;
+  delayed?: boolean;
+}) {
+  return (
+    <div className={`${delayed ? 'fade-in-delayed' : 'fade-in'} ${className}`}>
+      {children}
+    </div>
+  );
 }
 
-export function FadeFigure({ children, className, delayed = false }: { children: ReactNode; className?: string; delayed?: boolean }) {
-  const props = delayed ? fadeInDelayed : fadeIn;
-  return <MotionFigure className={className} {...props}>{children}</MotionFigure>;
+export function FadeFigure({
+  children,
+  className = '',
+  delayed = false,
+}: {
+  children: ReactNode;
+  className?: string;
+  delayed?: boolean;
+}) {
+  return (
+    <figure className={`${delayed ? 'fade-in-delayed' : 'fade-in'} ${className}`}>
+      {children}
+    </figure>
+  );
 }

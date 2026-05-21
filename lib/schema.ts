@@ -19,9 +19,13 @@ export function buildLocalBusinessSchema() {
       'https://www.facebook.com/denverflooringcollective',
       'https://www.instagram.com/denver_flooring',
     ],
+    // No streetAddress on purpose. DFC is install-only with no showroom or
+    // walk-in location, and we keep the warehouse address off public
+    // surfaces. The locality/region/postal triplet is enough for Google to
+    // attach this LocalBusiness to the right service area in Knowledge Graph
+    // without exposing the warehouse to inbound foot traffic or scrapers.
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '11068 E Louisiana Pl',
       addressLocality: 'Aurora',
       addressRegion: 'CO',
       postalCode: '80012',

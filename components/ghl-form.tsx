@@ -36,6 +36,10 @@ export function GhlForm({
       <iframe
         ref={iframeRef}
         src={`https://api.leadconnectorhq.com/widget/form/${formId}`}
+        // loading="lazy" defers the iframe's 300KB+ widget bundle until the
+        // user scrolls within ~1 viewport of it. Cuts LCP and TBT meaningfully
+        // on form-bearing pages (book, remote-estimate, contact, work-with-us).
+        loading="lazy"
         style={{ width: '100%', height: '100%', minHeight: `${height}px`, border: 'none', borderRadius: '20px' }}
         id={`inline-${formId}`}
         data-layout='{"id":"INLINE"}'
@@ -48,7 +52,9 @@ export function GhlForm({
         data-form-id={formId}
         title={formName}
       />
-      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+      {/* id dedupes the script tag across multiple <GhlForm> instances on the
+          same page (e.g. a future page that renders contact + remote forms). */}
+      <Script id="ghl-form-embed" src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
     </>
   );
 }

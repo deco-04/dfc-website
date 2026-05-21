@@ -1,5 +1,6 @@
 import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
+import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema } from '@/lib/schema';
 import { pageMetadata } from '@/lib/seo';
@@ -96,24 +97,20 @@ export default function WorkWithUsPage() {
           </header>
 
           {/*
-            TODO(Andre): replace PLACEHOLDER_FORM_ID with the dedicated partner-inquiry
-            GHL form once you share the new form ID. Until then this falls back to the
-            generic contact form so the page is never broken.
+            TODO(Andre): replace NEXT_PUBLIC_GHL_FORM_PARTNER with the dedicated
+            partner-inquiry GHL form once you share the new form ID. Until then
+            this falls back to the generic contact form so the page is never broken.
+
+            Using <GhlForm> (not a raw iframe) gives us UTM postMessage,
+            loading="lazy", deduped form_embed.js script, and consistent styling
+            with every other GHL embed in the site.
           */}
           <div className="bg-linen-warm p-6 lg:p-8">
-            <iframe
-              src={`https://api.leadconnectorhq.com/widget/form/${PLACEHOLDER_FORM_ID}`}
-              style={{ width: '100%', height: '100%', minHeight: '1500px', border: 'none', borderRadius: '20px' }}
-              id={`inline-${PLACEHOLDER_FORM_ID}`}
-              data-layout='{"id":"INLINE"}'
-              data-trigger-type="alwaysShow"
-              data-activation-type="alwaysActivated"
-              data-deactivation-type="neverDeactivate"
-              data-form-name="Partner / Hire Inquiry"
-              data-height="1500"
-              data-layout-iframe-id={`inline-${PLACEHOLDER_FORM_ID}`}
-              data-form-id={PLACEHOLDER_FORM_ID}
-              title="Partner or hire inquiry"
+            <GhlForm
+              formId={PLACEHOLDER_FORM_ID}
+              formName="Partner / Hire Inquiry"
+              height="1500"
+              defaultsUtm={{ utm_source: 'work-with-us', landing_page: '/work-with-us' }}
             />
           </div>
 

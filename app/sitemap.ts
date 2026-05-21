@@ -1,13 +1,18 @@
 import type { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo';
 
+// Sitemap is built from SITE_URL so swapping the canonical domain only
+// requires updating NEXT_PUBLIC_SITE_URL in CI. Routes intentionally exclude
+// noindex pages (/thanks, /lp/*, /studio) — those should never appear in
+// search results.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://denverflooringcollective.com';
   const now = new Date();
   return [
-    { url: `${base}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${base}/book`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/remote-estimate`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/reviews`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${SITE_URL}/`,                changeFrequency: 'weekly',  priority: 1.0, lastModified: now },
+    { url: `${SITE_URL}/book`,            changeFrequency: 'monthly', priority: 0.9, lastModified: now },
+    { url: `${SITE_URL}/remote-estimate`, changeFrequency: 'monthly', priority: 0.9, lastModified: now },
+    { url: `${SITE_URL}/contact`,         changeFrequency: 'monthly', priority: 0.8, lastModified: now },
+    { url: `${SITE_URL}/reviews`,         changeFrequency: 'weekly',  priority: 0.7, lastModified: now },
+    { url: `${SITE_URL}/work-with-us`,    changeFrequency: 'monthly', priority: 0.6, lastModified: now },
   ];
 }

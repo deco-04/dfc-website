@@ -9,12 +9,13 @@ export function GhlCalendar({ calendarId }: { calendarId: string }) {
     <>
       <iframe
         src={`https://api.leadconnectorhq.com/widget/booking/${calendarId}`}
+        loading="lazy"
         style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '900px' }}
         scrolling="no"
         id={`booking-${calendarId}`}
         title="Book a free on-site estimate"
       />
-      <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+      <Script id="ghl-form-embed" src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
     </>
   );
 }

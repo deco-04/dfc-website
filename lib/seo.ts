@@ -68,6 +68,9 @@ export function pageMetadata({
       description,
       images: [image.url],
     },
-    robots: noindex ? { index: false, follow: noindex ? false : true } : undefined,
+    // noindex pages (thanks, /lp/*) should still allow link-following so any
+    // outbound links on them (e.g. phone/email/sister-page CTAs) pass link
+    // equity. The previous ternary was a typo that emitted nofollow,nofollow.
+    robots: noindex ? { index: false, follow: true } : undefined,
   };
 }
