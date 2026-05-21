@@ -2,7 +2,7 @@ import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
-import { buildLocalBusinessSchema } from '@/lib/schema';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 function PhoneIcon({ className = 'w-5 h-5' }: { className?: string }) {
@@ -43,6 +43,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }])} />
       <Nav />
       <main className="max-w-site mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <header className="mb-12">

@@ -2,7 +2,7 @@ import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { ReviewWidget } from '@/components/review-widget';
 import { JsonLd } from '@/components/json-ld';
-import { buildLocalBusinessSchema, buildReviewSchema } from '@/lib/schema';
+import { buildLocalBusinessSchema, buildReviewSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
@@ -17,6 +17,7 @@ export default function ReviewsPage() {
     <>
       <JsonLd data={buildLocalBusinessSchema()} />
       <JsonLd data={buildReviewSchema()} />
+      <JsonLd data={buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Reviews', path: '/reviews' }])} />
       <Nav />
       <main className="max-w-3xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <header className="mb-12 text-center">

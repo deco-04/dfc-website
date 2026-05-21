@@ -2,7 +2,7 @@ import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
-import { buildLocalBusinessSchema } from '@/lib/schema';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
@@ -23,6 +23,7 @@ export default function WorkWithUsPage() {
   return (
     <>
       <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Work with us', path: '/work-with-us' }])} />
       <Nav />
       <main className="max-w-site mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <header className="max-w-3xl mx-auto text-center mb-16">

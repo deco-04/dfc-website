@@ -13,8 +13,16 @@ import { Faq } from '@/components/faq';
 import { BottomCta } from '@/components/bottom-cta';
 import { Footer } from '@/components/footer';
 import { JsonLd } from '@/components/json-ld';
-import { buildLocalBusinessSchema, buildFaqSchema, buildReviewSchema } from '@/lib/schema';
+import {
+  buildLocalBusinessSchema,
+  buildFaqSchema,
+  buildReviewSchema,
+  buildServiceCatalogSchema,
+  buildPersonSchema,
+  buildProcessHowToSchema,
+} from '@/lib/schema';
 import { FAQS } from '@/components/faq.data';
+import { SPECIMENS } from '@/components/services.data';
 
 export default function Home() {
   return (
@@ -22,6 +30,13 @@ export default function Home() {
       <JsonLd data={buildLocalBusinessSchema()} />
       <JsonLd data={buildFaqSchema(FAQS)} />
       <JsonLd data={buildReviewSchema()} />
+      <JsonLd data={buildPersonSchema()} />
+      <JsonLd data={buildProcessHowToSchema()} />
+      <JsonLd
+        data={buildServiceCatalogSchema(
+          SPECIMENS.map((s) => ({ slug: s.slug, name: s.name, description: s.body }))
+        )}
+      />
       <Nav />
       <main>
         <Hero />

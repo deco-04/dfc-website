@@ -2,7 +2,7 @@ import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlCalendar } from '@/components/ghl-calendar';
 import { JsonLd } from '@/components/json-ld';
-import { buildLocalBusinessSchema } from '@/lib/schema';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
@@ -17,6 +17,7 @@ export default function BookPage() {
   return (
     <>
       <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Book a free estimate', path: '/book' }])} />
       <NavMinimal />
       <main className="max-w-3xl mx-auto px-6 lg:px-12 py-16">
         <header className="mb-10 text-center">
