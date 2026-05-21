@@ -49,7 +49,7 @@ export const FLOORS: FloorPage[] = [
     notFor: [
       'Basements (humidity + slab moisture wrecks solid hardwood)',
       'Bathrooms or kitchens with heavy water exposure',
-      'Tight budgets — solid hardwood is the priciest tier',
+      'Tight budgets. Solid hardwood is the priciest tier',
     ],
     coloradoNotes:
       'Denver runs dry in winter (10-20% RH indoors), which makes solid hardwood prone to seasonal gapping if it was installed without proper acclimation. We measure moisture in the subfloor before delivery, leave the boards on site for 5-7 days to equalize, and use a humidifier in winter installs when conditions are too dry. The result: boards that move where they should move, not at the seams.',
@@ -68,7 +68,7 @@ export const FLOORS: FloorPage[] = [
         a: 'No, and we will tell you that on the estimate. Solid hardwood needs to be above grade with stable humidity. Below grade, the slab pulls moisture from the ground year-round and the boards cup, crown, or gap. Engineered hardwood or LVP is the right call for basements.',
       },
       {
-        q: 'Site-finished vs. pre-finished — which is better?',
+        q: 'Site-finished vs. pre-finished, which is better?',
         a: 'Site-finished gives you flush seams (no micro-bevel between boards), a smoother feel, and a custom stain match. Pre-finished is faster, less dusty, and the factory finish is harder. For a kitchen or main entry where it has to look new in 5 years, site-finished. For a guest room or office, pre-finished is fine.',
       },
       {
@@ -85,7 +85,7 @@ export const FLOORS: FloorPage[] = [
       'Solid + site-finished hardwood flooring in Denver and Aurora. Oak, walnut, hickory, maple. Acclimated on site for Colorado humidity. 1-year workmanship warranty.',
     photo: '/photos/staircases-walnut-after--landscape_16x9.jpg',
     photoAlt: 'Walnut hardwood staircase installed by Denver Flooring Collective',
-    ogImage: '/og/dfc-share-1200x630.jpg',
+    ogImage: '/og/dfc-floor-hardwood-1200x630.jpg',
   },
 
   {
@@ -106,7 +106,7 @@ export const FLOORS: FloorPage[] = [
     notFor: [
       'Heavy refinishing cycles (most wear layers handle 1-2 refinishes)',
       'Wet areas (bathrooms, mudrooms with snow)',
-      'Bargain prices — high-quality engineered is close to solid hardwood pricing',
+      'Bargain prices. High-quality engineered is close to solid hardwood pricing',
     ],
     coloradoNotes:
       'Engineered is built for the Denver basement: a stable HDF or plywood core that does not move with moisture the way solid hardwood does. We still moisture-test the slab before install (calcium chloride test or in-situ probe), and we use a proper vapor barrier when the reading is borderline. Slab-glued installs in basements where moisture is verified low. Floating installs over concrete with a foam-and-film underlayment when moisture is at the edge of spec.',
@@ -122,7 +122,7 @@ export const FLOORS: FloorPage[] = [
     faqs: [
       {
         q: 'How do I know if engineered hardwood is the right call for my space?',
-        a: 'If you have a slab (basement, condo, slab-on-grade home), engineered is the answer. If you have plywood subfloor on a main or upper floor, you can do solid hardwood OR engineered — engineered gets you to wide-plank widths without cupping risk.',
+        a: 'If you have a slab (basement, condo, slab-on-grade home), engineered is the answer. If you have plywood subfloor on a main or upper floor, you can do solid hardwood OR engineered. Engineered gets you to wide-plank widths without cupping risk.',
       },
       {
         q: 'Can engineered hardwood be refinished?',
@@ -130,7 +130,7 @@ export const FLOORS: FloorPage[] = [
       },
       {
         q: 'Will it work over my radiant heat?',
-        a: 'Yes — engineered is the recommended hardwood for radiant. We follow the manufacturer maximum surface temperature (usually 81-84°F) and the gradual ramp-up requirements. We do not install solid hardwood over radiant.',
+        a: 'Yes, engineered is the recommended hardwood for radiant. We follow the manufacturer maximum surface temperature (usually 81-84°F) and the gradual ramp-up requirements. We do not install solid hardwood over radiant.',
       },
     ],
     metaTitle: 'Engineered hardwood installation in Denver · DFC',
@@ -138,7 +138,7 @@ export const FLOORS: FloorPage[] = [
       'Engineered hardwood flooring for Denver basements, slabs, and wide-plank looks. Slab-safe, radiant-heat compatible. Same crew, manufacturer-spec installation, 1-year warranty.',
     photo: '/photos/hardwood-jason-entry--landscape_16x9.jpg',
     photoAlt: 'Wide-plank engineered hardwood entry installed by Denver Flooring Collective',
-    ogImage: '/og/dfc-share-1200x630.jpg',
+    ogImage: '/og/dfc-floor-engineered-1200x630.jpg',
   },
 
   {
@@ -162,7 +162,7 @@ export const FLOORS: FloorPage[] = [
       'Heated floor systems exceeding 85°F surface temp',
     ],
     coloradoNotes:
-      'LVP is the most forgiving floor for Colorado homes. It does not gap in winter dryness, does not cup in basement moisture, and snowmelt at the entry wipes up without damage. The two LVP-specific Denver issues: south-facing windows can fade lower-grade LVP, so spec a UV-resistant wear layer in sun-heavy rooms. And LVP over a poorly-leveled slab telegraphs every dip — we self-level before install, every time.',
+      'LVP is the most forgiving floor for Colorado homes. It does not gap in winter dryness, does not cup in basement moisture, and snowmelt at the entry wipes up without damage. The two LVP-specific Denver issues: south-facing windows can fade lower-grade LVP, so spec a UV-resistant wear layer in sun-heavy rooms. And LVP over a poorly-leveled slab telegraphs every dip. We self-level before install, every time.',
     install: [
       'Subfloor leveling: any dip over 3/16" in a 10 ft span gets self-leveling compound or feathered patch.',
       'Acclimation: 48 hours on site at the install temperature (LVP expands and contracts more than hardwood).',
@@ -171,11 +171,11 @@ export const FLOORS: FloorPage[] = [
       'Transition strips, T-molds at doorways, baseboards, and a walkthrough.',
     ],
     timeline:
-      'Most 800-1500 sq ft LVP installs take 2-3 working days. Subfloor leveling is the long pole — if a slab needs significant prep, add a day.',
+      'Most 800-1500 sq ft LVP installs take 2-3 working days. Subfloor leveling is the long pole. If a slab needs significant prep, add a day.',
     faqs: [
       {
         q: 'Is all LVP waterproof?',
-        a: 'The plank itself is waterproof through the wear layer, yes. But the seams between planks are not — they are watertight against splash and spills, not against standing water for hours. A flooded basement with LVP usually survives; LVP under a leaky dishwasher running for 12 hours overnight does not.',
+        a: 'The plank itself is waterproof through the wear layer, yes. But the seams between planks are not. They are watertight against splash and spills, not against standing water for hours. A flooded basement with LVP usually survives; LVP under a leaky dishwasher running for 12 hours overnight does not.',
       },
       {
         q: 'Will LVP scratch from dog nails?',
@@ -191,7 +191,7 @@ export const FLOORS: FloorPage[] = [
       'Waterproof, pet-friendly luxury vinyl plank flooring in Denver, Aurora, and the Front Range. Click-lock or glue-down, proper subfloor prep, 1-year warranty.',
     photo: '/photos/basement-david-bathroom--landscape_16x9.jpg',
     photoAlt: 'Luxury vinyl plank flooring in a Denver basement remodel by DFC',
-    ogImage: '/og/dfc-share-1200x630.jpg',
+    ogImage: '/og/dfc-floor-lvp-1200x630.jpg',
   },
 
   {
@@ -211,13 +211,13 @@ export const FLOORS: FloorPage[] = [
     ],
     notFor: [
       'Bathrooms, kitchens, mudrooms (most laminate cores swell with sustained moisture)',
-      'Long-term refinishing — laminate is single-life, replace when worn',
+      'Long-term refinishing. Laminate is single-life, replace when worn',
       'Premium resale homes where buyers expect real wood',
     ],
     coloradoNotes:
-      'Denver dryness can shrink laminate planks over the winter if the install skipped expansion gaps at the walls. We leave 5/16" expansion every wall, every doorway, every transition. Skip that step and the floor buckles by year two. Conversely, snowmelt at entry doors needs to be wiped up — laminate is not waterproof and the swelling shows fast.',
+      'Denver dryness can shrink laminate planks over the winter if the install skipped expansion gaps at the walls. We leave 5/16" expansion every wall, every doorway, every transition. Skip that step and the floor buckles by year two. Conversely, snowmelt at entry doors needs to be wiped up. Laminate is not waterproof and the swelling shows fast.',
     install: [
-      'Subfloor flatness check, same as LVP — any dip over 3/16" in 10 ft gets feathered.',
+      'Subfloor flatness check, same as LVP, any dip over 3/16" in 10 ft gets feathered.',
       '48-hour acclimation on site.',
       'Underlayment with attached vapor barrier on concrete, IXPE foam on plywood.',
       'Click-lock installation with planks staggered at least 12" at end joints, expansion gaps at every wall.',
@@ -244,7 +244,7 @@ export const FLOORS: FloorPage[] = [
       'Budget-friendly laminate flooring installation in Denver and Aurora. AC-rated planks, proper expansion gaps, no warped seams. Same crew, 1-year workmanship warranty.',
     photo: '/photos/laminate-irena-stairs--landscape_16x9.jpg',
     photoAlt: 'Laminate flooring installed on stairs in a Denver-area home',
-    ogImage: '/og/dfc-share-1200x630.jpg',
+    ogImage: '/og/dfc-floor-laminate-1200x630.jpg',
   },
 
   {
@@ -265,7 +265,7 @@ export const FLOORS: FloorPage[] = [
     notFor: [
       'Whole-house bedroom installs (hard on feet, cold underfoot without radiant)',
       'Wood-look in budget projects (LVP wood-look is cheaper and warmer)',
-      'Quick weekend projects — tile is slow done right',
+      'Quick weekend projects, tile is slow done right',
     ],
     coloradoNotes:
       'The two Denver-specific tile failures we see most: cracked grout in bathroom floors with no isolation membrane (the slab shifts seasonally), and shower walls without a proper waterproofing membrane behind them (every shower will leak eventually without one). We use Schluter Kerdi or RedGard on every wet wall, isolation membranes in bathrooms with known slab movement.',
@@ -284,7 +284,7 @@ export const FLOORS: FloorPage[] = [
         a: 'Yes. We use Schluter Kerdi membrane or RedGard liquid waterproofing on every shower wall, plus a Kerdi-Shower or properly built mud-pan with PVC liner. No shortcut "tar paper behind cement board" approach. The shower has to be watertight before any tile goes on.',
       },
       {
-        q: 'Heated tile floors — can you do it?',
+        q: 'Heated tile floors, can you do it?',
         a: 'Yes. We install Schluter DITRA-HEAT or equivalent electric radiant under tile floors. Common in master bathrooms in Denver. The system goes under the tile, ties into a thermostat, and adds ~$8-12 per sq ft to the project.',
       },
       {
@@ -297,7 +297,7 @@ export const FLOORS: FloorPage[] = [
       'Porcelain, ceramic, and stone tile installation in Denver and Aurora. Proper waterproofing, isolation membranes, and pattern alignment. Same crew, 1-year warranty.',
     photo: '/photos/basement-kallie-shower--landscape_16x9.jpg',
     photoAlt: 'Tile shower installation in a Denver-area home by DFC',
-    ogImage: '/og/dfc-share-1200x630.jpg',
+    ogImage: '/og/dfc-floor-tile-1200x630.jpg',
   },
 
   {
@@ -350,7 +350,7 @@ export const FLOORS: FloorPage[] = [
       'Dustless hardwood refinishing and refinishing in Denver and Aurora. Custom stain matching, water-based or oil finish, 1-year workmanship warranty.',
     photo: '/photos/hardwood-petra-stairs--landscape_16x9.jpg',
     photoAlt: 'Refinished hardwood staircase in a Denver-area home',
-    ogImage: '/og/dfc-share-1200x630.jpg',
+    ogImage: '/og/dfc-floor-refinishing-1200x630.jpg',
   },
 ];
 
