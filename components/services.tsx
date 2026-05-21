@@ -10,7 +10,7 @@ export function Services() {
             <span className="italic">Six</span> categories. <span className="italic">One</span> crew.
           </h2>
           <p className="font-body leading-relaxed text-onyx/85 mt-4">
-            Each specimen below is something we install hand-on-tool, daily. We do not subcontract any of it.
+            Every category below is installed by our own crew, daily. No subcontractors, no exceptions.
             Pick what fits the room, the moisture, and the budget, and we will give you a straight line from quote to walkthrough.
           </p>
         </header>

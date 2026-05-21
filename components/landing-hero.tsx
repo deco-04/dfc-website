@@ -35,7 +35,7 @@ export function LandingHero({ defaultsUtm }: { defaultsUtm: UtmPayload }) {
             <PhoneIcon /> Call or text 720-599-1664
           </a>
           <p className="font-display italic text-walnut-deep text-lg mt-8">
-            Free estimate. No on-site visit required. 1-year warranty.
+            Free remote estimate. Photos and measurements. 1-year warranty.
           </p>
         </div>
         <div className="bg-linen-warm p-6 lg:p-8">

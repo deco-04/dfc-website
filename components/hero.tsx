@@ -57,9 +57,9 @@ export function Hero() {
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-walnut-deep/20">
             {[
               { big: '600+', label: 'Projects' },
-              { big: '1 yr',  label: 'Warranty' },
-              { big: '5.0',   label: 'Google' },
-              { big: 'L&I',   label: 'Licensed, insured' },
+              { big: '14',   label: 'Front Range cities' },
+              { big: '1 yr', label: 'Warranty' },
+              { big: '5.0',  label: 'on Google' },
             ].map((t) => (
               <li key={t.label} className="flex flex-col">
                 <strong className="display text-sage text-2xl leading-none">{t.big}</strong>

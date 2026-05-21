@@ -14,6 +14,20 @@ function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
 
 type SourceKey = 'default' | 'calendar' | 'remote-estimate' | 'meta' | 'google';
 
+// meta + google paid-ad sources share the same post-submit copy because
+// the lead flow is identical (Andrew personally reviews). They diverge only
+// in source attribution, which lives in the form payload, not the UI.
+const PAID_AD_COPY = {
+  eyebrow: 'Got it',
+  headline: 'We have your request.',
+  body: 'Andrew personally reviews every paid-ad lead.',
+  steps: [
+    'Andrew reviews your message and photos personally.',
+    'You get a call or text from him within business hours.',
+    'Written quote lands in your inbox within 24 hours of the call.',
+  ],
+};
+
 const SOURCE_COPY: Record<SourceKey, { eyebrow: string; headline: string; body: string; steps: string[] }> = {
   default: {
     eyebrow: 'Got it',
@@ -45,26 +59,8 @@ const SOURCE_COPY: Record<SourceKey, { eyebrow: string; headline: string; body: 
       'Written quote arrives within 24 hours of the call.',
     ],
   },
-  meta: {
-    eyebrow: 'Got it',
-    headline: 'We have your request.',
-    body: 'Andrew personally reviews every paid-ad lead.',
-    steps: [
-      'Andrew reviews your message and photos personally.',
-      'You get a call or text from him within business hours.',
-      'Written quote lands in your inbox within 24 hours of the call.',
-    ],
-  },
-  google: {
-    eyebrow: 'Got it',
-    headline: 'We have your request.',
-    body: 'Andrew personally reviews every paid-ad lead.',
-    steps: [
-      'Andrew reviews your message and photos personally.',
-      'You get a call or text from him within business hours.',
-      'Written quote lands in your inbox within 24 hours of the call.',
-    ],
-  },
+  meta: PAID_AD_COPY,
+  google: PAID_AD_COPY,
 };
 
 export const metadata = pageMetadata({

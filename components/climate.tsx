@@ -20,7 +20,7 @@ export function Climate() {
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
           <div>
             <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-lichen mb-4">
-              A note from the crew
+              Built for Colorado
             </div>
             <h2 className="display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
               <span className="italic">Built for</span>

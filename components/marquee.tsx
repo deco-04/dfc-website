@@ -26,9 +26,9 @@ export function Marquee() {
       <div className="absolute inset-y-0 left-0 w-16 sm:w-24 bg-gradient-to-r from-espresso to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-16 sm:w-24 bg-gradient-to-l from-espresso to-transparent z-10 pointer-events-none" />
 
-      <div className="flex items-center gap-6 sm:gap-10 whitespace-nowrap animate-marquee">
+      <div className="flex items-center gap-6 sm:gap-10 whitespace-nowrap animate-marquee motion-reduce:animate-none">
         {doubled.map((label, i) => (
-          <span key={i} className="flex items-center gap-6 sm:gap-10">
+          <span key={i} aria-hidden={i >= SERVICES.length} className="flex items-center gap-6 sm:gap-10">
             <span
               className={
                 i % 2 === 0
