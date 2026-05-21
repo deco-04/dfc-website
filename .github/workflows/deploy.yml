@@ -1,0 +1,96 @@
+name: Deploy to Cloudflare Workers
+
+# Triggers:
+# - Every push to main (production deploy)
+# - Manual via GitHub Actions UI ("Run workflow")
+#
+# Why this workflow exists:
+# OpenNext + pnpm + Windows is non-deterministic. The Windows builder
+# sometimes produces a worker that hits "Dynamic require of
+# middleware-manifest.json is not supported" at runtime (verified
+# 2026-05-21, version 186f7a87 from a Windows machine). Running the
+# build on an Ubuntu runner produces a deterministic, working worker
+# every time. So all production builds happen here, not on Andre's
+# Windows machine.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel in-flight runs on new pushes to the same branch.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build + deploy worker
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    # Skip the deploy if the commit message contains [skip ci] or [skip deploy].
+    # Useful for docs-only commits where you do not want to spend a CI minute.
+    if: |
+      !contains(github.event.head_commit.message, '[skip ci]') &&
+      !contains(github.event.head_commit.message, '[skip deploy]')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Lint + unit tests as a safety net before deploying. Keeps prod from
+      # ever serving code that breaks the type check or fails Vitest.
+      - name: Type check
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm exec next lint
+
+      - name: Unit tests
+        run: pnpm exec vitest run
+
+      - name: Build worker
+        run: pnpm exec opennextjs-cloudflare build
+        env:
+          # NEXT_PUBLIC_SITE_URL pins canonicals + OG image URLs to the
+          # production hostname at build time. If you ever change the
+          # canonical domain, update this env value (not the secret list).
+          NEXT_PUBLIC_SITE_URL: https://denverflooringcollective.com
+
+      - name: Deploy to Cloudflare Workers
+        run: pnpm exec opennextjs-cloudflare deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Smoke test deployed routes
+        # Hits each public route through the production URL and fails the
+        # job if any returns non-200. Cheap insurance against silent
+        # regressions like the 2026-05-21 middleware-manifest 500.
+        run: |
+          set -e
+          BASE=https://dfc-website.deco-f30.workers.dev
+          for route in / /work-with-us /contact /reviews /book /remote-estimate /sitemap.xml /robots.txt; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$BASE$route")
+            echo "$route -> $code"
+            if [ "$code" != "200" ]; then
+              echo "FAIL: $route returned $code"
+              exit 1
+            fi
+          done
+          echo "All routes 200"
