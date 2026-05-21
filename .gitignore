@@ -58,3 +58,4 @@ scripts/photos-src/
 /lighthouse-reports
 /.claude
 psi-*.json
+lhci-*
