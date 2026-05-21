@@ -1,49 +1,30 @@
 # DFC Website CMS · publish flow
 
-Sanity Studio lives at `/studio` on the deployed site. After launch, Liza
-opens `https://denverflooringcollective.com/studio`, logs in with Google
-SSO (Sanity handles auth), edits content, and clicks Publish.
+Sanity Studio is hosted by Sanity at:
 
-For every publish to trigger an automatic redeploy on Cloudflare Pages,
-do this one-time setup:
+**https://denverflooringcollective.sanity.studio**
 
-## 1. Create a deploy hook in Cloudflare Pages
+This is the canonical URL for editing content. Bookmark it.
 
-1. Open https://dash.cloudflare.com
-2. Workers & Pages → `dfc-website`
-3. Settings → Builds & deployments → Deploy hooks
-4. Add deploy hook
-5. Name: `sanity-publish`
-6. Branch: `main`
-7. Save. Copy the resulting URL.
+The Studio is intentionally NOT served from the Next.js worker on Cloudflare,
+because Sanity Studio's bundle (~15 MB) exceeds Cloudflare Workers' size limits
+(3 MB free / 10 MB paid). Hosting on Sanity is free, has no size limit, and
+has built-in auth and document history.
 
-## 2. Set the Sanity env vars in Cloudflare
+## Editing flow
 
-In Cloudflare Pages → `dfc-website` → Settings → Environment variables,
-add to **Production** AND **Preview**:
+1. Open https://denverflooringcollective.sanity.studio
+2. Log in (Google / GitHub / email — first time only, then session persists)
+3. Edit content, click Publish
+4. Public site updates within ~60 seconds on the next read (Sanity CDN cache)
 
-| Name | Type | Value |
-|---|---|---|
-| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Plaintext | `k0jdv8n4` |
-| `NEXT_PUBLIC_SANITY_DATASET` | Plaintext | `production` |
-| `SANITY_API_READ_TOKEN` | **Secret** | (the read token from Sanity → API → Tokens) |
+No redeploy required. The Next.js site reads from Sanity at request time using
+`safeSanityFetch` with a hardcoded fallback per component, so if Sanity is
+down the site degrades gracefully to the baked-in content.
 
-Trigger a redeploy after saving.
+## CORS origins
 
-## 3. Configure the webhook in Sanity
-
-1. Open https://www.sanity.io/manage
-2. Pick the `dfc-website` project
-3. API → Webhooks → Create webhook
-4. URL: paste the Cloudflare deploy hook URL from step 1
-5. Trigger on: Create + Update + Delete
-6. Filter: `_type in ['homepage', 'serviceCategory', 'project', 'review', 'faqItem', 'serviceArea', 'siteSettings']`
-7. Save
-
-## 4. CORS origins
-
-Verify all three are in Sanity → Project → API → CORS origins
-(Andre completed this in setup phase B6):
+Verify all three are in Sanity → Project → API → CORS origins:
 
 - `http://localhost:3000`
 - `https://dfc-website.deco-f30.workers.dev`
@@ -51,20 +32,29 @@ Verify all three are in Sanity → Project → API → CORS origins
 
 Each with "Allow credentials" = yes.
 
-## Verifying the flow
+## Local development
 
-1. Open `/studio` on production site
-2. Create a new FAQ item document (question: "Test?", answer: "Yes.", displayOrder: 99)
-3. Publish
-4. Cloudflare Pages → Deployments tab should show a new build kicking off within seconds
-5. ~2 minutes later, the new FAQ item appears at the bottom of the homepage FAQ
-6. Delete the test FAQ item from Sanity to clean up
+To edit content offline or test schema changes locally:
 
-## Rollback
+```bash
+pnpm exec sanity dev
+```
 
-Each Cloudflare Pages deploy is preserved. To revert:
-- Cloudflare Pages → Deployments → pick a prior good deploy → Rollback
-- Or revert content in Sanity Studio (document history → restore)
+Studio runs on http://localhost:3333. Changes here write to the same
+`production` dataset on Sanity, so be careful — there is no separate dev
+dataset configured.
+
+## Deploying schema changes
+
+When you change anything in `sanity/schemas/`, re-deploy the hosted Studio:
+
+```bash
+pnpm exec sanity deploy
+```
+
+The hostname is pinned to `denverflooringcollective` in `sanity.cli.ts`, so
+this no longer prompts. Output:
+`Success! Studio deployed to https://denverflooringcollective.sanity.studio`
 
 ## What is currently wired to Sanity
 
@@ -78,18 +68,31 @@ Each Cloudflare Pages deploy is preserved. To revert:
 | Photos | not yet | `public/photos/manifest.json` |
 
 Future wiring is incremental. Each component gets the same
-"safeSanityFetch with fallback" pattern. Add wiring after Liza has
+`safeSanityFetch` with fallback pattern. Add wiring after Liza has
 populated initial content in Studio.
 
 ## Initial content to seed
 
-Once Studio is accessible, populate at minimum:
+Once you start using Studio, populate at minimum:
 
-- 1 `siteSettings` document (phone, address, tagline, ratings)
+- 1 `siteSettings` document (phone, tagline, ratings)
 - 1 `homepage` document (hero copy + manifesto + climate)
-- 6 `serviceCategory` documents (hardwood, lvp, tile, etc)
-- 8 `faqItem` documents (copy from `components/faq.data.ts`)
-- 14 `serviceArea` documents (one per city)
-- 1 `review` document (Kallianne Watson, featured = true)
+- 6 `serviceCategory` documents (hardwood, engineered, LVP, laminate, tile, refinishing)
+- 8-12 `faqItem` documents (overrides the hardcoded set in `faq.data.ts`)
+- A handful of `review` documents (matches the Kallianne pattern in `testimonial.tsx`)
 
-After that, each new photo or project gets added as needed.
+## Rollback
+
+Sanity Studio retains document history. To revert content:
+
+1. Open the document in Studio
+2. Three-dot menu → History
+3. Pick a prior version → Restore
+
+For code rollbacks (Next.js site):
+
+```bash
+cd C:\Users\andre\Code\dfc-website
+git revert <bad-commit>
+pnpm run deploy
+```
