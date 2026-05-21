@@ -89,6 +89,9 @@ def process(name, cfg):
     src_path = SRC / f"{name}.jpg"
     if not src_path.exists():
         src_path = SRC / f"{name}.JPG"
+    if not src_path.exists():
+        print(f"  SKIP (no source): {name}")
+        return
     img = Image.open(src_path).convert("RGB")
     img = ImageOps.exif_transpose(img)
 
@@ -120,15 +123,15 @@ def process(name, cfg):
         "landscape_16x9": crop_to_ratio(img, 16/9),   # banner / OG
     }
     sizes = {
-        "portrait_3x4":   (900, 1200),
-        "landscape_4x3":  (1200, 900),
-        "landscape_16x9": (1600, 900),
+        "portrait_3x4":   (720, 960),
+        "landscape_4x3":  (1080, 810),
+        "landscape_16x9": (1440, 810),
     }
     for k, c in crops.items():
         w, h = sizes[k]
         out = c.resize((w, h), Image.LANCZOS)
         out_path = OUT / f"{name}--{k}.jpg"
-        out.save(out_path, "JPEG", quality=88, optimize=True, progressive=True)
+        out.save(out_path, "JPEG", quality=75, optimize=True, progressive=True)
         print(f"  {out_path.name}  {w}x{h}  {out_path.stat().st_size//1024} KB")
 
 def crop_to_ratio(img, target_ratio):

@@ -1,7 +1,6 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { FadeDiv, FadeFigure } from './motion-fade';
 
 // IMPORTANT: lucide-react@1.x has an SSR/hydration bug in Next 15 (see Task 9 nav.tsx).
 // Use inline SVGs for icons in this project until a downgrade or upstream fix lands.
@@ -18,11 +17,7 @@ export function Hero() {
   return (
     <section className="max-w-site mx-auto px-6 lg:px-12 pt-16 pb-12 lg:pt-24 lg:pb-20">
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-start">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
-        >
+        <FadeDiv>
           <div className="eyebrow mb-6">Denver · Aurora · Front Range</div>
           <h1 className="display text-sage text-[clamp(3.5rem,9vw,9rem)] leading-[0.95]">
             Flooring,
@@ -72,20 +67,16 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </FadeDiv>
 
-        <motion.figure
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
-          className="bg-linen-warm p-4"
-        >
+        <FadeFigure delayed className="bg-linen-warm p-4">
           <Image
             src="/photos/staircases-walnut-after--portrait_3x4.jpg"
             alt="Walnut-stained staircase recently installed by Denver Flooring Collective"
-            width={900}
-            height={1200}
+            width={720}
+            height={960}
             priority
+            sizes="(max-width: 1024px) 100vw, 45vw"
             className="w-full h-auto"
           />
           <figcaption className="mt-4 flex flex-wrap items-baseline gap-3">
@@ -93,7 +84,7 @@ export function Hero() {
             <span className="font-display italic text-xl text-espresso">Walnut stair remodel</span>
             <span className="ml-auto font-body text-[10px] uppercase tracking-caps text-onyx/60">Denver Metro · 2026</span>
           </figcaption>
-        </motion.figure>
+        </FadeFigure>
       </div>
     </section>
   );

@@ -1,20 +1,34 @@
 {
   "hardwood": {
-    "label": "Hardwood",
+    "label": "Hardwood Refinishing",
     "items": [
       {
         "slug": "hardwood-jason-entry",
         "src_3x4": "/photos/hardwood-jason-entry--portrait_3x4.jpg",
         "src_4x3": "/photos/hardwood-jason-entry--landscape_4x3.jpg",
         "src_16x9": "/photos/hardwood-jason-entry--landscape_16x9.jpg",
-        "alt": "Red oak hardwood floor in an entry hallway"
+        "alt": "Hardwood Jason Entry"
+      },
+      {
+        "slug": "hardwood-petra-stairs",
+        "src_3x4": "/photos/hardwood-petra-stairs--portrait_3x4.jpg",
+        "src_4x3": "/photos/hardwood-petra-stairs--landscape_4x3.jpg",
+        "src_16x9": "/photos/hardwood-petra-stairs--landscape_16x9.jpg",
+        "alt": "Hardwood Petra Stairs"
       },
       {
         "slug": "hardwood-petra-kitchen",
         "src_3x4": "/photos/hardwood-petra-kitchen--portrait_3x4.jpg",
         "src_4x3": "/photos/hardwood-petra-kitchen--landscape_4x3.jpg",
         "src_16x9": "/photos/hardwood-petra-kitchen--landscape_16x9.jpg",
-        "alt": "Refinished white oak hardwood floor in a kitchen"
+        "alt": "Hardwood Petra Kitchen"
+      },
+      {
+        "slug": "hardwood-eddie-sanding",
+        "src_3x4": "/photos/hardwood-eddie-sanding--portrait_3x4.jpg",
+        "src_4x3": "/photos/hardwood-eddie-sanding--landscape_4x3.jpg",
+        "src_16x9": "/photos/hardwood-eddie-sanding--landscape_16x9.jpg",
+        "alt": "Hardwood Eddie Sanding"
       }
     ]
   },
@@ -26,56 +40,63 @@
         "src_3x4": "/photos/lvp-cherelle-bedroom--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-cherelle-bedroom--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-cherelle-bedroom--landscape_16x9.jpg",
-        "alt": "Luxury vinyl plank flooring in a navy-walled bedroom"
+        "alt": "Lvp Cherelle Bedroom"
       },
       {
         "slug": "lvp-christopher-hallway",
         "src_3x4": "/photos/lvp-christopher-hallway--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-christopher-hallway--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-christopher-hallway--landscape_16x9.jpg",
-        "alt": "Warm honey luxury vinyl plank flooring in a hallway"
+        "alt": "Lvp Christopher Hallway"
       },
       {
         "slug": "lvp-landon-teal",
         "src_3x4": "/photos/lvp-landon-teal--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-landon-teal--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-landon-teal--landscape_16x9.jpg",
-        "alt": "Dark walnut luxury vinyl plank floor"
+        "alt": "Lvp Landon Teal"
+      },
+      {
+        "slug": "lvp-michael-sage",
+        "src_3x4": "/photos/lvp-michael-sage--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-michael-sage--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-michael-sage--landscape_16x9.jpg",
+        "alt": "Lvp Michael Sage"
       },
       {
         "slug": "lvp-eddie-hallway",
         "src_3x4": "/photos/lvp-eddie-hallway--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-eddie-hallway--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-eddie-hallway--landscape_16x9.jpg",
-        "alt": "Pale honey luxury vinyl plank flooring in a hallway"
+        "alt": "Lvp Eddie Hallway"
       },
       {
         "slug": "lvp-rustic-room",
         "src_3x4": "/photos/lvp-rustic-room--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-rustic-room--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-rustic-room--landscape_16x9.jpg",
-        "alt": "Rustic multi-tone luxury vinyl plank in an empty room"
+        "alt": "Lvp Rustic Room"
+      },
+      {
+        "slug": "lvp-kelly-stairs",
+        "src_3x4": "/photos/lvp-kelly-stairs--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-kelly-stairs--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-kelly-stairs--landscape_16x9.jpg",
+        "alt": "Lvp Kelly Stairs"
       },
       {
         "slug": "lvp-trey-openplan",
         "src_3x4": "/photos/lvp-trey-openplan--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-trey-openplan--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-trey-openplan--landscape_16x9.jpg",
-        "alt": "Dark walnut luxury vinyl plank in an open-plan kitchen and living room"
+        "alt": "Lvp Trey Openplan"
       },
       {
         "slug": "lvp-photos-living",
         "src_3x4": "/photos/lvp-photos-living--portrait_3x4.jpg",
         "src_4x3": "/photos/lvp-photos-living--landscape_4x3.jpg",
         "src_16x9": "/photos/lvp-photos-living--landscape_16x9.jpg",
-        "alt": "Pale honey luxury vinyl plank in a styled living room"
-      },
-      {
-        "slug": "lvp-hapa-sushi-commercial",
-        "src_3x4": "/photos/tile-hapa-sushi-1--portrait_3x4.jpg",
-        "src_4x3": "/photos/tile-hapa-sushi-1--landscape_4x3.jpg",
-        "src_16x9": "/photos/tile-hapa-sushi-1--landscape_16x9.jpg",
-        "alt": "Multi-color wood-look luxury vinyl plank flooring in a commercial restaurant"
+        "alt": "Lvp Photos Living"
       }
     ]
   },
@@ -87,28 +108,28 @@
         "src_3x4": "/photos/tile-gray-kitchen--portrait_3x4.jpg",
         "src_4x3": "/photos/tile-gray-kitchen--landscape_4x3.jpg",
         "src_16x9": "/photos/tile-gray-kitchen--landscape_16x9.jpg",
-        "alt": "Gray porcelain tile flooring in a kitchen"
+        "alt": "Tile Gray Kitchen"
+      },
+      {
+        "slug": "tile-hapa-sushi-1",
+        "src_3x4": "/photos/tile-hapa-sushi-1--portrait_3x4.jpg",
+        "src_4x3": "/photos/tile-hapa-sushi-1--landscape_4x3.jpg",
+        "src_16x9": "/photos/tile-hapa-sushi-1--landscape_16x9.jpg",
+        "alt": "Tile Hapa Sushi 1"
+      },
+      {
+        "slug": "tile-shower",
+        "src_3x4": "/photos/tile-shower--portrait_3x4.jpg",
+        "src_4x3": "/photos/tile-shower--landscape_4x3.jpg",
+        "src_16x9": "/photos/tile-shower--landscape_16x9.jpg",
+        "alt": "Tile Shower"
       },
       {
         "slug": "tile-kelly-entry",
         "src_3x4": "/photos/tile-kelly-entry--portrait_3x4.jpg",
         "src_4x3": "/photos/tile-kelly-entry--landscape_4x3.jpg",
         "src_16x9": "/photos/tile-kelly-entry--landscape_16x9.jpg",
-        "alt": "Gray porcelain tile entry with a transition to hardwood"
-      },
-      {
-        "slug": "tile-michael-library",
-        "src_3x4": "/photos/lvp-michael-sage--portrait_3x4.jpg",
-        "src_4x3": "/photos/lvp-michael-sage--landscape_4x3.jpg",
-        "src_16x9": "/photos/lvp-michael-sage--landscape_16x9.jpg",
-        "alt": "Large-format porcelain tile flooring in a library with a sage chair and Persian rug"
-      },
-      {
-        "slug": "tile-pebble-shower",
-        "src_3x4": "/photos/tile-shower--portrait_3x4.jpg",
-        "src_4x3": "/photos/tile-shower--landscape_4x3.jpg",
-        "src_16x9": "/photos/tile-shower--landscape_16x9.jpg",
-        "alt": "Slate and river-rock pebble tile shower floor"
+        "alt": "Tile Kelly Entry"
       }
     ]
   },
@@ -120,56 +141,35 @@
         "src_3x4": "/photos/staircases-walnut-after--portrait_3x4.jpg",
         "src_4x3": "/photos/staircases-walnut-after--landscape_4x3.jpg",
         "src_16x9": "/photos/staircases-walnut-after--landscape_16x9.jpg",
-        "alt": "Walnut-stained hardwood staircase with white risers and iron balusters"
+        "alt": "Staircases Walnut After"
       },
       {
         "slug": "staircases-dark-treads",
         "src_3x4": "/photos/staircases-dark-treads--portrait_3x4.jpg",
         "src_4x3": "/photos/staircases-dark-treads--landscape_4x3.jpg",
         "src_16x9": "/photos/staircases-dark-treads--landscape_16x9.jpg",
-        "alt": "Dark stained hardwood stair treads with white risers"
+        "alt": "Staircases Dark Treads"
       },
       {
         "slug": "staircases-classic-oak",
         "src_3x4": "/photos/staircases-classic-oak--portrait_3x4.jpg",
         "src_4x3": "/photos/staircases-classic-oak--landscape_4x3.jpg",
         "src_16x9": "/photos/staircases-classic-oak--landscape_16x9.jpg",
-        "alt": "Classic oak hardwood staircase with white spindles"
+        "alt": "Staircases Classic Oak"
       },
       {
         "slug": "staircases-top-view",
         "src_3x4": "/photos/staircases-top-view--portrait_3x4.jpg",
         "src_4x3": "/photos/staircases-top-view--landscape_4x3.jpg",
         "src_16x9": "/photos/staircases-top-view--landscape_16x9.jpg",
-        "alt": "Oak hardwood staircase viewed from the top"
+        "alt": "Staircases Top View"
       },
       {
         "slug": "staircases-spindle",
         "src_3x4": "/photos/staircases-spindle--portrait_3x4.jpg",
         "src_4x3": "/photos/staircases-spindle--landscape_4x3.jpg",
         "src_16x9": "/photos/staircases-spindle--landscape_16x9.jpg",
-        "alt": "Hardwood staircase with traditional white spindles"
-      },
-      {
-        "slug": "staircases-petra",
-        "src_3x4": "/photos/hardwood-petra-stairs--portrait_3x4.jpg",
-        "src_4x3": "/photos/hardwood-petra-stairs--landscape_4x3.jpg",
-        "src_16x9": "/photos/hardwood-petra-stairs--landscape_16x9.jpg",
-        "alt": "Refinished oak hardwood stair treads"
-      },
-      {
-        "slug": "staircases-kelly",
-        "src_3x4": "/photos/lvp-kelly-stairs--portrait_3x4.jpg",
-        "src_4x3": "/photos/lvp-kelly-stairs--landscape_4x3.jpg",
-        "src_16x9": "/photos/lvp-kelly-stairs--landscape_16x9.jpg",
-        "alt": "Walnut hardwood stair treads transitioning to hardwood floor below"
-      },
-      {
-        "slug": "staircases-irena-pale",
-        "src_3x4": "/photos/laminate-irena-stairs--portrait_3x4.jpg",
-        "src_4x3": "/photos/laminate-irena-stairs--landscape_4x3.jpg",
-        "src_16x9": "/photos/laminate-irena-stairs--landscape_16x9.jpg",
-        "alt": "Pale gray wood-look stair treads and risers"
+        "alt": "Staircases Spindle"
       }
     ]
   },
@@ -181,21 +181,21 @@
         "src_3x4": "/photos/basement-kallie-shower--portrait_3x4.jpg",
         "src_4x3": "/photos/basement-kallie-shower--landscape_4x3.jpg",
         "src_16x9": "/photos/basement-kallie-shower--landscape_16x9.jpg",
-        "alt": "Pebble and porcelain shower floor from a basement remodel"
+        "alt": "Basement Kallie Shower"
       },
       {
         "slug": "basement-david-bathroom",
         "src_3x4": "/photos/basement-david-bathroom--portrait_3x4.jpg",
         "src_4x3": "/photos/basement-david-bathroom--landscape_4x3.jpg",
         "src_16x9": "/photos/basement-david-bathroom--landscape_16x9.jpg",
-        "alt": "Terrazzo tile flooring in a basement bathroom remodel"
+        "alt": "Basement David Bathroom"
       },
       {
         "slug": "basement-natalie-wide",
         "src_3x4": "/photos/basement-natalie-wide--portrait_3x4.jpg",
         "src_4x3": "/photos/basement-natalie-wide--landscape_4x3.jpg",
         "src_16x9": "/photos/basement-natalie-wide--landscape_16x9.jpg",
-        "alt": "Pale luxury vinyl plank flooring in a finished basement room"
+        "alt": "Basement Natalie Wide"
       }
     ]
   },
@@ -203,18 +203,25 @@
     "label": "Laminate",
     "items": [
       {
+        "slug": "laminate-irena-stairs",
+        "src_3x4": "/photos/laminate-irena-stairs--portrait_3x4.jpg",
+        "src_4x3": "/photos/laminate-irena-stairs--landscape_4x3.jpg",
+        "src_16x9": "/photos/laminate-irena-stairs--landscape_16x9.jpg",
+        "alt": "Laminate Irena Stairs"
+      },
+      {
         "slug": "laminate-warm-dining",
         "src_3x4": "/photos/laminate-warm-dining--portrait_3x4.jpg",
         "src_4x3": "/photos/laminate-warm-dining--landscape_4x3.jpg",
         "src_16x9": "/photos/laminate-warm-dining--landscape_16x9.jpg",
-        "alt": "Warm wood-look laminate flooring in a dining area"
+        "alt": "Laminate Warm Dining"
       },
       {
         "slug": "laminate-pale-landing",
         "src_3x4": "/photos/laminate-pale-landing--portrait_3x4.jpg",
         "src_4x3": "/photos/laminate-pale-landing--landscape_4x3.jpg",
         "src_16x9": "/photos/laminate-pale-landing--landscape_16x9.jpg",
-        "alt": "Pale laminate flooring near a carpeted staircase landing"
+        "alt": "Laminate Pale Landing"
       }
     ]
   }
