@@ -12,7 +12,7 @@ function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
   );
 }
 
-type SourceKey = 'default' | 'calendar' | 'remote-estimate' | 'meta' | 'google';
+type SourceKey = 'default' | 'calendar' | 'remote-estimate' | 'meta' | 'google' | 'partner';
 
 // meta + google paid-ad sources share the same post-submit copy because
 // the lead flow is identical (Andrew personally reviews). They diverge only
@@ -61,6 +61,16 @@ const SOURCE_COPY: Record<SourceKey, { eyebrow: string; headline: string; body: 
   },
   meta: PAID_AD_COPY,
   google: PAID_AD_COPY,
+  partner: {
+    eyebrow: 'Sent',
+    headline: 'Andrew reads every one.',
+    body: 'We received your inquiry. Whether you are joining the crew, supplying materials, or building a referral line, Andrew personally reviews every partner request.',
+    steps: [
+      'Andrew reviews your inquiry within 24 hours.',
+      'You get a call or text from him to talk it through.',
+      'If it is a fit, we move to next steps the same week.',
+    ],
+  },
 };
 
 export const metadata = pageMetadata({

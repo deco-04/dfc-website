@@ -159,31 +159,41 @@ def trust_pill(d: ImageDraw.ImageDraw, cx: int, cy: int, text: str, fontspec, bg
     d.text((cx, cy), text, font=fontspec, fill=fg, anchor="mm")
 
 
-def logo_mark(d: ImageDraw.ImageDraw, x: int, y: int, size: int, color):
-    """Render the DFC stylized mountain mark + wordmark.
+_LOGO_CACHE: dict[str, Image.Image] = {}
 
-    Recreates the iconography of public/logo/logo-black.svg
-    (circle ring + mountain peaks) at any size, without needing
-    cairo to rasterize the SVG.
+
+def load_logo(variant: str = "sage") -> Image.Image:
+    """Load the rasterized DFC badge logo. Variants: 'sage', 'black', 'linen'.
+
+    Generated once via `node scripts/convert_logo.mjs` which uses sharp to
+    rasterize public/logo/logo-black.svg at 1024x1024 with transparency.
+    The badge already contains both the iconography (pine + mountain in a
+    brush-textured ring) AND the wordmark (DENVER FLOORING / COLLECTIVE),
+    so OG layouts paste the badge alone without a separate wordmark.
     """
-    r = size // 2
-    # Outer ring
-    d.ellipse((x - r, y - r, x + r, y + r), outline=color, width=max(2, size // 32))
-    # Mountain peaks inside the ring (two triangles)
-    peak_h = int(r * 0.55)
-    base_y = y + int(r * 0.25)
-    # Back peak
-    d.polygon([
-        (x - int(r * 0.55), base_y),
-        (x - int(r * 0.05), base_y - peak_h),
-        (x + int(r * 0.45), base_y),
-    ], fill=color)
-    # Front peak (shorter, in front)
-    d.polygon([
-        (x - int(r * 0.10), base_y),
-        (x + int(r * 0.25), base_y - int(peak_h * 0.7)),
-        (x + int(r * 0.60), base_y),
-    ], fill=color)
+    if variant in _LOGO_CACHE:
+        return _LOGO_CACHE[variant]
+    name = {
+        "sage":  "logo-mark-sage-1024.png",
+        "black": "logo-mark-1024.png",
+        "linen": "logo-mark-linen-1024.png",
+    }.get(variant, "logo-mark-sage-1024.png")
+    path = ASSETS / name
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Logo PNG not found at {path}. Run "
+            "`node scripts/convert_logo.mjs` first."
+        )
+    im = Image.open(path).convert("RGBA")
+    _LOGO_CACHE[variant] = im
+    return im
+
+
+def paste_logo(canvas: Image.Image, cx: int, cy: int, size: int,
+               variant: str = "sage") -> None:
+    """Paste the DFC badge centered on (cx, cy) at the given pixel size."""
+    logo = load_logo(variant).resize((size, size), Image.LANCZOS)
+    canvas.paste(logo, (cx - size // 2, cy - size // 2), logo)
 
 
 def fit_photo(path: Path, w: int, h: int) -> Image.Image:
@@ -236,21 +246,18 @@ def build_landscape(
 
     # Left content column
     LX = 64
-    # Logo mark + wordmark (top-left)
-    logo_mark(d, LX + 26, 86, 52, SAGE)
-    draw_text(d, (LX + 70, 76), "DENVER FLOORING",
-              font("Inter-SemiBold.ttf", 17), WALNUT_DEEP, anchor="lt", tracking=2)
-    draw_text(d, (LX + 70, 100), "COLLECTIVE",
-              font("Inter-SemiBold.ttf", 17), WALNUT_DEEP, anchor="lt", tracking=2)
+    # Real DFC badge logo (top-left). Contains its own wordmark so we do
+    # NOT layer a separate "DENVER FLOORING COLLECTIVE" text next to it.
+    paste_logo(canvas, LX + 60, 90, 120, variant="sage")
 
-    # Eyebrow
-    draw_text(d, (LX, 170), eyebrow,
+    # Eyebrow (below the logo)
+    draw_text(d, (LX, 180), eyebrow,
               font("Inter-SemiBold.ttf", 16), WALNUT_DEEP, anchor="lt", tracking=4)
 
     # Headline (Fraunces) — drawn in three pieces so the accent word is italic.
     head_font = font("Fraunces-SemiBold.ttf", 78)
     head_italic = font("Fraunces-Italic-SemiBold.ttf", 78)
-    y = 210
+    y = 220
     d.text((LX, y), headline_pre, font=head_font, fill=SAGE, anchor="lt")
     y2 = y + 88
     d.text((LX, y2), headline_accent, font=head_italic, fill=SAGE_DEEP, anchor="lt")
@@ -282,23 +289,19 @@ def build_square(headline_pre: str, headline_accent: str, headline_post: str, ph
     d = ImageDraw.Draw(canvas)
 
     # ----- Top band: logo + headline ---------------------------------
-    logo_mark(d, 130, 110, 60, SAGE)
-    draw_text(d, (180, 95), "DENVER FLOORING",
-              font("Inter-SemiBold.ttf", 22), WALNUT_DEEP, anchor="lt", tracking=3)
-    draw_text(d, (180, 126), "COLLECTIVE",
-              font("Inter-SemiBold.ttf", 22), WALNUT_DEEP, anchor="lt", tracking=3)
+    paste_logo(canvas, 160, 140, 180, variant="sage")
 
     # Eyebrow
-    draw_text(d, (80, 230), "DENVER  ·  AURORA  ·  FRONT RANGE",
+    draw_text(d, (80, 270), "DENVER  ·  AURORA  ·  FRONT RANGE",
               font("Inter-SemiBold.ttf", 18), WALNUT_DEEP, anchor="lt", tracking=4)
 
     # Headline (3 lines stacked for square)
-    head = font("Fraunces-SemiBold.ttf", 96)
-    head_it = font("Fraunces-Italic-SemiBold.ttf", 96)
-    d.text((80, 270), headline_pre + ",", font=head, fill=SAGE, anchor="lt")
-    d.text((80, 370), headline_accent, font=head_it, fill=SAGE_DEEP, anchor="lt")
+    head = font("Fraunces-SemiBold.ttf", 90)
+    head_it = font("Fraunces-Italic-SemiBold.ttf", 90)
+    d.text((80, 310), headline_pre + ",", font=head, fill=SAGE, anchor="lt")
+    d.text((80, 410), headline_accent, font=head_it, fill=SAGE_DEEP, anchor="lt")
     if headline_post:
-        d.text((80, 470), headline_post + ".", font=head, fill=SAGE, anchor="lt")
+        d.text((80, 510), headline_post + ".", font=head, fill=SAGE, anchor="lt")
 
     # ----- Middle band: photo card -----------------------------------
     photo_h = 380
@@ -333,22 +336,20 @@ def build_story(headline_pre: str, headline_accent: str, headline_post: str, pho
     canvas = Image.new("RGB", (W, H), LINEN_WARM)
     d = ImageDraw.Draw(canvas)
 
-    # Logo top center
-    logo_mark(d, W // 2, 160, 110, SAGE)
-    draw_text(d, (W // 2, 250), "DENVER FLOORING COLLECTIVE",
-              font("Inter-SemiBold.ttf", 22), WALNUT_DEEP, anchor="mm", tracking=4)
+    # Logo top center (real badge already includes the wordmark)
+    paste_logo(canvas, W // 2, 220, 260, variant="sage")
 
     # Eyebrow
-    draw_text(d, (W // 2, 360), "DENVER  ·  AURORA  ·  FRONT RANGE",
+    draw_text(d, (W // 2, 400), "DENVER  ·  AURORA  ·  FRONT RANGE",
               font("Inter-SemiBold.ttf", 18), WALNUT_DEEP, anchor="mm", tracking=4)
 
     # Headline
-    head = font("Fraunces-SemiBold.ttf", 110)
-    head_it = font("Fraunces-Italic-SemiBold.ttf", 110)
-    d.text((W // 2, 470), headline_pre + ",", font=head, fill=SAGE, anchor="mm")
-    d.text((W // 2, 600), headline_accent, font=head_it, fill=SAGE_DEEP, anchor="mm")
+    head = font("Fraunces-SemiBold.ttf", 100)
+    head_it = font("Fraunces-Italic-SemiBold.ttf", 100)
+    d.text((W // 2, 510), headline_pre + ",", font=head, fill=SAGE, anchor="mm")
+    d.text((W // 2, 640), headline_accent, font=head_it, fill=SAGE_DEEP, anchor="mm")
     if headline_post:
-        d.text((W // 2, 730), headline_post + ".", font=head, fill=SAGE, anchor="mm")
+        d.text((W // 2, 770), headline_post + ".", font=head, fill=SAGE, anchor="mm")
 
     # Photo card
     photo_h = 700
