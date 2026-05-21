@@ -1,4 +1,4 @@
-import { CoverageMap } from './coverage-map';
+import { ServiceAreaMap } from './service-area-map';
 
 // Cities ordered alphabetically. Display size + grid columns tuned so the
 // longest names ("Cherry Hills Village", "Highlands Ranch") render on a
@@ -36,7 +36,7 @@ export function ServiceArea() {
       </p>
 
       <div className="mb-12">
-        <CoverageMap />
+        <ServiceAreaMap />
       </div>
 
       <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-4 sm:gap-x-8 max-w-4xl mx-auto py-8 border-y border-walnut-deep/20">
