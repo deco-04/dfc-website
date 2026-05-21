@@ -26,7 +26,14 @@ export function Footer() {
     <footer className="bg-espresso text-heather">
       <div className="max-w-site mx-auto px-6 lg:px-12 pt-16 pb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-12">
         <div className="flex flex-col gap-5">
-          <Image src="/logo/logo-white.svg" alt="Denver Flooring Collective" width={200} height={200} className="w-40 h-auto" />
+          <Image
+            src="/logo/logo-nav-white-192.png"
+            alt="Denver Flooring Collective"
+            width={200}
+            height={200}
+            className="w-40 h-auto"
+            loading="lazy"
+          />
           <p className="font-display italic text-camel text-lg leading-snug">
             Crafted floors.<br />Thoughtful process.<br />Built to last.
           </p>
@@ -88,7 +95,13 @@ export function Footer() {
 function FootCol({ title, links }: { title: string; links: { href: string; label: string; external?: boolean }[] }) {
   return (
     <div>
-      <h4 className="font-body text-[11px] uppercase tracking-caps font-semibold text-camel mb-4">{title}</h4>
+      {/* Was <h4>. Pages with content sections ending in <h3> (e.g.
+          FAQ on /, service categories) jumped to footer <h4> which
+          flagged heading-order on Lighthouse. Footer column labels
+          carry no document outline meaning — they are visual labels
+          for the link group — so a styled <div> with role=heading
+          would be overkill. Keep semantic-light. */}
+      <p className="font-body text-[11px] uppercase tracking-caps font-semibold text-camel mb-4">{title}</p>
       <ul className="flex flex-col gap-2 font-body text-sm text-heather">
         {links.map((l) =>
           l.external ? (

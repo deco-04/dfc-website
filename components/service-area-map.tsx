@@ -31,7 +31,7 @@ export function ServiceAreaMap() {
           display: 'block',
         }}
       />
-      <figcaption className="font-body text-[11px] uppercase tracking-caps text-walnut-deep/75 text-center px-6 py-4 border-t border-walnut-deep/15">
+      <figcaption className="font-body text-[11px] uppercase tracking-caps font-semibold text-walnut-deep text-center px-6 py-4 border-t border-walnut-deep/15">
         Centered on Aurora &middot; Within 25 miles we travel by default &middot; Beyond that, ask
       </figcaption>
     </figure>

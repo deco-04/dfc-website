@@ -138,7 +138,7 @@ export function CoverageMap() {
         </g>
       </svg>
 
-      <figcaption className="font-body text-[11px] uppercase tracking-caps text-walnut-deep/75 text-center mt-4">
+      <figcaption className="font-body text-[11px] uppercase tracking-caps font-semibold text-walnut-deep text-center mt-4">
         25-mile coverage radius from Aurora &middot; <span className="text-flatiron font-semibold">DFC base</span>
       </figcaption>
     </figure>

@@ -52,4 +52,35 @@ await rasterize('public/logo/logo-black.svg', 'logo-mark-1024.png');           /
 await rasterize('public/logo/logo-black.svg', 'logo-mark-sage-1024.png',  '#567360'); // sage
 await rasterize('public/logo/logo-white.svg', 'logo-mark-linen-1024.png');     // already light
 
+// Small nav logo. The full SVG is the brush-ring badge with a 3150x3189
+// viewBox and complex vector paths — heavy to fetch + parse for a tiny
+// 64x64 slot in the navbar. Lighthouse on 2026-05-21 picked it as the
+// LCP element (7.3s on mobile) because of that. Rasterizing once to a
+// 192px PNG (Retina-ready for the 64px display size) makes it tiny,
+// cacheable, and keeps it out of the LCP path. Output goes directly
+// into /public so Next.js serves it at the canonical URL.
+const navSvgBlack = readFileSync(join(ROOT, 'public/logo/logo-black.svg'), 'utf8');
+await sharp(Buffer.from(navSvgBlack))
+  .resize(192, 192, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+  .png({ quality: 90, compressionLevel: 9 })
+  .toFile(join(ROOT, 'public/logo/logo-nav-192.png'));
+console.log(`  -> public/logo/logo-nav-192.png`);
+
+const navSvgWhite = readFileSync(join(ROOT, 'public/logo/logo-white.svg'), 'utf8');
+await sharp(Buffer.from(navSvgWhite))
+  .resize(192, 192, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+  .png({ quality: 90, compressionLevel: 9 })
+  .toFile(join(ROOT, 'public/logo/logo-nav-white-192.png'));
+console.log(`  -> public/logo/logo-nav-white-192.png`);
+
+// Apple touch icon. 180x180 is the standard size for iOS home-screen
+// shortcuts. Previously /logo/favicon.png (32x32) was being served as
+// the apple icon and iOS upscaled it. This fixes that.
+await sharp(Buffer.from(navSvgBlack))
+  .flatten({ background: '#F2EFE9' }) // linen background since iOS rounds the corners
+  .resize(180, 180, { fit: 'contain', background: '#F2EFE9' })
+  .png({ quality: 90 })
+  .toFile(join(ROOT, 'public/logo/apple-touch-icon-180.png'));
+console.log(`  -> public/logo/apple-touch-icon-180.png`);
+
 console.log('Logo rasterization complete.');

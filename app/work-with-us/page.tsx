@@ -117,7 +117,7 @@ export default function WorkWithUsPage() {
 
           <p className="font-body text-[11px] uppercase tracking-caps text-onyx/55 mt-6 text-center">
             Prefer a direct line? Text or call{' '}
-            <a href="tel:7205991664" className="text-sage border-b border-sage">
+            <a href="tel:7205991664" className="text-sage-deep border-b border-sage-deep">
               720-599-1664
             </a>
           </p>

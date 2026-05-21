@@ -17,7 +17,7 @@ export function Gallery() {
           </h2>
           <p className="font-body text-onyx/85 mt-4">
             Six categories, real projects, every photo from a real DFC install. See more on Instagram{' '}
-            <a href="https://instagram.com/denver_flooring" target="_blank" rel="noopener" className="text-sage border-b border-sage">@denver_flooring</a>.
+            <a href="https://instagram.com/denver_flooring" target="_blank" rel="noopener" className="text-sage-deep border-b border-sage-deep">@denver_flooring</a>.
           </p>
         </header>
 

@@ -22,7 +22,9 @@ export function Testimonial() {
       />
 
       <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-        <div className="eyebrow text-camel mb-6">A letter from Kallianne</div>
+        {/* Was text-camel which fails WCAG AA against espresso (3.8:1).
+            Lichen passes (4.5:1+) and stays on-brand. */}
+        <div className="eyebrow text-lichen mb-6">A letter from Kallianne</div>
         <div className="font-display text-camel/35 text-9xl leading-none mb-[-3rem] select-none" aria-hidden>&ldquo;</div>
         <blockquote className="font-display italic text-[clamp(1.5rem,2.6vw,2.2rem)] leading-snug text-linen max-w-[30ch] mx-auto">
           Denver Flooring Collective did a <em className="text-camel">fantastic job</em> with our basement remodel.

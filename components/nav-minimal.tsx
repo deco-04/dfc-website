@@ -27,7 +27,14 @@ export function NavMinimal() {
     <header className="bg-linen border-b border-walnut/10">
       <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
         <Link href="/" aria-label="Denver Flooring Collective home" className="shrink-0">
-          <Image src="/logo/logo-black.svg" alt="Denver Flooring Collective" width={56} height={56} priority />
+          <Image
+            src="/logo/logo-nav-192.png"
+            alt="Denver Flooring Collective"
+            width={56}
+            height={56}
+            priority
+            fetchPriority="high"
+          />
         </Link>
         <a
           href="tel:7205991664"

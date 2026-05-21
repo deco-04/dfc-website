@@ -22,7 +22,7 @@ export function SplitCards() {
           Retail buildouts with a hard opening date. Restaurants and short-term rentals where the floor takes a
           beating from day one. Same install crew, same warranty, same direct line to Andrew.
         </p>
-        <Link href="/book" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-sage border-b border-sage pb-1 hover:text-flatiron hover:border-flatiron transition-colors">
+        <Link href="/book" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1 hover:text-flatiron hover:border-flatiron transition-colors">
           Get a commercial estimate
           <ArrowRightIcon />
         </Link>

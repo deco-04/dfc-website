@@ -52,7 +52,20 @@ export function Nav() {
     >
       <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-8">
         <Link href="/" aria-label="Denver Flooring Collective home" data-testid="nav-logo" className="shrink-0">
-          <Image src="/logo/logo-black.svg" alt="Denver Flooring Collective" width={64} height={64} priority />
+          {/*
+            Small rasterized PNG (~5KB) instead of the 170KB brush-ring
+            SVG. Lighthouse on 2026-05-21 picked the SVG as the LCP
+            element on mobile (7.3s) at 64x64 in the sticky nav.
+            See scripts/convert_logo.mjs.
+          */}
+          <Image
+            src="/logo/logo-nav-192.png"
+            alt="Denver Flooring Collective"
+            width={64}
+            height={64}
+            priority
+            fetchPriority="high"
+          />
         </Link>
         <nav className="hidden md:flex gap-6 ml-auto">
           {links.map((l) => (

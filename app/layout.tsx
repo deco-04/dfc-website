@@ -34,7 +34,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: ['/og/dfc-share-1200x630.jpg'],
   },
-  icons: { icon: '/logo/favicon.png', apple: '/logo/favicon.png' },
+  // apple-touch-icon-180.png renders properly on iOS home-screen shortcuts.
+  // Previously favicon.png (32x32) was being upscaled by iOS.
+  icons: {
+    icon: '/logo/favicon.png',
+    apple: [
+      { url: '/logo/apple-touch-icon-180.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   authors: [{ name: 'Denver Flooring Collective' }],
   keywords: [
     'flooring installer denver',

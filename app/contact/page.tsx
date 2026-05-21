@@ -54,7 +54,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12">
           <aside className="space-y-6">
             <ContactRow icon={<PhoneIcon />} title="Call or text">
-              <a href="tel:7205991664" className="text-sage border-b border-sage">720-599-1664</a>
+              <a href="tel:7205991664" className="text-sage-deep border-b border-sage-deep">720-599-1664</a>
             </ContactRow>
             <ContactRow icon={<MapPinIcon />} title="Service area">
               Denver metro &amp; the Front Range<br />

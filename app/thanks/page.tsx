@@ -101,12 +101,12 @@ export default async function ThanksPage({ searchParams }: { searchParams: Promi
           ))}
         </ol>
         <div className="flex flex-wrap justify-center gap-3 mt-12">
-          <Link href="/#projects" className="inline-flex items-center gap-2 font-body text-[13px] uppercase tracking-caps font-semibold text-sage border-b border-sage pb-1">
+          <Link href="/#projects" className="inline-flex items-center gap-2 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1">
             Browse recent floors <ArrowRightIcon />
           </Link>
         </div>
         <p className="font-body text-[12px] uppercase tracking-caps text-onyx/60 mt-10">
-          Or call <a href="tel:7205991664" className="text-sage border-b border-sage">720-599-1664</a> if you have a question now.
+          Or call <a href="tel:7205991664" className="text-sage-deep border-b border-sage-deep">720-599-1664</a> if you have a question now.
         </p>
       </main>
       <FooterMinimal />
