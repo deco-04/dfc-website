@@ -3,12 +3,13 @@ import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlCalendar } from '@/components/ghl-calendar';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema } from '@/lib/schema';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Book a free on-site estimate',
   description: 'Pick a time. The same crew that will install your floor walks the space with you and gives you a written quote, no charge, no pressure.',
-  alternates: { canonical: '/book' },
-};
+  path: '/book',
+});
 
 export default function BookPage() {
   const calendarId = process.env.NEXT_PUBLIC_GHL_CALENDAR_BOOK || 'aEgakNOq8nqb7Iz4ag0z';

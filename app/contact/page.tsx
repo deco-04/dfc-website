@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema } from '@/lib/schema';
+import { pageMetadata } from '@/lib/seo';
 
 function PhoneIcon({ className = 'w-5 h-5' }: { className?: string }) {
   return (
@@ -30,11 +31,11 @@ function ClockIcon({ className = 'w-5 h-5' }: { className?: string }) {
   );
 }
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Contact us',
   description: 'Call, text, email, or fill the form. We answer fast and we do not high-pressure anyone into anything.',
-  alternates: { canonical: '/contact' },
-};
+  path: '/contact',
+});
 
 export default function ContactPage() {
   const formId = process.env.NEXT_PUBLIC_GHL_FORM_CONTACT || 'pN1j2f72dFaRTfGfVWSe';

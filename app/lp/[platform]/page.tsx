@@ -6,6 +6,7 @@ import { TrustBar } from '@/components/trust-bar';
 import { ReviewWidget } from '@/components/review-widget';
 import { Gallery } from '@/components/gallery';
 import { Faq } from '@/components/faq';
+import { pageMetadata } from '@/lib/seo';
 
 const PLATFORMS = ['meta', 'google'] as const;
 type Platform = typeof PLATFORMS[number];
@@ -17,11 +18,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ platform: string }> }) {
   const { platform } = await params;
   if (!PLATFORMS.includes(platform as Platform)) return {};
-  return {
+  return pageMetadata({
     title: 'Free Denver Flooring Estimate',
     description: 'Install-only flooring in Denver and Aurora. 600+ projects. 1-year warranty. Licensed and insured.',
-    robots: { index: false, follow: true },
-  };
+    path: `/lp/${platform}`,
+    noindex: true,
+  });
 }
 
 export default async function LandingPage({ params }: { params: Promise<{ platform: string }> }) {

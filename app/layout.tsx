@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import { fraunces, inter } from './fonts';
+import { SITE_URL } from '@/lib/seo';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://denverflooringcollective.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Denver Flooring Installers · Hardwood, LVP, Tile · DFC',
     template: '%s · Denver Flooring Collective',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Denver Flooring Collective',
     locale: 'en_US',
-    url: 'https://denverflooringcollective.com',
+    url: SITE_URL,
     title: 'Denver Flooring Installers · Hardwood, LVP, Tile · DFC',
     description:
       'Install-only flooring in Denver. Hardwood, LVP, laminate, tile. 600+ projects. 1-year warranty. Licensed and insured.',

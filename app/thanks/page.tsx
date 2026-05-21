@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
+import { pageMetadata } from '@/lib/seo';
 
 function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
   return (
@@ -66,11 +67,12 @@ const SOURCE_COPY: Record<SourceKey, { eyebrow: string; headline: string; body: 
   },
 };
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Thank you',
   description: 'We received your request. Here is what happens next.',
-  robots: { index: false, follow: false },
-};
+  path: '/thanks',
+  noindex: true,
+});
 
 export default async function ThanksPage({ searchParams }: { searchParams: Promise<{ source?: string }> }) {
   const { source } = await searchParams;

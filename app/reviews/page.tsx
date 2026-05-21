@@ -3,12 +3,13 @@ import { Footer } from '@/components/footer';
 import { ReviewWidget } from '@/components/review-widget';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema, buildReviewSchema } from '@/lib/schema';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Reviews',
   description: 'Real Google reviews from real Denver homeowners and business owners. 5.0 average, 600+ projects, 1-year workmanship warranty.',
-  alternates: { canonical: '/reviews' },
-};
+  path: '/reviews',
+});
 
 export default function ReviewsPage() {
   return (
