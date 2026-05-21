@@ -29,7 +29,6 @@
     "@sanity/image-url": "^1",
     "@sanity/vision": "^3",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.39.0",
     "groq": "^5.25.1",
     "next": "15.5.18",
     "next-sanity": "^9",

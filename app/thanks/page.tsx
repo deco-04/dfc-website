@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
 import { pageMetadata } from '@/lib/seo';
+import { TrackedPhoneLink } from '@/components/tracked-phone-link';
 
 function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
   return (
@@ -106,7 +107,7 @@ export default async function ThanksPage({ searchParams }: { searchParams: Promi
           </Link>
         </div>
         <p className="font-body text-[12px] uppercase tracking-caps text-onyx/60 mt-10">
-          Or call <a href="tel:7205991664" className="text-sage-deep border-b border-sage-deep">720-599-1664</a> if you have a question now.
+          Or call <TrackedPhoneLink className="text-sage-deep border-b border-sage-deep">720-599-1664</TrackedPhoneLink> if you have a question now.
         </p>
       </main>
       <FooterMinimal />

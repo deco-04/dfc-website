@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { GhlForm } from '@/components/ghl-form';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/schema';
+import { TrackedPhoneLink } from '@/components/tracked-phone-link';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 function PhoneIcon({ className = 'w-5 h-5' }: { className?: string }) {
@@ -55,7 +56,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12">
           <aside className="space-y-6">
             <ContactRow icon={<PhoneIcon />} title="Call or text">
-              <a href="tel:7205991664" className="text-sage-deep border-b border-sage-deep">720-599-1664</a>
+              <TrackedPhoneLink className="text-sage-deep border-b border-sage-deep">720-599-1664</TrackedPhoneLink>
             </ContactRow>
             <ContactRow icon={<MapPinIcon />} title="Service area">
               Denver metro &amp; the Front Range<br />
