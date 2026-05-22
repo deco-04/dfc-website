@@ -25,6 +25,17 @@ export default function ReviewsPage() {
           <h1 className="display text-sage text-5xl lg:text-7xl leading-[1.04]">
             <span className="italic">5.0 stars</span> on Google.
           </h1>
+          {/* Visual 5-star row immediately below the H1. Stars use the same
+              flatiron orange as the brand accents so they don't fight the
+              sage headline. role="img" + aria-label gives screen readers a
+              single readable rating instead of five 'star' announcements. */}
+          <div role="img" aria-label="Rated 5 out of 5 stars" className="flex items-center justify-center gap-1 mt-4">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <svg key={i} className="w-6 h-6 text-flatiron" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            ))}
+          </div>
           <p className="font-body text-onyx/85 mt-4 max-w-prose mx-auto">
             Every project carries a 1-year workmanship warranty. Every install is a dedicated crew on your project.
             Below: every review, live from our Google Business Profile.

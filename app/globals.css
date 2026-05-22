@@ -3,7 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    /*
+      Match the body's linen background at the <html> level too. iOS
+      Safari renders the rubber-band/overscroll area + the safe-area
+      strip behind the notch using the HTML background color, not the
+      body's. Without this, scrolled-past-end content + the notch
+      zone read as white (default) or as a tinted preview of the
+      next page (when arriving from a deep-linked nav like WhatsApp),
+      which is what bled above the sticky nav in user feedback
+      2026-05-22.
+    */
+    background-color: #F2EFE9;
+  }
   body {
     @apply font-body text-onyx bg-linen antialiased;
     font-size: 17px;

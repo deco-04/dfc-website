@@ -9,7 +9,12 @@ export function FooterMinimal() {
         <span className="text-camel/40">·</span>
         <span>Licensed &amp; insured</span>
         <span className="text-camel/40">·</span>
-        <span>5.0 stars on Google</span>
+        <span className="inline-flex items-center gap-1">
+          <svg className="w-3.5 h-3.5 text-camel" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          5.0 stars on Google
+        </span>
       </div>
     </footer>
   );

@@ -1,8 +1,10 @@
-const STATS = [
+type Stat = { big: string; label: string; star?: boolean };
+
+const STATS: Stat[] = [
   { big: '14',    label: 'Front Range cities served' },
   { big: '600+',  label: 'Floors installed to date' },
   { big: '1 yr',  label: 'Workmanship warranty' },
-  { big: '5.0',   label: 'stars · Google' },
+  { big: '5.0',   label: 'stars · Google', star: true },
 ];
 
 export function Climate() {
@@ -37,7 +39,14 @@ export function Climate() {
           <dl className="grid grid-cols-2 gap-x-8 gap-y-6">
             {STATS.map((s) => (
               <div key={s.label} className="border-t border-linen/20 pt-5">
-                <dt className="font-display text-camel text-[clamp(2.5rem,5vw,4rem)] leading-none">{s.big}</dt>
+                <dt className="font-display text-camel text-[clamp(2.5rem,5vw,4rem)] leading-none flex items-center gap-2">
+                  {s.big}
+                  {s.star && (
+                    <svg className="w-7 h-7 text-camel shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  )}
+                </dt>
                 <dd className="font-body text-[11px] uppercase tracking-caps text-lichen mt-2">{s.label}</dd>
               </div>
             ))}

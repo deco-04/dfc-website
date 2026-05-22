@@ -24,6 +24,13 @@ function PhoneIcon({ className }: { className?: string }) {
 
 export function NavMinimal() {
   return (
+    <>
+      {/* Same fixed safe-area cover as the full Nav. */}
+      <div
+        aria-hidden
+        className="fixed inset-x-0 top-0 z-[51] bg-linen pointer-events-none"
+        style={{ height: 'env(safe-area-inset-top, 0px)' }}
+      />
     <header
       className="bg-linen border-b border-walnut/10"
       // Same safe-area extension as the full Nav so iOS notch zone is
@@ -51,5 +58,6 @@ export function NavMinimal() {
         </a>
       </div>
     </header>
+    </>
   );
 }

@@ -65,10 +65,17 @@ export function Hero() {
               { big: '600+', label: 'Projects' },
               { big: '14',   label: 'Front Range cities' },
               { big: '1 yr', label: 'Warranty' },
-              { big: '5.0',  label: 'stars · Google' },
+              { big: '5.0',  label: 'stars · Google', star: true },
             ].map((t) => (
               <li key={t.label} className="flex flex-col">
-                <strong className="display text-sage text-2xl leading-none">{t.big}</strong>
+                <strong className="display text-sage text-2xl leading-none flex items-center gap-1.5">
+                  {t.big}
+                  {t.star && (
+                    <svg className="w-5 h-5 text-flatiron shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  )}
+                </strong>
                 <span className="font-body text-[10px] uppercase tracking-caps text-onyx/70 mt-1">{t.label}</span>
               </li>
             ))}

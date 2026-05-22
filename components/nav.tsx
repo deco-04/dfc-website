@@ -89,6 +89,20 @@ export function Nav() {
   }, [menuOpen]);
 
   return (
+    <>
+      {/*
+        Safe-area cover. Fixed at top:0 spanning the full width, with
+        height = env(safe-area-inset-top). Sits ABOVE the sticky nav in
+        z-order so the iOS notch / Dynamic Island zone is always linen
+        no matter how iOS Safari interprets sticky positioning or
+        viewport-fit. Belt-and-suspenders alongside the header's
+        padding-top: env(safe-area-inset-top).
+      */}
+      <div
+        aria-hidden
+        className="fixed inset-x-0 top-0 z-[51] bg-linen pointer-events-none"
+        style={{ height: 'env(safe-area-inset-top, 0px)' }}
+      />
     <header
       className={clsx(
         'sticky top-0 z-50 transition-shadow',
@@ -200,5 +214,6 @@ export function Nav() {
         </nav>
       </div>
     </header>
+    </>
   );
 }
