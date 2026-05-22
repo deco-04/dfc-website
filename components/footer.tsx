@@ -85,7 +85,14 @@ export function Footer() {
       <div className="max-w-site mx-auto px-6 lg:px-12 py-6 border-t border-heather/15 flex flex-col md:flex-row justify-between gap-2 font-body text-[10px] uppercase tracking-caps text-heather/55">
         <span>&copy; 2026 Denver Flooring Collective LLC &middot; Licensed and insured &middot; Serving the Denver Metro</span>
         <span>
-          A <a href="https://decosmartbusiness.com" target="_blank" rel="noopener" className="text-camel border-b border-camel">DECO</a> client
+          Crafted by{' '}
+          <a href="https://scalewithgos.com" target="_blank" rel="noopener" className="text-camel border-b border-camel">
+            Grain of Salt
+          </a>
+          {' '}&middot; Powered by{' '}
+          <a href="https://decosmartbusiness.com" target="_blank" rel="noopener" className="text-camel border-b border-camel">
+            DECO
+          </a>
         </span>
       </div>
     </footer>

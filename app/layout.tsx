@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { fraunces, inter } from './fonts';
 import { SITE_URL } from '@/lib/seo';
 import { DeferredAnalytics } from '@/components/deferred-analytics';
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://api.leadconnectorhq.com" crossOrigin="" />
         <link rel="preconnect" href="https://link.msgsndr.com" crossOrigin="" />
         <link rel="preconnect" href="https://reputationhub.site" crossOrigin="" />
+        <link rel="preconnect" href="https://widgets.leadconnectorhq.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
@@ -76,6 +78,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             while preserving attribution on >95% of sessions. See
             components/deferred-analytics.tsx for rationale. */}
         <DeferredAnalytics />
+        {/*
+          GoHighLevel (LeadConnector) chat widget. Lazy-loaded so the
+          ~80KB widget bundle never competes with LCP. Widget renders
+          its own floating chat bubble in the bottom-right corner.
+          Widget config (greeting, hours, routing) is managed in the
+          GHL sub-account UI under Sites -> Chat Widgets. The data-*
+          attributes here are the binding to widget id 691bcb73183503cc8a90af51.
+        */}
+        <Script
+          id="ghl-chat-widget"
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          strategy="lazyOnload"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="691bcb73183503cc8a90af51"
+        />
       </body>
     </html>
   );
