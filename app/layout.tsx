@@ -55,6 +55,13 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: '#567360',
+  // viewport-fit=cover lets the page draw into iOS Safari's safe-area
+  // zones (Dynamic Island, notch, home-indicator). Combined with the
+  // safe-area-inset padding on <Nav>, the sticky nav background now
+  // extends all the way up to the top of the physical viewport instead
+  // of stopping at the bottom of the notch — content can no longer
+  // scroll behind the notch and show above the nav box.
+  viewportFit: 'cover' as const,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

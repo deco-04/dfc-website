@@ -24,7 +24,12 @@ function PhoneIcon({ className }: { className?: string }) {
 
 export function NavMinimal() {
   return (
-    <header className="bg-linen border-b border-walnut/10">
+    <header
+      className="bg-linen border-b border-walnut/10"
+      // Same safe-area extension as the full Nav so iOS notch zone is
+      // covered by the linen background, not by underlying page content.
+      style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
+    >
       <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
         <Link href="/" aria-label="Denver Flooring Collective home" className="shrink-0">
           <Image

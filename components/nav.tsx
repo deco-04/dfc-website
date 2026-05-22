@@ -101,6 +101,11 @@ export function Nav() {
         'bg-linen border-b',
         scrolled ? 'shadow-md border-walnut-deep/15' : 'shadow-sm border-walnut-deep/10',
       )}
+      // safe-area-inset-top extends the linen background up into the
+      // iOS notch / Dynamic Island zone so page content cannot scroll
+      // behind it. With viewport-fit=cover set in layout.tsx, this
+      // closes the visible gap above the nav on iPhones.
+      style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
       <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-4 md:gap-8">
         <Link href="/" aria-label="Denver Flooring Collective home" data-testid="nav-logo" className="shrink-0">
