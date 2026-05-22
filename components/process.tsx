@@ -17,7 +17,7 @@ const STEPS = [
   {
     num: '4',
     name: 'Install',
-    body: 'Same crew, every day. Manufacturer-spec installation. Daily updates so you always know what is happening tomorrow.',
+    body: 'Dedicated crew on your floor. Manufacturer-spec installation. Daily updates so you always know what is happening tomorrow.',
   },
   {
     num: '5',

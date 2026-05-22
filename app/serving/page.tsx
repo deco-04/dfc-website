@@ -13,7 +13,7 @@ import { CITIES_INDEX } from '@/components/cities.data';
 export const metadata = pageMetadata({
   title: 'Where we serve',
   description:
-    'Denver Flooring Collective serves the Denver metro and Colorado Front Range. Hardwood, LVP, tile, and refinishing across 14 cities within 25 miles of Aurora.',
+    'Denver Flooring Collective serves the Denver Metro and the Colorado Front Range. Hardwood, LVP, tile, and refinishing across 14 cities.',
   path: '/serving',
   image: OG_IMAGES.home,
 });
@@ -46,14 +46,15 @@ export default function ServingPage() {
         <section className="max-w-site mx-auto px-6 lg:px-12 pt-16 pb-12 lg:pt-20 lg:pb-16 text-center">
           <div className="eyebrow mb-4">Where we serve</div>
           <h1 className="display text-sage text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.98] max-w-[18ch] mx-auto">
-            Denver metro
+            Denver Metro
             <br />
             <span className="italic text-sage-deep">and the Front Range</span>.
           </h1>
           <p className="font-body text-onyx/85 mt-8 max-w-prose mx-auto text-lg leading-relaxed">
-            Aurora-based crew. 14 Front Range cities within 25 miles. Newer master-planned
-            subdivisions, mid-century ranches, downtown Denver bungalows, mountain-foothills
-            homes. Same crew, every project, no subcontractors.
+            14 Front Range cities. Newer master-planned subdivisions, mid-century
+            ranches, downtown Denver bungalows, mountain-foothills homes. Our crews
+            stay focused on one project at a time and we travel by default within the
+            Denver Metro.
           </p>
         </section>
 
@@ -104,7 +105,7 @@ export default function ServingPage() {
             </h2>
             <p className="font-body text-onyx/85 mt-4 max-w-prose">
               We work in these cities regularly but have not yet written dedicated pages.
-              Same crew, same warranty, same install discipline. Reach out and we will
+              Same warranty, same install discipline. Reach out and we will
               walk your space.
             </p>
           </div>

@@ -82,7 +82,7 @@ export const FLOORS: FloorPage[] = [
     ],
     metaTitle: 'Hardwood floor installation in Denver · DFC',
     metaDescription:
-      'Solid + site-finished hardwood flooring in Denver and Aurora. Oak, walnut, hickory, maple. Acclimated on site for Colorado humidity. 1-year workmanship warranty.',
+      'Solid + site-finished hardwood flooring in the Denver Metro. Oak, walnut, hickory, maple. Acclimated on site for Colorado humidity. 1-year workmanship warranty.',
     photo: '/photos/staircases-walnut-after--landscape_16x9.jpg',
     photoAlt: 'Walnut hardwood staircase installed by Denver Flooring Collective',
     ogImage: '/og/dfc-floor-hardwood-1200x630.jpg',
@@ -135,7 +135,7 @@ export const FLOORS: FloorPage[] = [
     ],
     metaTitle: 'Engineered hardwood installation in Denver · DFC',
     metaDescription:
-      'Engineered hardwood flooring for Denver basements, slabs, and wide-plank looks. Slab-safe, radiant-heat compatible. Same crew, manufacturer-spec installation, 1-year warranty.',
+      'Engineered hardwood flooring for Denver basements, slabs, and wide-plank looks. Slab-safe, radiant-heat compatible. Manufacturer-spec installation, 1-year warranty.',
     photo: '/photos/hardwood-jason-entry--landscape_16x9.jpg',
     photoAlt: 'Wide-plank engineered hardwood entry installed by Denver Flooring Collective',
     ogImage: '/og/dfc-floor-engineered-1200x630.jpg',
@@ -241,7 +241,7 @@ export const FLOORS: FloorPage[] = [
     ],
     metaTitle: 'Laminate floor installation in Denver · DFC',
     metaDescription:
-      'Budget-friendly laminate flooring installation in Denver and Aurora. AC-rated planks, proper expansion gaps, no warped seams. Same crew, 1-year workmanship warranty.',
+      'Budget-friendly laminate flooring installation in the Denver Metro. AC-rated planks, proper expansion gaps, no warped seams. 1-year workmanship warranty.',
     photo: '/photos/laminate-irena-stairs--landscape_16x9.jpg',
     photoAlt: 'Laminate flooring installed on stairs in a Denver-area home',
     ogImage: '/og/dfc-floor-laminate-1200x630.jpg',
@@ -294,7 +294,7 @@ export const FLOORS: FloorPage[] = [
     ],
     metaTitle: 'Tile and shower installation in Denver · DFC',
     metaDescription:
-      'Porcelain, ceramic, and stone tile installation in Denver and Aurora. Proper waterproofing, isolation membranes, and pattern alignment. Same crew, 1-year warranty.',
+      'Porcelain, ceramic, and stone tile installation in the Denver Metro. Proper waterproofing, isolation membranes, and pattern alignment. 1-year workmanship warranty.',
     photo: '/photos/basement-kallie-shower--landscape_16x9.jpg',
     photoAlt: 'Tile shower installation in a Denver-area home by DFC',
     ogImage: '/og/dfc-floor-tile-1200x630.jpg',
@@ -347,7 +347,7 @@ export const FLOORS: FloorPage[] = [
     ],
     metaTitle: 'Hardwood sanding and refinishing in Denver · DFC',
     metaDescription:
-      'Dustless hardwood refinishing and refinishing in Denver and Aurora. Custom stain matching, water-based or oil finish, 1-year workmanship warranty.',
+      'Dustless hardwood refinishing and refinishing in the Denver Metro. Custom stain matching, water-based or oil finish, 1-year workmanship warranty.',
     photo: '/photos/hardwood-petra-stairs--landscape_16x9.jpg',
     photoAlt: 'Refinished hardwood staircase in a Denver-area home',
     ogImage: '/og/dfc-floor-refinishing-1200x630.jpg',

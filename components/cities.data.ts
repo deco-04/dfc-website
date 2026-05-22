@@ -51,7 +51,7 @@ export const CITY_PAGES: CityPage[] = [
     name: 'Denver',
     eyebrow: 'Bungalows · Victorians · Mid-century · Modern Infill',
     lead:
-      'Denver is the most diverse housing stock we work in. We do hardwood refinishing in Park Hill and Wash Park bungalows, engineered installs in LoDo and RiNo condos, tile renovations in Highlands kitchens, and LVP in basement remodels across Stapleton, Berkeley, and Sloan Lake. Same crew, every project.',
+      'Denver is the most diverse housing stock we work in. We do hardwood refinishing in Park Hill and Wash Park bungalows, engineered installs in LoDo and RiNo condos, tile renovations in Highlands kitchens, and LVP in basement remodels across Stapleton, Berkeley, and Sloan Lake. Dedicated crew on your project.',
     housingNotes:
       'Denver homes split roughly four ways: pre-war bungalows and Victorians (Park Hill, Wash Park, Congress Park, Capitol Hill) with original oak and pine that refinish beautifully; mid-century ranches (Virginia Vale, Krisana Park, University Hills) often with red oak under carpet; modern condos and lofts (LoDo, RiNo, Cherry Creek) with concrete slab subfloors that need engineered or LVP; and newer infill construction (Stapleton, Lowry, Sloan Lake) typically built with engineered hardwood on plywood subfloor over a finished basement.',
     flooringNotes:
@@ -72,7 +72,7 @@ export const CITY_PAGES: CityPage[] = [
     name: 'Aurora',
     eyebrow: 'Newer Construction · Slab-on-grade · Finished Basements',
     lead:
-      'Aurora is our home base. Most of the city is post-1990 construction with slab-on-grade foundations or full finished basements, which means engineered hardwood, LVP, and tile cover most of what we install. We know which Aurora subdivisions came with the slab-moisture issues and which finishes the original builders cut corners on.',
+      'Aurora is one of our most-installed cities. Most of the city is post-1990 construction with slab-on-grade foundations or full finished basements, which means engineered hardwood, LVP, and tile cover most of what we install. We know which Aurora subdivisions came with the slab-moisture issues and which finishes the original builders cut corners on.',
     housingNotes:
       'Aurora housing is mostly two eras: 1970s-90s ranch and split-level homes in central Aurora (around Havana, near Buckley) with finished basements and older subfloor systems that often need leveling; and 2000s+ master-planned communities (Tallyn Reach, Saddle Rock, Painted Prairie, Murphy Creek) built on slab with engineered hardwood, LVP, or tile from the builder. The newer construction tends to ship with builder-grade engineered that wears through fast in high-traffic areas, so refinishing or replacement is common after 8-10 years.',
     flooringNotes:
@@ -85,7 +85,7 @@ export const CITY_PAGES: CityPage[] = [
     ],
     metaTitle: 'Flooring installation in Aurora, CO · DFC',
     metaDescription:
-      'Engineered hardwood, LVP, tile, and refinishing in Aurora. Tallyn Reach, Saddle Rock, Painted Prairie. Aurora-based crew, slab-tested, 1-year warranty.',
+      'Engineered hardwood, LVP, tile, and refinishing in Aurora. Tallyn Reach, Saddle Rock, Painted Prairie. Denver Metro crew, slab-tested, 1-year warranty.',
   },
 
   {
@@ -106,7 +106,7 @@ export const CITY_PAGES: CityPage[] = [
     ],
     metaTitle: 'Flooring installation in Lakewood, CO · DFC',
     metaDescription:
-      'Hardwood refinishing, LVP, engineered, and tile in Lakewood. Mid-century ranches and newer townhomes. Same crew, 1-year workmanship warranty.',
+      'Hardwood refinishing, LVP, engineered, and tile in Lakewood. Mid-century ranches and newer townhomes. 1-year workmanship warranty.',
   },
 ];
 

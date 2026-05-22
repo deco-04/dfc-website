@@ -55,7 +55,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
           '@context': 'https://schema.org',
           '@type': 'Place',
           name: `${city.name}, Colorado`,
-          containedInPlace: { '@type': 'AdministrativeArea', name: 'Denver metro' },
+          containedInPlace: { '@type': 'AdministrativeArea', name: 'Denver Metro' },
         }}
       />
       <Nav />

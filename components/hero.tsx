@@ -27,7 +27,7 @@ export function Hero() {
             the first time.
           </h1>
           <p className="font-body text-[clamp(1.05rem,1.3vw,1.25rem)] leading-relaxed mt-8 max-w-prose">
-            A Denver and Aurora install crew for hardwood, LVP, laminate, and tile.
+            A Denver Metro install crew for hardwood, LVP, laminate, and tile.
           </p>
           <p className="font-body italic text-[clamp(1.05rem,1.3vw,1.25rem)] leading-relaxed mt-3 text-walnut-deep max-w-prose">
             You choose the materials. We do the install and make it last.
@@ -47,12 +47,18 @@ export function Hero() {
               Send us your floorplan
             </Link>
           </div>
-          <div className="flex flex-wrap items-center gap-3 mt-10 font-display italic text-walnut-deep text-lg">
-            <span>Crafted floors</span>
-            <span className="inline-block w-9 h-px bg-walnut-deep/40" />
-            <span>Thoughtful process</span>
-            <span className="inline-block w-9 h-px bg-walnut-deep/40" />
-            <span>Built to last</span>
+          {/*
+            Mobile-first tagline layout. On mobile the previous horizontal-
+            rule separators between phrases wrapped to mid-line dashes that
+            read like broken em-dashes. Now: stacked phrases on mobile with
+            tight leading; inline with sage-dot separators on sm and up.
+          */}
+          <div className="mt-10 font-display italic text-walnut-deep text-lg leading-snug">
+            <span className="block sm:inline">Crafted floors.</span>
+            <span aria-hidden className="hidden sm:inline mx-3 text-walnut-deep/40">&middot;</span>
+            <span className="block sm:inline">Thoughtful process.</span>
+            <span aria-hidden className="hidden sm:inline mx-3 text-walnut-deep/40">&middot;</span>
+            <span className="block sm:inline">Built to last.</span>
           </div>
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-walnut-deep/20">
             {[

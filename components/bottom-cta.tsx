@@ -38,7 +38,7 @@ export function BottomCta() {
           <span className="mx-2 text-walnut-deep/40">·</span>
           Mon&ndash;Fri 8a&ndash;6p
           <span className="mx-2 text-walnut-deep/40">·</span>
-          Denver metro
+          Denver Metro
         </p>
       </div>
     </section>

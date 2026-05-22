@@ -43,7 +43,7 @@ export const OG_IMAGES = {
     url: '/og/dfc-book-1200x630.jpg',
     width: 1200,
     height: 630,
-    alt: 'Book a free Denver flooring estimate. On-site or remote. Same crew walks the space.',
+    alt: 'Book a free Denver flooring estimate. On-site or remote. Crew lead walks the space.',
   },
   remote: {
     url: '/og/dfc-remote-1200x630.jpg',

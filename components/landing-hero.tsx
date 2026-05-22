@@ -22,7 +22,7 @@ export function LandingHero({ defaultsUtm }: { defaultsUtm: UtmPayload }) {
             the first time.
           </h1>
           <p className="font-body text-onyx/85 mt-6 max-w-prose">
-            A Denver and Aurora install crew for hardwood, LVP, laminate, and tile.
+            A Denver Metro install crew for hardwood, LVP, laminate, and tile.
           </p>
           <p className="font-body italic text-walnut-deep mt-2 max-w-prose">
             You choose the materials. We install and warrant the work.

@@ -1,4 +1,4 @@
-// Real Google Maps embed showing the Denver metro service area.
+// Real Google Maps embed showing the Denver Metro service area.
 //
 // Uses the no-API-key embed URL form (maps.google.com/maps?q=...&output=embed),
 // which renders an interactive Google Map without needing the paid Maps
@@ -18,10 +18,12 @@ export function ServiceAreaMap() {
   return (
     <figure className="relative bg-linen-warm border border-walnut-deep/15 max-w-3xl mx-auto overflow-hidden">
       <iframe
-        title="Denver Flooring Collective service area map. Centered on Aurora, Colorado, showing the Denver metro and Front Range."
-        // q= centers Aurora, t=m is the standard road map, z=9 fits the
-        // whole Front Range. iwloc=&output=embed strips the info-window.
-        src="https://maps.google.com/maps?q=Aurora,%20Colorado&t=m&z=9&ie=UTF8&iwloc=&output=embed"
+        title="Denver Flooring Collective service area map. Centered on Denver, Colorado, showing the Denver Metro and Front Range coverage."
+        // Centered on Denver per user feedback 2026-05-22. t=m road map,
+        // z=10 fits the Denver Metro core (Boulder north, Parker south,
+        // Lakewood west, Aurora east). iwloc=&output=embed strips the
+        // default info-window.
+        src="https://maps.google.com/maps?q=Denver,%20Colorado&t=m&z=10&ie=UTF8&iwloc=&output=embed"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         style={{
@@ -32,7 +34,7 @@ export function ServiceAreaMap() {
         }}
       />
       <figcaption className="font-body text-[11px] uppercase tracking-caps font-semibold text-walnut-deep text-center px-6 py-4 border-t border-walnut-deep/15">
-        Centered on Aurora &middot; Within 25 miles we travel by default &middot; Beyond that, ask
+        Denver Metro core &middot; The Front Range &middot; We travel by default
       </figcaption>
     </figure>
   );

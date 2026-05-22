@@ -11,23 +11,25 @@ export function Services() {
             <span className="italic">Six</span> categories. <span className="italic">One</span> crew.
           </h2>
           <p className="font-body leading-relaxed text-onyx/85 mt-4">
-            Every category below is installed by our own crew, daily. No subcontractors, no exceptions.
+            Every category below is installed by our crews, daily. Dedicated crews focused on your project.
             Pick what fits the room, the moisture, and the budget, and we will give you a straight line from quote to walkthrough.
           </p>
         </header>
 
+        {/* Mobile: stacked single-column rows (no phantom swatch column).
+            Desktop: 4-column grid with swatch + label + body + tag. */}
         <ol className="border-t border-walnut-deep/20">
           {SPECIMENS.map((s) => (
             <li
               key={s.slug}
-              className="grid grid-cols-[60px_1fr] md:grid-cols-[80px_80px_1fr_240px] gap-4 md:gap-6 items-center py-8 border-b border-walnut-deep/20 hover:bg-sage/5 transition-colors"
+              className="grid grid-cols-1 md:grid-cols-[80px_80px_1fr_240px] md:gap-6 md:items-center py-8 border-b border-walnut-deep/20 hover:bg-sage/5 transition-colors"
             >
               <span
-                className="w-16 h-16 border border-walnut-deep/20 shadow-inner hidden md:block"
+                className="hidden md:block w-16 h-16 border border-walnut-deep/20 shadow-inner md:col-start-1"
                 style={{ backgroundColor: s.swatch }}
                 aria-hidden
               />
-              <div className="col-span-1 md:col-start-3">
+              <div className="md:col-start-3">
                 <h3 className="display text-sage text-2xl md:text-3xl">
                   <Link href={`/floors/${s.slug}`} className="hover:text-sage-deep transition-colors underline-offset-4 hover:underline">
                     {s.name}
@@ -41,7 +43,7 @@ export function Services() {
                   More about {s.name.toLowerCase()} &rarr;
                 </Link>
               </div>
-              <span className="font-body text-[10px] uppercase tracking-caps text-walnut-deep md:text-right col-span-2 md:col-span-1">
+              <span className="font-body text-[10px] uppercase tracking-caps text-walnut-deep mt-3 md:mt-0 md:text-right md:col-start-4">
                 {s.tag}
               </span>
             </li>

@@ -59,7 +59,7 @@ export default function ContactPage() {
               <TrackedPhoneLink className="text-sage-deep border-b border-sage-deep">720-599-1664</TrackedPhoneLink>
             </ContactRow>
             <ContactRow icon={<MapPinIcon />} title="Service area">
-              Denver metro &amp; the Front Range<br />
+              Denver Metro &amp; the Front Range<br />
               <span className="text-onyx/60 text-sm">14 cities listed on the homepage</span>
             </ContactRow>
             <ContactRow icon={<ClockIcon />} title="Hours">

@@ -1,4 +1,4 @@
-// Custom SVG map of the Denver metro showing the cities we cover.
+// Custom SVG map of the Denver Metro showing the cities we cover.
 // Built as inline SVG so it ships zero JS, no third-party tracking,
 // no API key, and renders identically across server + client. Editorial
 // rather than literal: the layout is loosely geographic (relative
@@ -139,7 +139,7 @@ export function CoverageMap() {
       </svg>
 
       <figcaption className="font-body text-[11px] uppercase tracking-caps font-semibold text-walnut-deep text-center mt-4">
-        25-mile coverage radius from Aurora &middot; <span className="text-flatiron font-semibold">DFC base</span>
+        Denver Metro coverage &middot; <span className="text-flatiron font-semibold">14 cities</span>
       </figcaption>
     </figure>
   );

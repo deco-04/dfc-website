@@ -7,7 +7,7 @@ export function buildLocalBusinessSchema() {
     legalName: 'Denver Flooring Collective LLC',
     url: 'https://denverflooringcollective.com/',
     description:
-      'Install-only flooring crew serving the Denver metro from Aurora, Colorado. Hardwood, engineered hardwood, luxury vinyl plank, laminate, and tile installation. Customers buy materials; we install with no markup.',
+      'Install-only flooring crew serving the Denver Metro. Hardwood, engineered hardwood, luxury vinyl plank, laminate, and tile installation. Customers buy materials; we install with no markup.',
     telephone: '+1-720-599-1664',
     priceRange: '$$',
     image: [
@@ -123,7 +123,7 @@ export function buildServiceCatalogSchema(services: ServiceSpec[]) {
         { '@type': 'City', name: 'Boulder' },
         { '@type': 'City', name: 'Highlands Ranch' },
         { '@type': 'City', name: 'Parker' },
-        { '@type': 'AdministrativeArea', name: 'Denver metro' },
+        { '@type': 'AdministrativeArea', name: 'Denver Metro' },
         { '@type': 'AdministrativeArea', name: 'Colorado Front Range' },
       ],
       offers: {
@@ -219,7 +219,7 @@ export function buildProcessHowToSchema() {
       {
         '@type': 'HowToStep',
         name: 'Install',
-        text: 'Same crew, every day. Manufacturer-spec installation. Daily updates so you always know what is happening tomorrow.',
+        text: 'Dedicated crew on your floor. Manufacturer-spec installation. Daily updates so you always know what is happening tomorrow.',
       },
       {
         '@type': 'HowToStep',

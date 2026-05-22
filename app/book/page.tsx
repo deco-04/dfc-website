@@ -7,7 +7,7 @@ import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
   title: 'Book a free on-site estimate',
-  description: 'Pick a time. The same crew that will install your floor walks the space with you and gives you a written quote, no charge, no pressure.',
+  description: 'Pick a time. Our crew lead walks the space with you and gives you a written quote, no charge, no pressure.',
   path: '/book',
   image: OG_IMAGES.book,
 });

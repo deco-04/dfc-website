@@ -48,7 +48,7 @@ export default function WorkWithUsPage() {
               Join the <span className="italic">crew</span>.
             </h2>
             <p className="font-body text-onyx/80 text-sm leading-relaxed">
-              Skilled hardwood, LVP, tile, and refinishing installers. Year-round Denver work, same crew every project, paid on time, no chasing per-square-foot pennies.
+              Skilled hardwood, LVP, tile, and refinishing installers. Year-round Denver work, paid on time, no chasing per-square-foot pennies.
             </p>
             <p className="font-body text-walnut-deep text-xs uppercase tracking-caps mt-5">
               Hiring continuously

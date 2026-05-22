@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ platform:
   if (!PLATFORMS.includes(platform as Platform)) return {};
   return pageMetadata({
     title: 'Free Denver Flooring Estimate',
-    description: 'Install-only flooring in Denver and Aurora. 600+ projects. 1-year warranty. Licensed and insured.',
+    description: 'Install-only flooring in the Denver Metro. 600+ projects. 1-year warranty. Licensed and insured.',
     path: `/lp/${platform}`,
     noindex: true,
     image: platform === 'google' ? OG_IMAGES.lpGoogle : OG_IMAGES.lpMeta,

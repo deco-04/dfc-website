@@ -27,7 +27,7 @@ export default function RemoteEstimatePage() {
           </h1>
           <p className="font-body text-onyx/85 mt-4 max-w-prose mx-auto">
             Upload photos, rough measurements, and any floorplan you have. We will review it together over a call or video.
-            Same crew, same written quote, no on-site visit needed.
+            Same written quote, no on-site visit needed.
           </p>
         </header>
         <GhlForm

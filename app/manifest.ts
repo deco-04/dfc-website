@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Denver Flooring Collective',
     short_name: 'DFC',
     description:
-      'Install-only flooring crew in Denver and Aurora. Hardwood, LVP, laminate, tile. 600+ projects. 1-year warranty.',
+      'Install-only flooring crew in the Denver Metro. Hardwood, LVP, laminate, tile. 600+ projects. 1-year warranty.',
     start_url: '/',
     display: 'standalone',
     background_color: '#F2EFE9',

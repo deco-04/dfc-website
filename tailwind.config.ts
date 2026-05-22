@@ -40,7 +40,11 @@ const config: Config = {
         },
       },
       animation: {
-        marquee: 'marquee 70s linear infinite',
+        // Was 70s linear. Felt sluggish on mobile per user feedback
+        // 2026-05-22. 35s reads as 'paced' on desktop while feeling alive
+        // on phones where the visible window is smaller and the eye reads
+        // each label faster.
+        marquee: 'marquee 35s linear infinite',
       },
     },
   },
