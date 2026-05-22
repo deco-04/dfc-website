@@ -1,3 +1,21 @@
+/**
+ * Reviews nested inside LocalBusiness.review[] per Google's Review snippet
+ * guidance — standalone Review nodes referencing an entity by @id are
+ * increasingly ignored by Rich Results since 2024. Grow this array as
+ * more written reviews are surfaced on-site. AggregateRating below
+ * reflects the broader Google Business Profile count.
+ */
+const NESTED_REVIEWS = [
+  {
+    '@type': 'Review',
+    author: { '@type': 'Person', name: 'Kallianne Watson' },
+    datePublished: '2026-05',
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody:
+      'Denver Flooring Collective did a fantastic job with our basement remodel. We replaced carpet with LVP and redid the shower tile in our bathroom. They had really competitive pricing, were great at communicating, and did gorgeous work. Andrew was very helpful during the initial planning phase and throughout the project. His team was great to work with. We would use them again for future projects!',
+  },
+];
+
 export function buildLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
@@ -65,6 +83,7 @@ export function buildLocalBusinessSchema() {
     },
     founder: { '@type': 'Person', name: 'Andrew Dean', jobTitle: 'Owner' },
     slogan: 'Crafted floors. Thoughtful process. Built to last.',
+    review: NESTED_REVIEWS,
   };
 }
 
