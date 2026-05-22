@@ -65,7 +65,7 @@ export function Hero() {
               { big: '600+', label: 'Projects' },
               { big: '14',   label: 'Front Range cities' },
               { big: '1 yr', label: 'Warranty' },
-              { big: '5.0',  label: 'on Google' },
+              { big: '5.0',  label: 'stars · Google' },
             ].map((t) => (
               <li key={t.label} className="flex flex-col">
                 <strong className="display text-sage text-2xl leading-none">{t.big}</strong>

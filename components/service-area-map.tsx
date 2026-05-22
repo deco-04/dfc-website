@@ -18,12 +18,13 @@ export function ServiceAreaMap() {
   return (
     <figure className="relative bg-linen-warm border border-walnut-deep/15 max-w-3xl mx-auto overflow-hidden">
       <iframe
-        title="Denver Flooring Collective service area map. Centered on Denver, Colorado, showing the Denver Metro and Front Range coverage."
-        // Centered on Denver per user feedback 2026-05-22. t=m road map,
-        // z=10 fits the Denver Metro core (Boulder north, Parker south,
-        // Lakewood west, Aurora east). iwloc=&output=embed strips the
-        // default info-window.
-        src="https://maps.google.com/maps?q=Denver,%20Colorado&t=m&z=10&ie=UTF8&iwloc=&output=embed"
+        title="Denver Flooring Collective service area map. Showing the full Denver Metro and Colorado Front Range coverage from Boulder north to Castle Rock south."
+        // Centered on Westminster (slightly north of Denver core) at z=9
+        // so the full Front Range coverage fits the viewport: Boulder up
+        // top, Parker + Castle Rock to the south, Golden + Lakewood west,
+        // Aurora east. User feedback 2026-05-22: zoom 10 cropped Boulder.
+        // Westminster is roughly the centroid of the 14-city service area.
+        src="https://maps.google.com/maps?q=Westminster,%20Colorado&t=m&z=9&ie=UTF8&iwloc=&output=embed"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         style={{

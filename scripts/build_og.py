@@ -226,7 +226,7 @@ def build_landscape(
     headline_post: str,
     eyebrow: str,
     photo: Path,
-    trust: str = "LICENSED  ·  INSURED  ·  5.0 GOOGLE  ·  1-YR WARRANTY",
+    trust: str = "LICENSED  ·  INSURED  ·  5.0 STARS · GOOGLE  ·  1-YR WARRANTY",
     phone: str = "720-599-1664",
 ) -> Image.Image:
     W, H = 1200, 630
@@ -324,7 +324,7 @@ def build_square(headline_pre: str, headline_accent: str, headline_post: str, ph
 
     # Trust strip
     draw_text(d, (80, band_y + 145),
-              "LICENSED   ·   INSURED   ·   5.0 ON GOOGLE   ·   1-YR WARRANTY",
+              "LICENSED   ·   INSURED   ·   5.0 STARS · GOOGLE   ·   1-YR WARRANTY",
               font("Inter-SemiBold.ttf", 16), CAMEL, tracking=3)
 
     return canvas
@@ -367,7 +367,7 @@ def build_story(headline_pre: str, headline_accent: str, headline_post: str, pho
     draw_text(d, (W // 2, band_y + 110), phone,
               font("Inter-Bold.ttf", 56), LINEN, anchor="mm")
     draw_text(d, (W // 2, band_y + 175),
-              "LICENSED  ·  INSURED  ·  5.0 ON GOOGLE  ·  1-YR WARRANTY",
+              "LICENSED  ·  INSURED  ·  5.0 STARS · GOOGLE  ·  1-YR WARRANTY",
               font("Inter-SemiBold.ttf", 16), CAMEL, anchor="mm", tracking=3)
 
     return canvas
@@ -380,7 +380,7 @@ VARIANTS = [
     ("dfc-share-1200x630.jpg",     "Flooring,", "installed right",   "",
      "DENVER  ·  AURORA  ·  FRONT RANGE",
      PHOTOS / "staircases-walnut-after--landscape_16x9.jpg",
-     "LICENSED  ·  INSURED  ·  5.0 ON GOOGLE  ·  1-YR WARRANTY"),
+     "LICENSED  ·  INSURED  ·  5.0 STARS · GOOGLE  ·  1-YR WARRANTY"),
     # Per-floor OG variants - one per material page at /floors/<slug>
     ("dfc-floor-hardwood-1200x630.jpg",   "Hardwood",  "installed",   "right.",
      "SOLID  ·  SITE-FINISHED  ·  ACCLIMATED ON SITE",
@@ -407,7 +407,7 @@ VARIANTS = [
      PHOTOS / "hardwood-petra-stairs--landscape_16x9.jpg",
      "DENVER METRO  ·  600+ PROJECTS  ·  1-YR WARRANTY"),
     ("dfc-reviews-1200x630.jpg",   "Real",      "Denver",            "reviews.",
-     "5.0 ON GOOGLE  ·  600+ PROJECTS",
+     "5.0 STARS · GOOGLE  ·  600+ PROJECTS",
      PHOTOS / "hardwood-petra-kitchen--landscape_16x9.jpg",
      "REAL CUSTOMERS  ·  REAL FLOORS  ·  REAL REVIEWS"),
     ("dfc-book-1200x630.jpg",      "Book a",    "free",              "estimate.",

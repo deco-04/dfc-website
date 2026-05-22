@@ -95,9 +95,11 @@ export function Nav() {
         // Opaque linen background (no /80 or /95 alpha). Previously had
         // backdrop-blur with transparency which let scrolled content
         // bleed through the nav box on mobile — user feedback
-        // 2026-05-22.
-        'bg-linen',
-        scrolled ? 'shadow-sm border-b border-walnut/10' : 'border-b border-transparent',
+        // 2026-05-22. The hairline border + subtle shadow even at
+        // scroll=0 keeps the nav box visually bounded against the
+        // similar-colored linen page background.
+        'bg-linen border-b',
+        scrolled ? 'shadow-md border-walnut-deep/15' : 'shadow-sm border-walnut-deep/10',
       )}
     >
       <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-4 md:gap-8">

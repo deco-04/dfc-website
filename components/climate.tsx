@@ -2,7 +2,7 @@ const STATS = [
   { big: '14',    label: 'Front Range cities served' },
   { big: '600+',  label: 'Floors installed to date' },
   { big: '1 yr',  label: 'Workmanship warranty' },
-  { big: '5.0',   label: 'on Google' },
+  { big: '5.0',   label: 'stars · Google' },
 ];
 
 export function Climate() {

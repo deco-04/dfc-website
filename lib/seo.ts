@@ -20,7 +20,7 @@ const DEFAULT_OG_IMAGE = {
   url: '/og/dfc-share-1200x630.jpg',
   width: 1200,
   height: 630,
-  alt: 'Denver Flooring Collective. Install-only crew for hardwood, LVP, laminate, and tile. Licensed, insured, 5.0 on Google. 720-599-1664.',
+  alt: 'Denver Flooring Collective. Install-only crew for hardwood, LVP, laminate, and tile. Licensed, insured, 5.0 stars on Google. 720-599-1664.',
 };
 
 /**
@@ -37,7 +37,7 @@ export const OG_IMAGES = {
     url: '/og/dfc-reviews-1200x630.jpg',
     width: 1200,
     height: 630,
-    alt: 'Real Denver flooring reviews. 5.0 on Google. 600+ projects completed.',
+    alt: 'Real Denver flooring reviews. 5.0 stars on Google. 600+ projects completed.',
   },
   book: {
     url: '/og/dfc-book-1200x630.jpg',

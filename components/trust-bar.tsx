@@ -15,7 +15,7 @@ export function TrustBar() {
   const items = [
     { icon: <AwardIcon />,    big: '600+', label: 'Projects completed' },
     { icon: <FileTextIcon />, big: '1 yr', label: 'Workmanship warranty' },
-    { icon: <StarIcon />,     big: '5.0',  label: 'on Google' },
+    { icon: <StarIcon />,     big: '5.0',  label: 'stars · Google' },
     { icon: <ShieldIcon />,   big: 'L&I',  label: 'Licensed and insured' },
   ];
   return (

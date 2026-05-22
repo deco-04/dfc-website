@@ -9,7 +9,7 @@ export function FooterMinimal() {
         <span className="text-camel/40">·</span>
         <span>Licensed &amp; insured</span>
         <span className="text-camel/40">·</span>
-        <span>5.0 on Google</span>
+        <span>5.0 stars on Google</span>
       </div>
     </footer>
   );
