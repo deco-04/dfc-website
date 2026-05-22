@@ -80,17 +80,16 @@ export function buildFaqSchema(items: { q: string; a: string }[]) {
   };
 }
 
-export function buildReviewSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Review',
-    itemReviewed: { '@id': 'https://denverflooringcollective.com/#business' },
-    author: { '@type': 'Person', name: 'Kallianne Watson' },
-    datePublished: '2026-05',
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-    reviewBody:
-      'Denver Flooring Collective did a fantastic job with our basement remodel. We replaced carpet with LVP and redid the shower tile in our bathroom. They had really competitive pricing, were great at communicating, and did gorgeous work. Andrew was very helpful during the initial planning phase and throughout the project. His team was great to work with. We would use them again for future projects!',
-  };
+/**
+ * Returns null. Standalone Review nodes referencing an entity by @id
+ * are largely ignored by Google Rich Results since 2024; reviews now
+ * live nested inside LocalBusiness.review[] (see NESTED_REVIEWS).
+ * Kept as a callable export so existing page imports do not break;
+ * callers should pass the return value to <JsonLd /> which renders
+ * nothing when given null.
+ */
+export function buildReviewSchema(): null {
+  return null;
 }
 
 /**

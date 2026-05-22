@@ -70,10 +70,14 @@ export default async function FloorPage({ params }: { params: Promise<{ slug: st
   return (
     <>
       <JsonLd data={buildLocalBusinessSchema()} />
+      {/* Two-level breadcrumb (Home -> Material). Google's
+          BreadcrumbList docs treat URLs with only a fragment
+          (e.g. /#services) as the same page as their parent,
+          which makes the middle crumb ambiguous in Rich Results.
+          Skipping the middle step keeps the trail unambiguous. */}
       <JsonLd
         data={buildBreadcrumbSchema([
           { name: 'Home', path: '/' },
-          { name: 'What we install', path: '/#services' },
           { name: f.name, path: `/floors/${f.slug}` },
         ])}
       />
