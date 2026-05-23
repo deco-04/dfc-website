@@ -109,6 +109,46 @@
         "src_4x3": "/photos/tile-shower--landscape_4x3.jpg",
         "src_16x9": "/photos/tile-shower--landscape_16x9.jpg",
         "alt": "Slate and river-rock pebble tile shower floor"
+      },
+      {
+        "slug": "tile-kallie-shower-pan",
+        "src_3x4": "/photos/basement-kallie-shower--portrait_3x4.jpg",
+        "src_4x3": "/photos/basement-kallie-shower--landscape_4x3.jpg",
+        "src_16x9": "/photos/basement-kallie-shower--landscape_16x9.jpg",
+        "alt": "River-rock pebble shower pan with gray porcelain surround"
+      },
+      {
+        "slug": "tile-david-bathroom",
+        "src_3x4": "/photos/basement-david-bathroom--portrait_3x4.jpg",
+        "src_4x3": "/photos/basement-david-bathroom--landscape_4x3.jpg",
+        "src_16x9": "/photos/basement-david-bathroom--landscape_16x9.jpg",
+        "alt": "Terrazzo tile bathroom floor with custom grout lines"
+      }
+    ]
+  },
+  "laminate": {
+    "label": "Laminate",
+    "items": [
+      {
+        "slug": "laminate-warm-dining",
+        "src_3x4": "/photos/laminate-warm-dining--portrait_3x4.jpg",
+        "src_4x3": "/photos/laminate-warm-dining--landscape_4x3.jpg",
+        "src_16x9": "/photos/laminate-warm-dining--landscape_16x9.jpg",
+        "alt": "Warm wood-look laminate flooring in a dining area"
+      },
+      {
+        "slug": "laminate-pale-landing",
+        "src_3x4": "/photos/laminate-pale-landing--portrait_3x4.jpg",
+        "src_4x3": "/photos/laminate-pale-landing--landscape_4x3.jpg",
+        "src_16x9": "/photos/laminate-pale-landing--landscape_16x9.jpg",
+        "alt": "Pale laminate flooring near a carpeted staircase landing"
+      },
+      {
+        "slug": "laminate-natalie-wide",
+        "src_3x4": "/photos/basement-natalie-wide--portrait_3x4.jpg",
+        "src_4x3": "/photos/basement-natalie-wide--landscape_4x3.jpg",
+        "src_16x9": "/photos/basement-natalie-wide--landscape_16x9.jpg",
+        "alt": "Pale wood-look laminate flooring in a finished basement room"
       }
     ]
   },
@@ -170,51 +210,6 @@
         "src_4x3": "/photos/laminate-irena-stairs--landscape_4x3.jpg",
         "src_16x9": "/photos/laminate-irena-stairs--landscape_16x9.jpg",
         "alt": "Pale gray wood-look stair treads and risers"
-      }
-    ]
-  },
-  "basement": {
-    "label": "Basement Remodel",
-    "items": [
-      {
-        "slug": "basement-kallie-shower",
-        "src_3x4": "/photos/basement-kallie-shower--portrait_3x4.jpg",
-        "src_4x3": "/photos/basement-kallie-shower--landscape_4x3.jpg",
-        "src_16x9": "/photos/basement-kallie-shower--landscape_16x9.jpg",
-        "alt": "Pebble and porcelain shower floor from a basement remodel"
-      },
-      {
-        "slug": "basement-david-bathroom",
-        "src_3x4": "/photos/basement-david-bathroom--portrait_3x4.jpg",
-        "src_4x3": "/photos/basement-david-bathroom--landscape_4x3.jpg",
-        "src_16x9": "/photos/basement-david-bathroom--landscape_16x9.jpg",
-        "alt": "Terrazzo tile flooring in a basement bathroom remodel"
-      },
-      {
-        "slug": "basement-natalie-wide",
-        "src_3x4": "/photos/basement-natalie-wide--portrait_3x4.jpg",
-        "src_4x3": "/photos/basement-natalie-wide--landscape_4x3.jpg",
-        "src_16x9": "/photos/basement-natalie-wide--landscape_16x9.jpg",
-        "alt": "Pale luxury vinyl plank flooring in a finished basement room"
-      }
-    ]
-  },
-  "laminate": {
-    "label": "Laminate",
-    "items": [
-      {
-        "slug": "laminate-warm-dining",
-        "src_3x4": "/photos/laminate-warm-dining--portrait_3x4.jpg",
-        "src_4x3": "/photos/laminate-warm-dining--landscape_4x3.jpg",
-        "src_16x9": "/photos/laminate-warm-dining--landscape_16x9.jpg",
-        "alt": "Warm wood-look laminate flooring in a dining area"
-      },
-      {
-        "slug": "laminate-pale-landing",
-        "src_3x4": "/photos/laminate-pale-landing--portrait_3x4.jpg",
-        "src_4x3": "/photos/laminate-pale-landing--landscape_4x3.jpg",
-        "src_16x9": "/photos/laminate-pale-landing--landscape_16x9.jpg",
-        "alt": "Pale laminate flooring near a carpeted staircase landing"
       }
     ]
   }
