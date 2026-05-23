@@ -74,6 +74,22 @@ PHOTOS = {
     "laminate-irena-stairs":    dict(crop_box=(0.00, 0.18, 1.00, 1.00), warmth=2,  contrast=1.05),  # crop person at top
     "laminate-warm-dining":     dict(crop_box=None,                     warmth=3,  contrast=1.04),
     "laminate-pale-landing":    dict(crop_box=None,                     warmth=2,  contrast=1.04),
+
+    # 2026-05-23 batch: 10 new photos from G:/DFC Social Media/Photos & Videos
+    # Staircases (3)
+    "staircases-honey-oak-sunlit":  dict(crop_box=None,                     warmth=3,  contrast=1.05),
+    "staircases-oak-bay-window":    dict(crop_box=None,                     warmth=3,  contrast=1.05),
+    "staircases-rustic-treads":     dict(crop_box=None,                     warmth=2,  contrast=1.06),
+    # LVP (5)
+    "lvp-pale-honey-hallway":       dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-wide-plank-greatroom":     dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-gray-bedroom":             dict(crop_box=None,                     warmth=2,  contrast=1.06),
+    "lvp-pale-builtin-hallway":     dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    "lvp-pale-leather-living":      dict(crop_box=None,                     warmth=2,  contrast=1.05),
+    # Laminate (1)
+    "laminate-pale-kitchen":        dict(crop_box=None,                     warmth=3,  contrast=1.04),
+    # Tile (1) — crop top to remove cluttered counter
+    "tile-gray-large-kitchen":      dict(crop_box=(0.00, 0.15, 1.00, 1.00), warmth=1,  contrast=1.05),
 }
 
 def warm_shift(img, amount):
@@ -171,7 +187,17 @@ for name, cfg in PHOTOS.items():
 print("Pipeline: photo processing complete. Manifest left untouched.")
 
 # --------------------------------------------------------------------------
-# Build OG image: 1200x630 Linen + left text + right photo plate
+# OG image generation has moved to scripts/build_og.py (uses the real DFC
+# badge logo, per-route variants, square + story, more brand-correct than
+# the rough draft below). The legacy code is kept for reference but no
+# longer runs: it would overwrite the branded set every time someone
+# regenerates photos. Run `pnpm run og` instead.
+# --------------------------------------------------------------------------
+import sys
+sys.exit(0)
+
+# --------------------------------------------------------------------------
+# LEGACY OG image: 1200x630 Linen + left text + right photo plate
 # --------------------------------------------------------------------------
 def find_font(candidates, size):
     for path in candidates:

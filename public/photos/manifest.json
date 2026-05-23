@@ -76,6 +76,41 @@
         "src_4x3": "/photos/tile-hapa-sushi-1--landscape_4x3.jpg",
         "src_16x9": "/photos/tile-hapa-sushi-1--landscape_16x9.jpg",
         "alt": "Multi-color wood-look luxury vinyl plank flooring in a commercial restaurant"
+      },
+      {
+        "slug": "lvp-pale-honey-hallway",
+        "src_3x4": "/photos/lvp-pale-honey-hallway--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-pale-honey-hallway--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-pale-honey-hallway--landscape_16x9.jpg",
+        "alt": "Pale honey luxury vinyl plank flooring in a sun-lit hallway"
+      },
+      {
+        "slug": "lvp-wide-plank-greatroom",
+        "src_3x4": "/photos/lvp-wide-plank-greatroom--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-wide-plank-greatroom--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-wide-plank-greatroom--landscape_16x9.jpg",
+        "alt": "Wide-plank rustic luxury vinyl plank in a great room with deck access"
+      },
+      {
+        "slug": "lvp-gray-bedroom",
+        "src_3x4": "/photos/lvp-gray-bedroom--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-gray-bedroom--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-gray-bedroom--landscape_16x9.jpg",
+        "alt": "Gray wood-look luxury vinyl plank in a furnished bedroom"
+      },
+      {
+        "slug": "lvp-pale-builtin-hallway",
+        "src_3x4": "/photos/lvp-pale-builtin-hallway--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-pale-builtin-hallway--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-pale-builtin-hallway--landscape_16x9.jpg",
+        "alt": "Pale beige luxury vinyl plank with white built-in shelves"
+      },
+      {
+        "slug": "lvp-pale-leather-living",
+        "src_3x4": "/photos/lvp-pale-leather-living--portrait_3x4.jpg",
+        "src_4x3": "/photos/lvp-pale-leather-living--landscape_4x3.jpg",
+        "src_16x9": "/photos/lvp-pale-leather-living--landscape_16x9.jpg",
+        "alt": "Pale wood-look luxury vinyl plank in a living room with a leather sofa"
       }
     ]
   },
@@ -123,6 +158,13 @@
         "src_4x3": "/photos/basement-david-bathroom--landscape_4x3.jpg",
         "src_16x9": "/photos/basement-david-bathroom--landscape_16x9.jpg",
         "alt": "Terrazzo tile bathroom floor with custom grout lines"
+      },
+      {
+        "slug": "tile-gray-large-kitchen",
+        "src_3x4": "/photos/tile-gray-large-kitchen--portrait_3x4.jpg",
+        "src_4x3": "/photos/tile-gray-large-kitchen--landscape_4x3.jpg",
+        "src_16x9": "/photos/tile-gray-large-kitchen--landscape_16x9.jpg",
+        "alt": "Large-format gray porcelain tile flooring in a kitchen"
       }
     ]
   },
@@ -149,6 +191,13 @@
         "src_4x3": "/photos/basement-natalie-wide--landscape_4x3.jpg",
         "src_16x9": "/photos/basement-natalie-wide--landscape_16x9.jpg",
         "alt": "Pale wood-look laminate flooring in a finished basement room"
+      },
+      {
+        "slug": "laminate-pale-kitchen",
+        "src_3x4": "/photos/laminate-pale-kitchen--portrait_3x4.jpg",
+        "src_4x3": "/photos/laminate-pale-kitchen--landscape_4x3.jpg",
+        "src_16x9": "/photos/laminate-pale-kitchen--landscape_16x9.jpg",
+        "alt": "Pale beige wood-look laminate flooring in a kitchen with white cabinets"
       }
     ]
   },
@@ -210,6 +259,27 @@
         "src_4x3": "/photos/laminate-irena-stairs--landscape_4x3.jpg",
         "src_16x9": "/photos/laminate-irena-stairs--landscape_16x9.jpg",
         "alt": "Pale gray wood-look stair treads and risers"
+      },
+      {
+        "slug": "staircases-honey-oak-sunlit",
+        "src_3x4": "/photos/staircases-honey-oak-sunlit--portrait_3x4.jpg",
+        "src_4x3": "/photos/staircases-honey-oak-sunlit--landscape_4x3.jpg",
+        "src_16x9": "/photos/staircases-honey-oak-sunlit--landscape_16x9.jpg",
+        "alt": "Honey-stained oak hardwood staircase with white risers, sunlight on the treads"
+      },
+      {
+        "slug": "staircases-oak-bay-window",
+        "src_3x4": "/photos/staircases-oak-bay-window--portrait_3x4.jpg",
+        "src_4x3": "/photos/staircases-oak-bay-window--landscape_4x3.jpg",
+        "src_16x9": "/photos/staircases-oak-bay-window--landscape_16x9.jpg",
+        "alt": "Oak hardwood staircase and landing leading into a bay-window sitting area"
+      },
+      {
+        "slug": "staircases-rustic-treads",
+        "src_3x4": "/photos/staircases-rustic-treads--portrait_3x4.jpg",
+        "src_4x3": "/photos/staircases-rustic-treads--landscape_4x3.jpg",
+        "src_16x9": "/photos/staircases-rustic-treads--landscape_16x9.jpg",
+        "alt": "Rustic dark wood plank stair treads with white risers"
       }
     ]
   }
