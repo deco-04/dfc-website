@@ -46,19 +46,19 @@ export function Testimonial() {
         </div>
 
         {/*
-          Google Business Profile link. Was using a maps.google.com/search
-          URL that resolved to a blank place page (flagged by Liza 2026-05-24).
-          Switched to a name+address search URL that consistently resolves
-          to the GBP. TODO(Andre): replace with the actual GBP shortlink
-          once we have it (cid= or g.page/ form).
+          Canonical Denver Flooring Collective Google Reviews URL,
+          provided by Andre 2026-05-25. Place ID:
+          ChIJyfAeyyh9bIcROn-MDdfKru4. search.google.com/local/reviews
+          drops the visitor directly into the reviews tab of the GBP
+          rather than the generic place page.
         */}
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Denver+Flooring+Collective+Aurora+CO"
+          href="https://search.google.com/local/reviews?placeid=ChIJyfAeyyh9bIcROn-MDdfKru4"
           target="_blank"
           rel="noopener"
           className="inline-flex items-center gap-2 mt-10 font-body text-[13px] uppercase tracking-caps font-semibold text-camel border-b border-camel pb-1 hover:text-linen hover:border-linen transition-colors"
         >
-          Open Google Business Profile
+          Read every review on Google
           <ArrowRightIcon />
         </a>
       </div>

@@ -36,6 +36,10 @@ export function buildLocalBusinessSchema() {
     sameAs: [
       'https://www.facebook.com/denverflooringcollective',
       'https://www.instagram.com/denver_flooring',
+      // Google Business Profile reviews page. Including the GBP URL in
+      // sameAs helps Google reconcile this LocalBusiness schema with
+      // the actual Place entity (place_id ChIJyfAeyyh9bIcROn-MDdfKru4).
+      'https://search.google.com/local/reviews?placeid=ChIJyfAeyyh9bIcROn-MDdfKru4',
     ],
     // No streetAddress on purpose. DFC is install-only with no showroom or
     // walk-in location, and we keep the warehouse address off public

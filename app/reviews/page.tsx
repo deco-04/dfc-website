@@ -42,6 +42,22 @@ export default function ReviewsPage() {
           </p>
         </header>
         <ReviewWidget />
+        {/* Direct link to the GBP reviews page. Andre provided the
+            canonical URL 2026-05-25 (place_id ChIJyfAeyyh9bIcROn-MDdfKru4). */}
+        <div className="text-center mt-12">
+          <a
+            href="https://search.google.com/local/reviews?placeid=ChIJyfAeyyh9bIcROn-MDdfKru4"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1 hover:text-flatiron hover:border-flatiron transition-colors"
+          >
+            Read every review on Google
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
       </main>
       <Footer />
     </>
