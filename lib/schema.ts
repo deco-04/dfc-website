@@ -190,7 +190,14 @@ export function buildPersonSchema() {
     '@id': 'https://denverflooringcollective.com/#andrew',
     name: 'Andrew Dean',
     jobTitle: 'Owner',
-    worksFor: { '@id': 'https://denverflooringcollective.com/#business' },
+    // Portrait added 2026-05-25. Verifiable founder photo + worksFor
+    // binding lifts EEAT signals (Google increasingly looks for a named
+    // human with a real face behind a local-service business).
+    image: 'https://denverflooringcollective.com/photos/andrew-dean@2x.jpg',
+    worksFor: {
+      '@type': 'LocalBusiness',
+      '@id': 'https://denverflooringcollective.com/#business',
+    },
     description:
       'Founder and owner of Denver Flooring Collective. Hands-on flooring installer with a focus on Denver-area residential and small commercial work.',
     knowsAbout: [
