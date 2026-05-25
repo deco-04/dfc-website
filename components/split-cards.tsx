@@ -14,15 +14,16 @@ export function SplitCards() {
     <section id="commercial" className="max-w-site mx-auto px-6 lg:px-12 py-12 lg:py-20 grid lg:grid-cols-2 gap-4">
       <article className="bg-linen-warm border-l-4 border-sage p-10 lg:p-14">
         <div className="eyebrow mb-4">Commercial work</div>
+        {/* Copy refreshed 2026-05-25 per Liza's brief. */}
         <h2 className="display text-sage text-3xl lg:text-4xl">
-          Offices, retail, and <span className="italic text-sage-deep">short-term rentals</span>.
+          Professional flooring installation for <span className="italic text-sage-deep">high-use spaces</span>.
         </h2>
         <p className="font-body text-onyx/85 mt-4 max-w-prose">
-          Smaller commercial floors where the work has to be done right and done fast. Offices between leases.
-          Retail buildouts with a hard opening date. Restaurants and short-term rentals where the floor takes a
-          beating from day one. Same install crew, same warranty, same direct line to Andrew.
+          From offices and retail environments to hospitality and rental properties, we bring the same
+          detail-oriented process, dedicated crews, and long-term mindset used across every DFC project.
+          Reach out to discuss specifics.
         </p>
-        <Link href="/book" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1 hover:text-flatiron hover:border-flatiron transition-colors">
+        <Link href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1 hover:text-flatiron hover:border-flatiron transition-colors">
           Get a commercial estimate
           <ArrowRightIcon />
         </Link>

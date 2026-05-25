@@ -12,11 +12,18 @@ export function Gallery() {
       <div className="max-w-site mx-auto px-6 lg:px-12">
         <header className="max-w-prose mb-12">
           <div className="eyebrow mb-4">Recently installed</div>
+          {/* Headline + copy refreshed 2026-05-23 per Liza's brief. */}
           <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
-            A few <span className="italic">recent floors</span>.
+            Flooring is the <span className="italic">foundation</span>...
+            <br />
+            so details matter.
           </h2>
           <p className="font-body text-onyx/85 mt-4">
-            Six categories, real projects, every photo from a real DFC install. See more on Instagram{' '}
+            Explore Denver Flooring Collective projects: installation, refinishing, repairs, baseboards,
+            staircases, painting, and more.
+          </p>
+          <p className="font-body text-onyx/85 mt-2">
+            More projects on our Instagram{' '}
             <a href="https://instagram.com/denver_flooring" target="_blank" rel="noopener" className="text-sage-deep border-b border-sage-deep">@denver_flooring</a>.
           </p>
         </header>

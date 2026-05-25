@@ -377,7 +377,7 @@ def build_story(headline_pre: str, headline_accent: str, headline_post: str, pho
 
 VARIANTS = [
     # (filename, headline_pre, headline_accent, headline_post, eyebrow, photo, trust)
-    ("dfc-share-1200x630.jpg",     "Flooring,", "installed right",   "",
+    ("dfc-share-1200x630.jpg",     "Flooring,", "installed just right",   "",
      "DENVER  ·  AURORA  ·  FRONT RANGE",
      PHOTOS / "staircases-walnut-after--landscape_16x9.jpg",
      "LICENSED  ·  INSURED  ·  5.0 STARS · GOOGLE  ·  1-YR WARRANTY"),
@@ -452,7 +452,7 @@ def main() -> None:
         save_jpg(im, OUT / fname)
 
     # Square
-    sq = build_square("Flooring", "installed right", "the first time",
+    sq = build_square("Flooring", "installed just right", "",
                       photo=default_photo)
     save_jpg(sq, OUT / "dfc-square-1200x1200.jpg")
 

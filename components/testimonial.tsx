@@ -45,8 +45,15 @@ export function Testimonial() {
           <ReviewWidget />
         </div>
 
+        {/*
+          Google Business Profile link. Was using a maps.google.com/search
+          URL that resolved to a blank place page (flagged by Liza 2026-05-24).
+          Switched to a name+address search URL that consistently resolves
+          to the GBP. TODO(Andre): replace with the actual GBP shortlink
+          once we have it (cid= or g.page/ form).
+        */}
         <a
-          href="https://www.google.com/maps/place/Denver+Flooring+Collective"
+          href="https://www.google.com/maps/search/?api=1&query=Denver+Flooring+Collective+Aurora+CO"
           target="_blank"
           rel="noopener"
           className="inline-flex items-center gap-2 mt-10 font-body text-[13px] uppercase tracking-caps font-semibold text-camel border-b border-camel pb-1 hover:text-linen hover:border-linen transition-colors"

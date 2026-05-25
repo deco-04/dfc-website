@@ -7,12 +7,21 @@ export function Services() {
       <div className="max-w-site mx-auto px-6 lg:px-12">
         <header className="max-w-prose mb-12 lg:mb-16">
           <div className="eyebrow mb-4">What we install</div>
+          {/*
+            Headline + sub-deck refreshed 2026-05-23 per Liza's brief:
+            'Thoughtful material selection. Precision installation.
+            Long-term performance.' + 'Craftsmanship across every floor,
+            room, and finish.'
+          */}
           <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
-            <span className="italic">Six</span> categories. <span className="italic">One</span> crew.
+            Thoughtful <span className="italic">material selection</span>.
+            <br />
+            Precision <span className="italic">installation</span>.
+            <br />
+            Long-term <span className="italic">performance</span>.
           </h2>
-          <p className="font-body leading-relaxed text-onyx/85 mt-4">
-            Every category below is installed by our crews, daily. Dedicated crews focused on your project.
-            Pick what fits the room, the moisture, and the budget, and we will give you a straight line from quote to walkthrough.
+          <p className="font-body leading-relaxed text-onyx/85 mt-6 text-lg">
+            Craftsmanship across every floor, room, and finish.
           </p>
         </header>
 
@@ -54,12 +63,21 @@ export function Services() {
           <div className="font-display italic text-walnut-deep text-lg mb-3">
             Also in scope
           </div>
+          {/*
+            Painting + post-service cleaning added 2026-05-23 per Liza's
+            brief. NOTE for Andre: this contradicts the earlier 'no
+            painting/drywall on public surfaces' rule. Liza requested
+            both. Please confirm — if you want them off, remove the
+            two list items below.
+          */}
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 font-body text-sm text-onyx/75">
             <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Staircases</li>
             <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Baseboards &amp; trim</li>
             <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Subfloor &amp; concrete leveling</li>
             <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Demolition &amp; haul-away</li>
             <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Small repairs &amp; patchwork</li>
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Painting</li>
+            <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-walnut-deep" />Post-service cleaning</li>
           </ul>
         </div>
       </div>

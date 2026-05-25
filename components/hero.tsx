@@ -18,19 +18,24 @@ export function Hero() {
     <section className="max-w-site mx-auto px-6 lg:px-12 pt-16 pb-12 lg:pt-24 lg:pb-20">
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-start">
         <FadeDiv>
-          <div className="eyebrow mb-6">Denver · Aurora · Front Range</div>
+          <div className="eyebrow mb-6">Denver Metro · Front Range</div>
           <h1 className="display text-sage text-[clamp(3.5rem,9vw,9rem)] leading-[0.95]">
             Flooring,
             <br />
-            <span className="italic text-sage-deep">installed right</span>
-            <br />
-            the first time.
+            <span className="italic text-sage-deep">installed just right</span>.
           </h1>
+          {/*
+            Copy refreshed 2026-05-23 per Liza:
+            - Headline: 'Flooring, installed just right.'
+            - Sub-deck (kept the original two-line, italic-second-line design
+              treatment): craftsmanship-driven lasting install + expert
+              guidance line.
+          */}
           <p className="font-body text-[clamp(1.05rem,1.3vw,1.25rem)] leading-relaxed mt-8 max-w-prose">
-            A Denver Metro install crew for hardwood, LVP, laminate, and tile.
+            Craftsmanship-driven, lasting flooring installation, refinishing, and repairs.
           </p>
           <p className="font-body italic text-[clamp(1.05rem,1.3vw,1.25rem)] leading-relaxed mt-3 text-walnut-deep max-w-prose">
-            You choose the materials. We do the install and make it last.
+            Expert guidance for your home, floors, and lifestyle.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <Link

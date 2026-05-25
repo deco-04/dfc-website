@@ -1,13 +1,14 @@
+// Process steps refreshed 2026-05-23 per Liza's brief.
 const STEPS = [
   {
     num: '1',
     name: 'Free estimate',
-    body: 'On-site visit or remote review of photos and measurements. A written quote with labor, prep, and timeline broken out, line by line. No upsells, no pressure.',
+    body: 'On-site visit or remote review of photos and measurements. A written quote with labor, prep, and timeline broken out, line by line. The information you need to make the best decision.',
   },
   {
     num: '2',
     name: 'Material selection',
-    body: 'You buy your own flooring. We help you choose. We pass along our contractor discounts at trusted local suppliers, no markup, no kickback. Optional pickup at cost.',
+    body: 'You buy your own flooring, though we are happy to help you choose. We partner with trusted local suppliers for discounts.',
   },
   {
     num: '3',
@@ -17,12 +18,12 @@ const STEPS = [
   {
     num: '4',
     name: 'Install',
-    body: 'Dedicated crew on your floor. Manufacturer-spec installation. Daily updates so you always know what is happening tomorrow.',
+    body: 'Dedicated crew on your floor. Manufacturer-spec installation. Consistent communication.',
   },
   {
     num: '5',
     name: 'Final walkthrough',
-    body: 'We walk every room with you. Anything not right gets fixed before the invoice closes. 1-year workmanship warranty in writing.',
+    body: 'Anything not right gets fixed before the invoice closes. Post-install cleaning service available. 1-year workmanship warranty in writing.',
   },
 ];
 
@@ -58,8 +59,8 @@ export function Process() {
       </ol>
 
       <p className="font-display italic text-walnut-deep text-center text-xl mt-16 max-w-prose mx-auto pt-8 border-t border-walnut-deep/20">
-        We do not stock materials. We do not run a showroom. We do not subcontract the install.
-        The whole job is the install, and that is what you are hiring us for.
+        By focusing specifically on installation, refinishing, and repair, we&rsquo;re able to keep the
+        process clear, consistent, and detail-oriented from start to finish.
       </p>
     </section>
   );
