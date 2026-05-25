@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { fraunces, inter } from './fonts';
 import { SITE_URL } from '@/lib/seo';
 import { DeferredAnalytics } from '@/components/deferred-analytics';
+import { DeferredChat } from '@/components/deferred-chat';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -77,29 +77,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://widgets.leadconnectorhq.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        {/*
+          Preload the hero LCP image so the browser starts the fetch
+          before parsing the CSS / mounting the React tree. Same image
+          as the <Image priority> in components/hero.tsx — duplicating
+          the preload hint here is the canonical Next.js pattern for
+          shaving 100-300ms off LCP on slow networks.
+        */}
+        <link
+          rel="preload"
+          as="image"
+          href="/photos/staircases-walnut-after--portrait_3x4.jpg"
+          fetchPriority="high"
+          // imageSizes mirrors the <Image sizes> prop on the hero so
+          // the browser can pick the right responsive variant up-front.
+          imageSizes="(max-width: 1024px) 100vw, 45vw"
+        />
       </head>
       <body className="grain">
         {children}
         {/* GTM + GA4 deferred until first user interaction or 3s idle.
             Keeps third-party JS out of the LCP / TBT critical path
-            while preserving attribution on >95% of sessions. See
-            components/deferred-analytics.tsx for rationale. */}
+            while preserving attribution on >95% of sessions. */}
         <DeferredAnalytics />
-        {/*
-          GoHighLevel (LeadConnector) chat widget. Lazy-loaded so the
-          ~80KB widget bundle never competes with LCP. Widget renders
-          its own floating chat bubble in the bottom-right corner.
-          Widget config (greeting, hours, routing) is managed in the
-          GHL sub-account UI under Sites -> Chat Widgets. The data-*
-          attributes here are the binding to widget id 691bcb73183503cc8a90af51.
-        */}
-        <Script
-          id="ghl-chat-widget"
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          strategy="lazyOnload"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="691bcb73183503cc8a90af51"
-        />
+        {/* GHL chat widget deferred until first interaction or 5s
+            idle. ~80KB bundle + websocket out of the LCP critical
+            path. See components/deferred-chat.tsx for the rationale. */}
+        <DeferredChat />
       </body>
     </html>
   );
