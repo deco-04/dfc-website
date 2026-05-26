@@ -5,22 +5,33 @@ export function Services() {
   return (
     <section id="services" className="bg-linen-warm py-24 lg:py-36">
       <div className="max-w-site mx-auto px-6 lg:px-12">
-        <header className="max-w-prose mb-12 lg:mb-16">
+        <header className="mb-12 lg:mb-16">
           <div className="eyebrow mb-4">What we install</div>
           {/*
             Headline + sub-deck refreshed 2026-05-23 per Liza's brief:
             'Thoughtful material selection. Precision installation.
             Long-term performance.' + 'Craftsmanship across every floor,
             room, and finish.'
+            Each sentence wrapped in a whitespace-nowrap span so the phrase
+            never breaks mid-line ('selection' bled to its own line on
+            desktop before the 2026-05-25 fix). max-w-prose moved off the
+            header onto the subhead so the heading can use full viewport
+            width.
           */}
           <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
-            Thoughtful <span className="italic">material selection</span>.
+            <span className="whitespace-nowrap">
+              Thoughtful <span className="italic">material selection</span>.
+            </span>
             <br />
-            Precision <span className="italic">installation</span>.
+            <span className="whitespace-nowrap">
+              Precision <span className="italic">installation</span>.
+            </span>
             <br />
-            Long-term <span className="italic">performance</span>.
+            <span className="whitespace-nowrap">
+              Long-term <span className="italic">performance</span>.
+            </span>
           </h2>
-          <p className="font-body leading-relaxed text-onyx/85 mt-6 text-lg">
+          <p className="font-body leading-relaxed text-onyx/85 mt-6 text-lg max-w-prose">
             Craftsmanship across every floor, room, and finish.
           </p>
         </header>
