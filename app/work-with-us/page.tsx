@@ -13,11 +13,12 @@ export const metadata = pageMetadata({
   image: OG_IMAGES.partner,
 });
 
-// GHL form ID will be provided by Andre. Hardcoded fallback is the contact
-// form so the page is never blank. Swap NEXT_PUBLIC_GHL_FORM_PARTNER when
-// the dedicated partner form lands.
-const PLACEHOLDER_FORM_ID =
-  process.env.NEXT_PUBLIC_GHL_FORM_PARTNER || 'pN1j2f72dFaRTfGfVWSe';
+// Dedicated 'Work With Us Form' in GHL — provided by Andre 2026-05-25.
+// Form name in GHL: "Work With Us Form". Andre confirmed height 1718.
+// NEXT_PUBLIC_GHL_FORM_PARTNER overrides for staging/preview if needed,
+// otherwise the dedicated form ID is used.
+const PARTNER_FORM_ID =
+  process.env.NEXT_PUBLIC_GHL_FORM_PARTNER || 'J4l5h2Lf5vXDLzMZJ0cG';
 
 export default function WorkWithUsPage() {
   return (
@@ -99,19 +100,18 @@ export default function WorkWithUsPage() {
           </header>
 
           {/*
-            TODO(Andre): replace NEXT_PUBLIC_GHL_FORM_PARTNER with the dedicated
-            partner-inquiry GHL form once you share the new form ID. Until then
-            this falls back to the generic contact form so the page is never broken.
+            Dedicated 'Work With Us Form' in GHL. Form ID + 1718 height
+            confirmed by Andre 2026-05-25.
 
-            Using <GhlForm> (not a raw iframe) gives us UTM postMessage,
-            loading="lazy", deduped form_embed.js script, and consistent styling
-            with every other GHL embed in the site.
+            <GhlForm> (not a raw iframe) gives us UTM postMessage,
+            loading="lazy", deduped form_embed.js script, and consistent
+            styling with every other GHL embed in the site.
           */}
           <div className="bg-linen-warm p-6 lg:p-8">
             <GhlForm
-              formId={PLACEHOLDER_FORM_ID}
-              formName="Partner / Hire Inquiry"
-              height="1500"
+              formId={PARTNER_FORM_ID}
+              formName="Work With Us Form"
+              height="1718"
               defaultsUtm={{ utm_source: 'work-with-us', landing_page: '/work-with-us' }}
             />
           </div>
