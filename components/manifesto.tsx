@@ -56,14 +56,12 @@ export function Manifesto() {
             organized, and projects get the attention real craftsmanship requires. Count on our
             dedicated crews to refresh your space.
           </p>
-          {/* Signature lives in the right column too as a wider sign-off.
-              On desktop both the portrait (left) and signature (right) are
-              visible at once; on mobile the column flow puts the portrait
-              up top + signature at the bottom of the section. */}
-          <div className="mt-10 pt-6 border-t border-walnut-deep/20 flex flex-col gap-1">
-            <span className="font-display italic text-sage text-3xl">Andrew Dean</span>
-            <span className="font-body text-[11px] uppercase tracking-caps text-walnut-deep font-medium">Owner · Denver Flooring Collective</span>
-          </div>
+          {/* Name + role caption lives only under the portrait in the
+              left column now. Earlier draft had a second standalone
+              signature here too — Andre flagged it as duplicate 2026-05-25.
+              On mobile the portrait + caption sit between the eyebrow and
+              the body, so the right column ends cleanly on the last
+              paragraph with no redundant signoff. */}
         </div>
       </div>
     </section>
