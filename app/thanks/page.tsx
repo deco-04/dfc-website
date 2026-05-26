@@ -16,16 +16,20 @@ function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
 type SourceKey = 'default' | 'calendar' | 'remote-estimate' | 'meta' | 'google' | 'partner';
 
 // meta + google paid-ad sources share the same post-submit copy because
-// the lead flow is identical (Andrew personally reviews). They diverge only
-// in source attribution, which lives in the form payload, not the UI.
+// the lead flow is identical. They diverge only in source attribution,
+// which lives in the form payload, not the UI.
+//
+// De-personalized 2026-05-25 per Andre: drop 'Andrew personally
+// reviews' framing, lean on the team. Bumped quote turnaround
+// window from 24h to 48h to set realistic expectations.
 const PAID_AD_COPY = {
   eyebrow: 'Got it',
   headline: 'We have your request.',
-  body: 'Andrew personally reviews every paid-ad lead.',
+  body: 'Our team reviews every paid-ad lead and will be in touch within 48 hours.',
   steps: [
-    'Andrew reviews your message and photos personally.',
-    'You get a call or text from him within business hours.',
-    'Written quote lands in your inbox within 24 hours of the call.',
+    'Our team reviews your message and photos.',
+    'You get a call or text from us within business hours.',
+    'Written quote lands in your inbox within 48 hours of the call.',
   ],
 };
 
