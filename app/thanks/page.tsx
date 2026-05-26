@@ -63,12 +63,16 @@ const SOURCE_COPY: Record<SourceKey, { eyebrow: string; headline: string; body: 
   meta: PAID_AD_COPY,
   google: PAID_AD_COPY,
   partner: {
+    // De-personalized 2026-05-25 per Andre: drop 'Andrew personally
+    // reviews' framing, lean on the team. Keep the partner-flavored
+    // tone (joining the crew / supplying / referral line) but no
+    // promise that Andrew himself reads every one.
     eyebrow: 'Sent',
-    headline: 'Andrew reads every one.',
-    body: 'We received your inquiry. Whether you are joining the crew, supplying materials, or building a referral line, Andrew personally reviews every partner request.',
+    headline: 'Inquiry received.',
+    body: 'Thanks for reaching out. Whether you are joining the crew, supplying materials, or building a referral line, our team reviews every partner request and will be in touch within 48 hours.',
     steps: [
-      'Andrew reviews your inquiry within 24 hours.',
-      'You get a call or text from him to talk it through.',
+      'Our team reviews your inquiry within 48 hours.',
+      'You get a call or text from us to talk it through.',
       'If it is a fit, we move to next steps the same week.',
     ],
   },
