@@ -58,13 +58,19 @@ export function Footer() {
             </a>
           </div>
         </div>
+        {/* Footer 'Install' column now links directly to the per-material
+            pages instead of all pointing at the same /#services anchor.
+            Fixes the PSI 'duplicate link text, different destinations'
+            warning (footer 'Hardwood' was pointing to /#services while
+            the home services list 'Hardwood' was pointing to
+            /floors/hardwood — same text, two URLs). */}
         <FootCol title="Install" links={[
-          { href: '/#services', label: 'Hardwood' },
-          { href: '/#services', label: 'Engineered' },
-          { href: '/#services', label: 'Luxury Vinyl Plank' },
-          { href: '/#services', label: 'Laminate' },
-          { href: '/#services', label: 'Tile & Shower' },
-          { href: '/#services', label: 'Refinishing' },
+          { href: '/floors/hardwood',    label: 'Hardwood' },
+          { href: '/floors/engineered',  label: 'Engineered' },
+          { href: '/floors/lvp',         label: 'Luxury Vinyl Plank' },
+          { href: '/floors/laminate',    label: 'Laminate' },
+          { href: '/floors/tile',        label: 'Tile & Shower' },
+          { href: '/floors/refinishing', label: 'Refinishing' },
         ]} />
         <FootCol title="Company" links={[
           { href: '/#manifesto',   label: 'Slow Materials' },
@@ -82,7 +88,9 @@ export function Footer() {
           { href: '/contact',       label: 'Send a message' },
         ]} />
       </div>
-      <div className="max-w-site mx-auto px-6 lg:px-12 py-6 border-t border-heather/15 flex flex-col md:flex-row justify-between gap-2 font-body text-[10px] uppercase tracking-caps text-heather/55">
+      {/* Bottom legal strip. text-heather/55 was failing WCAG AA at 10px
+          on espresso (~3.1:1). Bumped to /80 for ~4.5:1. */}
+      <div className="max-w-site mx-auto px-6 lg:px-12 py-6 border-t border-heather/15 flex flex-col md:flex-row justify-between gap-2 font-body text-[10px] uppercase tracking-caps text-heather/80">
         <span>&copy; 2026 Denver Flooring Collective LLC &middot; Licensed and insured &middot; Serving the Denver Metro</span>
         <span>
           Crafted by{' '}

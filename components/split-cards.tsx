@@ -23,14 +23,14 @@ export function SplitCards() {
           detail-oriented process, dedicated crews, and long-term mindset used across every DFC project.
           Reach out to discuss specifics.
         </p>
-        <Link href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1 hover:text-flatiron hover:border-flatiron transition-colors">
+        <Link href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1 hover:text-camel hover:border-camel transition-colors">
           Get a commercial estimate
           <ArrowRightIcon />
         </Link>
       </article>
 
-      <article className="bg-espresso text-linen border-l-4 border-flatiron p-10 lg:p-14">
-        <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-flatiron mb-4">Refer a neighbor</div>
+      <article className="bg-espresso text-linen border-l-4 border-camel p-10 lg:p-14">
+        <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-camel mb-4">Refer a neighbor</div>
         <h2 className="display text-linen text-3xl lg:text-4xl">
           Get <span className="italic text-camel">$50</span>, then $100 more.
         </h2>
@@ -39,7 +39,7 @@ export function SplitCards() {
           When their project completes you choose another $100 gift card or 10% credit toward a future DFC project.
           No referral limit.
         </p>
-        <a href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-flatiron border-b border-flatiron pb-1 hover:text-linen hover:border-linen transition-colors">
+        <a href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-camel border-b border-camel pb-1 hover:text-linen hover:border-linen transition-colors">
           See how it works
           <ArrowRightIcon />
         </a>

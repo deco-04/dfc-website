@@ -71,8 +71,11 @@ export default function WorkWithUsPage() {
             </p>
           </article>
 
-          <article className="bg-espresso text-linen border-l-4 border-flatiron p-8 lg:p-10">
-            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-flatiron mb-3">
+          <article className="bg-espresso text-linen border-l-4 border-camel p-8 lg:p-10">
+            {/* text-flatiron on espresso fails WCAG AA (~3.0:1). Swapped
+                eyebrow + 'standing line' line to text-camel (~6:1) per
+                PSI 2026-05-28 audit. */}
+            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-camel mb-3">
               For designers &amp; contractors
             </div>
             <h2 className="display text-linen text-2xl lg:text-3xl mb-3">
@@ -81,7 +84,7 @@ export default function WorkWithUsPage() {
             <p className="font-body text-linen/80 text-sm leading-relaxed">
               Interior designers, GCs, remodelers, real estate agents. Send us flooring jobs we are right for, get a $100 referral on each project that lands. Standing line of communication with Andrew.
             </p>
-            <p className="font-body text-flatiron text-xs uppercase tracking-caps mt-5">
+            <p className="font-body text-camel text-xs uppercase tracking-caps mt-5">
               $100 per landed referral
             </p>
           </article>

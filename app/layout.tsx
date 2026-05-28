@@ -71,11 +71,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect to third parties that show up on most pages: GHL form
             widget, GHL booking widget, GHL review widget, GTM, GA4. Buys us
             ~100-300ms on the first interaction-bound network round trip. */}
+        {/* Limited to 4 preconnect hints per PSI 2026-05-28 best practice
+            warning ('more than 4 preconnect found, use sparingly').
+            Demoted reputationhub (only loads on /reviews) + GTM (deferred
+            to interaction anyway) to dns-prefetch. */}
         <link rel="preconnect" href="https://api.leadconnectorhq.com" crossOrigin="" />
         <link rel="preconnect" href="https://link.msgsndr.com" crossOrigin="" />
-        <link rel="preconnect" href="https://reputationhub.site" crossOrigin="" />
         <link rel="preconnect" href="https://widgets.leadconnectorhq.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://reputationhub.site" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         {/*
           Preload the hero LCP image so the browser starts the fetch

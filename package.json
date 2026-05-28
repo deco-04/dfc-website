@@ -2,6 +2,15 @@
   "name": "dfc-website",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "Chrome >= 100",
+    "Firefox >= 100",
+    "Safari >= 15",
+    "Edge >= 100",
+    "iOS >= 15",
+    "ChromeAndroid >= 100",
+    "not dead"
+  ],
   "scripts": {
     "build": "next build",
     "build:cf": "opennextjs-cloudflare build",
