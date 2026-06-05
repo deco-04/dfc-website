@@ -95,7 +95,12 @@ export function Hero() {
             height={960}
             priority
             fetchPriority="high"
-            sizes="(max-width: 1024px) 100vw, 45vw"
+            // Mobile-tuned sizes: phone never needs more than 90vw of a
+            // 360-414px-wide viewport; tablet/desktop split holds at 45vw.
+            // Combined with deviceSizes in next.config.mjs, mobile gets a
+            // 414-650px crop instead of the previous 720-1080px.
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 45vw"
+            quality={72}
             className="w-full h-auto"
           />
           <figcaption className="mt-4 flex flex-wrap items-baseline gap-3">

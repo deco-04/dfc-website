@@ -86,16 +86,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           before parsing the CSS / mounting the React tree. Same image
           as the <Image priority> in components/hero.tsx — duplicating
           the preload hint here is the canonical Next.js pattern for
-          shaving 100-300ms off LCP on slow networks.
+          shaving 100-300ms off LCP on slow networks. Sizes string MUST
+          match the <Image sizes> exactly for the browser to pick the
+          right responsive variant up-front.
         */}
         <link
           rel="preload"
           as="image"
           href="/photos/staircases-walnut-after--portrait_3x4.jpg"
           fetchPriority="high"
-          // imageSizes mirrors the <Image sizes> prop on the hero so
-          // the browser can pick the right responsive variant up-front.
-          imageSizes="(max-width: 1024px) 100vw, 45vw"
+          imageSizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 45vw"
         />
       </head>
       <body className="grain">
