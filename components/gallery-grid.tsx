@@ -44,7 +44,10 @@ export function GalleryGrid({
       setIndex(null);
     };
     dialog.addEventListener('close', onClose);
-    return () => dialog.removeEventListener('close', onClose);
+    return () => {
+      dialog.removeEventListener('close', onClose);
+      document.documentElement.style.overflow = '';
+    };
   }, []);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -54,15 +57,17 @@ export function GalleryGrid({
 
   // Pointer swipe (mobile): track horizontal travel, threshold 48px.
   const touchX = useRef<number | null>(null);
+  const swiped = useRef(false);
   const onPointerDown = (e: React.PointerEvent) => { touchX.current = e.clientX; };
   const onPointerUp = (e: React.PointerEvent) => {
     if (touchX.current === null) return;
     const dx = e.clientX - touchX.current;
     touchX.current = null;
-    if (Math.abs(dx) > 48) step(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 48) { swiped.current = true; step(dx < 0 ? 1 : -1); }
   };
 
   const onBackdropClick = (e: React.MouseEvent<HTMLDialogElement>) => {
+    if (swiped.current) { swiped.current = false; return; }
     if (e.target === dialogRef.current) close();
   };
 
@@ -101,7 +106,7 @@ export function GalleryGrid({
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         aria-label={`${label} project photos`}
-        className="backdrop:bg-onyx/90 bg-transparent p-0 max-w-[min(96vw,1080px)] w-full open:flex flex-col items-center"
+        className="backdrop:bg-onyx/90 bg-transparent p-0 max-w-[min(96vw,1080px)] w-full open:flex flex-col items-center touch-pan-y"
       >
         {active && (
           <figure className="m-0 w-full">
@@ -113,7 +118,7 @@ export function GalleryGrid({
               className="w-full h-auto"
               sizes="96vw"
             />
-            <figcaption className="font-body text-linen/90 text-sm mt-3 px-1 flex items-center gap-4">
+            <figcaption aria-live="polite" className="font-body text-linen/90 text-sm mt-3 px-1 flex items-center gap-4">
               <span className="flex-1">{active.alt}</span>
               {index !== null && (
                 <span className="text-linen/60 tabular-nums">{index + 1} / {items.length}</span>

@@ -47,4 +47,12 @@ describe('GalleryGrid', () => {
     const dialog = screen.getByRole('dialog', { hidden: true }) as HTMLDialogElement;
     expect(dialog.open).toBe(false);
   });
+
+  it('locks scroll on open and restores it on close', () => {
+    render(<GalleryGrid label="Hardwood" items={ITEMS} lqip={{}} />);
+    fireEvent.click(screen.getByRole('button', { name: /photo a/i }));
+    expect(document.documentElement.style.overflow).toBe('hidden');
+    fireEvent.click(screen.getByRole('button', { name: /close/i }));
+    expect(document.documentElement.style.overflow).toBe('');
+  });
 });

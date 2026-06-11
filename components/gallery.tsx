@@ -41,7 +41,7 @@ export function Gallery() {
 
         {Object.entries(CATEGORIES).map(([slug, cat]) =>
           cat.items.length === 0 ? null : (
-            <GalleryGrid key={slug} label={cat.label} items={cat.items} lqip={lqipFor(cat.items)} />
+            <GalleryGrid key={slug} label={cat.label} items={cat.items.map(({ slug, src_4x3, alt }) => ({ slug, src_4x3, alt }))} lqip={lqipFor(cat.items)} />
           )
         )}
       </div>
