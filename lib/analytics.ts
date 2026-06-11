@@ -15,6 +15,6 @@ export function trackPhoneClick() {
   trackEvent('phone_click', { phone_number: '720-599-1664' });
 }
 
-export function trackCalendarBook() {
-  trackEvent('calendar_book');
+export function trackCalendarBook(payload: Record<string, unknown> = {}) {
+  trackEvent('calendar_book', payload);
 }

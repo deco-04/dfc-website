@@ -25,7 +25,7 @@ export function buildLocalBusinessSchema() {
     legalName: 'Denver Flooring Collective LLC',
     url: 'https://denverflooringcollective.com/',
     description:
-      'Install-only flooring crew serving the Denver Metro. Hardwood, engineered hardwood, luxury vinyl plank, laminate, and tile installation. Customers buy materials; we install with no markup.',
+      'Install-only flooring crew serving the Denver Metro. Hardwood, engineered hardwood, luxury vinyl plank, laminate, and tile installation. Customers source their own materials; we handle the installation.',
     telephone: '+1-720-599-1664',
     priceRange: '$$',
     image: [
@@ -238,7 +238,7 @@ export function buildProcessHowToSchema() {
       {
         '@type': 'HowToStep',
         name: 'Material selection',
-        text: 'You buy your own flooring. We pass along contractor discounts at trusted local suppliers with no markup, no kickback. Optional pickup at cost.',
+        text: 'You buy your own flooring, though we are happy to help you choose. We partner with trusted local suppliers for discounts. If you would like us to pick the material up, let us know (a small pickup fee may apply).',
       },
       {
         '@type': 'HowToStep',
@@ -248,12 +248,12 @@ export function buildProcessHowToSchema() {
       {
         '@type': 'HowToStep',
         name: 'Install',
-        text: 'Dedicated crew on your floor. Manufacturer-spec installation. Daily updates so you always know what is happening tomorrow.',
+        text: 'Dedicated crew on your floor. Manufacturer-spec installation. Consistent communication.',
       },
       {
         '@type': 'HowToStep',
         name: 'Final walkthrough',
-        text: 'We walk every room with you. Anything not right gets fixed before the invoice closes. 1-year workmanship warranty in writing.',
+        text: 'We walk every room with you. Anything not right gets fixed before the invoice closes. Post-install cleaning service available. 1-year workmanship warranty in writing.',
       },
     ],
   };

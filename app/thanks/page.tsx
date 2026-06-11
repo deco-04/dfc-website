@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
+import { LeadTracker } from '@/components/lead-tracker';
 import { pageMetadata } from '@/lib/seo';
 import { TrackedPhoneLink } from '@/components/tracked-phone-link';
 
@@ -96,6 +97,7 @@ export default async function ThanksPage({ searchParams }: { searchParams: Promi
 
   return (
     <>
+      <LeadTracker source={key} />
       <NavMinimal />
       <main className="max-w-3xl mx-auto px-6 lg:px-12 py-24 text-center">
         <div className="eyebrow mb-4">{copy.eyebrow}</div>

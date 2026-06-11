@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlCalendar } from '@/components/ghl-calendar';
+import { BookingTracker } from '@/components/booking-tracker';
 import { RatingChip } from '@/components/rating-chip';
 import { TrackedPhoneLink } from '@/components/tracked-phone-link';
 import { JsonLd } from '@/components/json-ld';
@@ -19,6 +20,7 @@ export default function BookPage() {
   const calendarId = process.env.NEXT_PUBLIC_GHL_CALENDAR_BOOK || 'aEgakNOq8nqb7Iz4ag0z';
   return (
     <>
+      <BookingTracker />
       <JsonLd data={buildLocalBusinessSchema()} />
       <JsonLd data={buildBreadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Book a free estimate', path: '/book' }])} />
       <NavMinimal />

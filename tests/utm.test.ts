@@ -31,4 +31,13 @@ describe('captureUtmFromSearch', () => {
       ['fbclid','gclid','landing_page','referrer','utm_campaign','utm_content','utm_medium','utm_source','utm_term'].sort()
     );
   });
+
+  it('URL params win over extras when the same key is present in both', () => {
+    // extras = defaults supplied by the /lp page (e.g. utm_source:'meta').
+    // When a real ad URL also carries utm_source, the ad value must survive.
+    const params = new URLSearchParams('utm_source=facebook');
+    const result = captureUtmFromSearch(params, { utm_source: 'meta', utm_medium: 'paid' });
+    expect(result.utm_source).toBe('facebook'); // URL wins over default
+    expect(result.utm_medium).toBe('paid');      // extras fill gap when URL has no value
+  });
 });
