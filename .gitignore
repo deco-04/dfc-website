@@ -50,9 +50,7 @@ next-env.d.ts
 scripts/photos-src/
 .venv/
 
-# sanity studio build artifacts (Studio is hosted at sanity.studio, not bundled)
 /dist
-/.sanity
 
 # local-only audit/lighthouse runs + claude session
 /lighthouse-reports

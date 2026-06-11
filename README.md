@@ -23,7 +23,7 @@ deploys. No CMS login required.
 | Floor/material pages | `components/floors.data.ts` |
 | Services grid | `components/services.data.ts` |
 | Cities served | `components/cities.data.ts` |
-| Project gallery | `public/photos/manifest.json` (regenerate via `pnpm photos`) |
+| Project gallery | `public/photos/manifest.json` (hand-curated; edit by hand) |
 
 ## Scripts
 
@@ -36,7 +36,7 @@ deploys. No CMS login required.
 | `pnpm typecheck` | TypeScript check (no emit) |
 | `pnpm test` | Vitest unit tests |
 | `pnpm e2e` | Playwright end-to-end tests |
-| `pnpm photos` | Regenerate `public/photos/manifest.json` from `public/photos/` |
+| `pnpm photos` | Reprocess source photos into `public/photos/` crops (manifest stays hand-curated) |
 | `pnpm og` | Regenerate OG images |
 | `pnpm deploy` | Build + deploy to Cloudflare Workers |
 
