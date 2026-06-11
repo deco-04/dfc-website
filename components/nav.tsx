@@ -139,9 +139,12 @@ export function Nav() {
           />
         </Link>
 
-        {/* Desktop links. whitespace-nowrap + tighter gap so labels never
-            wrap mid-phrase now that the Book CTA shares the row. */}
-        <nav className="hidden md:flex gap-4 lg:gap-6 ml-auto">
+        {/* Desktop links. flex-wrap lets the row break on tablets: at
+            768px the seven links plus the phone pill are wider than the
+            viewport and a non-wrapping row pushed the pill 38px off
+            screen. xl:whitespace-nowrap keeps labels on one line only
+            where the full row genuinely fits. */}
+        <nav className="hidden md:flex md:flex-wrap md:justify-end gap-x-4 gap-y-1 lg:gap-x-6 ml-auto">
           {links.map((l) => (
             <Link
               key={l.href}

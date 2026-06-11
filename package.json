@@ -28,7 +28,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "photos": "python scripts/build_photos.py",
     "og": "python scripts/build_og.py",
-    "lqip": "python scripts/build_lqip.py"
+    "lqip": "python scripts/build_lqip.py",
+    "audit:responsive": "node scripts/audit-responsive.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

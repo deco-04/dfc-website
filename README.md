@@ -38,6 +38,7 @@ deploys. No CMS login required.
 | `pnpm e2e` | Playwright end-to-end tests (run `pnpm build` first; tests serve the production build via `pnpm start`) |
 | `pnpm photos` | Reprocess source photos into `public/photos/` crops (manifest stays hand-curated) |
 | `pnpm og` | Regenerate OG images |
+| `pnpm audit:responsive` | Check every route for horizontal overflow at 7 device widths (needs `pnpm build && pnpm start` running) |
 | `pnpm deploy` | Build + deploy to Cloudflare Workers |
 
 ## Deploy

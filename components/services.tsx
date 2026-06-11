@@ -12,22 +12,23 @@ export function Services() {
             'Thoughtful material selection. Precision installation.
             Long-term performance.' + 'Craftsmanship across every floor,
             room, and finish.'
-            Each sentence wrapped in a whitespace-nowrap span so the phrase
-            never breaks mid-line ('selection' bled to its own line on
-            desktop before the 2026-05-25 fix). max-w-prose moved off the
-            header onto the subhead so the heading can use full viewport
-            width.
+            Each sentence wrapped in an md:whitespace-nowrap span so the
+            phrase never breaks mid-line on desktop ('selection' bled to its
+            own line before the 2026-05-25 fix) while phones wrap naturally:
+            unscoped nowrap forced a 519px line into a 375px viewport and the
+            heading bled off screen. max-w-prose moved off the header onto
+            the subhead so the heading can use full viewport width.
           */}
-          <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
-            <span className="whitespace-nowrap">
+          <h2 className="display text-sage text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.04]">
+            <span className="md:whitespace-nowrap">
               Thoughtful <span className="italic">material selection</span>.
             </span>
             <br />
-            <span className="whitespace-nowrap">
+            <span className="md:whitespace-nowrap">
               Precision <span className="italic">installation</span>.
             </span>
             <br />
-            <span className="whitespace-nowrap">
+            <span className="md:whitespace-nowrap">
               Long-term <span className="italic">performance</span>.
             </span>
           </h2>
