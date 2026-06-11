@@ -121,7 +121,7 @@ export function Nav() {
       // closes the visible gap above the nav on iPhones.
       style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
-      <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-4 md:gap-8">
+      <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-4 md:gap-5 lg:gap-7">
         <Link href="/" aria-label="Denver Flooring Collective home" data-testid="nav-logo" className="shrink-0">
           {/*
             Small rasterized PNG (~5KB) instead of the 170KB brush-ring
@@ -139,23 +139,26 @@ export function Nav() {
           />
         </Link>
 
-        {/* Desktop links */}
-        <nav className="hidden md:flex gap-6 ml-auto">
+        {/* Desktop links. whitespace-nowrap + tighter gap so labels never
+            wrap mid-phrase now that the Book CTA shares the row. */}
+        <nav className="hidden md:flex gap-4 lg:gap-6 ml-auto">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="font-body text-[12px] uppercase tracking-caps font-medium text-onyx hover:text-sage transition-colors"
+              className="font-body text-[12px] uppercase tracking-caps font-medium text-onyx hover:text-sage transition-colors xl:whitespace-nowrap"
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop "Book estimate" CTA — md+ only, sits beside the phone pill */}
+        {/* Desktop "Book estimate" CTA. xl+ only: below 1280px the seven
+            links plus the phone pill already fill the row and the button
+            forces an overflow. */}
         <Link
           href="/book"
-          className="hidden md:inline-flex items-center bg-sage text-linen px-4 py-2.5 font-body text-[12px] font-semibold tracking-caps uppercase hover:bg-sage-deep transition-colors whitespace-nowrap"
+          className="hidden xl:inline-flex items-center bg-sage text-linen px-4 py-2.5 font-body text-[12px] font-semibold tracking-caps uppercase hover:bg-sage-deep transition-colors whitespace-nowrap"
         >
           Book estimate
         </Link>

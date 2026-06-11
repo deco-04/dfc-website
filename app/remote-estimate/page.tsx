@@ -9,7 +9,7 @@ import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
 
 export const metadata = pageMetadata({
-  title: 'Send us your floorplan',
+  title: 'Get an estimate from photos',
   description: 'Skip the on-site visit. Send photos, measurements, and a floorplan and we will review it together over a call or video, no charge.',
   path: '/remote-estimate',
   image: OG_IMAGES.remote,
