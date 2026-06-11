@@ -152,6 +152,14 @@ export function Nav() {
           ))}
         </nav>
 
+        {/* Desktop "Book estimate" CTA — md+ only, sits beside the phone pill */}
+        <Link
+          href="/book"
+          className="hidden md:inline-flex items-center bg-sage text-linen px-4 py-2.5 font-body text-[12px] font-semibold tracking-caps uppercase hover:bg-sage-deep transition-colors whitespace-nowrap"
+        >
+          Book estimate
+        </Link>
+
         {/* Phone CTA (always visible) */}
         <a
           href="tel:7205991664"
@@ -180,8 +188,8 @@ export function Nav() {
       <div
         id="mobile-nav-drawer"
         className={clsx(
-          'md:hidden overflow-hidden bg-linen border-b border-walnut/10 transition-[max-height,opacity] duration-300',
-          menuOpen ? 'max-h-[640px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none',
+          'md:hidden overflow-hidden bg-linen border-b border-walnut/10 transition-[max-height,opacity,visibility] duration-300',
+          menuOpen ? 'max-h-[640px] opacity-100 visible' : 'max-h-0 opacity-0 invisible pointer-events-none',
         )}
       >
         <nav className="max-w-site mx-auto px-6 py-4 flex flex-col gap-1">
