@@ -69,3 +69,14 @@
     }
   }
 }
+
+/* Keep the GHL chat bubble above the sticky mobile CTA bar. The widget
+   mounts a top-level <chat-widget> custom element; on phones we lift it
+   by the bar height (56px) plus its default 20px offset. Desktop is
+   untouched (the bar is md:hidden). */
+@media (max-width: 767px) {
+  chat-widget {
+    --chat--widget-bottom: 76px;
+    bottom: 76px !important;
+  }
+}
