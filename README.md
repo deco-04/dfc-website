@@ -35,7 +35,7 @@ deploys. No CMS login required.
 | `pnpm lint` | ESLint |
 | `pnpm typecheck` | TypeScript check (no emit) |
 | `pnpm test` | Vitest unit tests |
-| `pnpm e2e` | Playwright end-to-end tests |
+| `pnpm e2e` | Playwright end-to-end tests (run `pnpm build` first; tests serve the production build via `pnpm start`) |
 | `pnpm photos` | Reprocess source photos into `public/photos/` crops (manifest stays hand-curated) |
 | `pnpm og` | Regenerate OG images |
 | `pnpm deploy` | Build + deploy to Cloudflare Workers |
