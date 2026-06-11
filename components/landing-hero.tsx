@@ -40,10 +40,13 @@ export function LandingHero({ defaultsUtm }: { defaultsUtm: UtmPayload }) {
         </div>
         <div className="bg-linen-warm p-6 lg:p-8">
           <h2 className="display text-sage text-2xl mb-4">Tell us about your space</h2>
+          {/* height raised to 2000 to match remote-estimate/page.tsx floor.
+              Prevents submit button from being buried behind inner iframe
+              scroll at 375px width before form_embed.js resizes. */}
           <GhlForm
             formId={formId}
             formName="Remote Estimate Lead Form"
-            height="1583"
+            height="2000"
             defaultsUtm={defaultsUtm}
           />
         </div>

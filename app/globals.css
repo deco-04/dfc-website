@@ -69,3 +69,32 @@
     }
   }
 }
+
+/* The GHL chat bubble cannot be moved with page CSS: it is positioned by
+   inline styles inside the widget's shadow root. The sticky CTA bar lifts
+   it via JS instead (see components/sticky-cta.tsx). */
+
+/* Scroll-driven section reveals. Pure CSS: animation-timeline: view()
+   plays the same dfc-fade-in used above the fold as each section header
+   scrolls into view. @supports-gated so Safari/Firefox without
+   scroll-timelines render sections normally (no hidden content, no JS
+   fallback needed). Reduced-motion users get no animation at all. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation-name: dfc-fade-in;
+      animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+/* Chromium can print scroll-driven animations at their initial state,
+   which with fill-mode both would print revealed sections invisible. */
+@media print {
+  .reveal {
+    animation: none;
+  }
+}

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ServiceAreaMap } from './service-area-map';
 
 // Cities listed alphabetically. Numbered indicators removed 2026-05-24
@@ -49,17 +50,38 @@ export function ServiceArea() {
       </div>
 
       <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-4 sm:gap-x-8 max-w-4xl mx-auto py-8 border-y border-walnut-deep/20">
-        {CITIES.map((c) => (
-          <li
-            key={c}
-            className="flex justify-start text-left whitespace-nowrap"
-          >
-            <span className="font-display italic text-espresso text-base sm:text-lg lg:text-xl">
-              {c}
-            </span>
-          </li>
-        ))}
+        {CITIES.map((c) => {
+          const slug = c === 'Denver' ? 'denver' : c === 'Aurora' ? 'aurora' : c === 'Lakewood' ? 'lakewood' : null;
+          return (
+            <li
+              key={c}
+              className="flex justify-start text-left whitespace-nowrap"
+            >
+              {slug ? (
+                <Link
+                  href={`/serving/${slug}`}
+                  className="font-display italic text-espresso text-base sm:text-lg lg:text-xl border-b border-current/30 hover:border-current transition-colors"
+                >
+                  {c}
+                </Link>
+              ) : (
+                <span className="font-display italic text-espresso text-base sm:text-lg lg:text-xl">
+                  {c}
+                </span>
+              )}
+            </li>
+          );
+        })}
       </ul>
+      <p className="font-body text-onyx/80 mt-6 text-sm max-w-4xl mx-auto text-center">
+        Read how we work in{' '}
+        <Link href="/serving/denver" className="border-b border-current/30 hover:border-current transition-colors">Denver</Link>
+        {', '}
+        <Link href="/serving/aurora" className="border-b border-current/30 hover:border-current transition-colors">Aurora</Link>
+        {', and '}
+        <Link href="/serving/lakewood" className="border-b border-current/30 hover:border-current transition-colors">Lakewood</Link>
+        .
+      </p>
     </section>
   );
 }

@@ -115,7 +115,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
         <section className="bg-forest text-linen py-16 lg:py-24">
           <div className="max-w-site mx-auto px-6 lg:px-12">
             <div className="max-w-3xl">
-              <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-lichen mb-3">Recent {city.name} work</div>
+              <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-heather mb-3">Recent {city.name} work</div>
               <h2 className="display text-3xl lg:text-4xl mb-8">
                 A few <span className="italic">typical projects</span>.
               </h2>
@@ -151,7 +151,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
               href="/remote-estimate"
               className="inline-flex items-center gap-3 border-2 border-flatiron text-flatiron px-6 py-4 font-body text-[13px] font-semibold tracking-caps uppercase hover:bg-flatiron hover:text-linen transition-all"
             >
-              Send us your floorplan
+              Get an estimate from photos
             </Link>
           </div>
         </section>

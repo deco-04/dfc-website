@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ReviewWidget } from './review-widget';
 
 function ArrowRightIcon({ className = 'w-4 h-4' }: { className?: string }) {
@@ -21,7 +22,7 @@ export function Testimonial() {
         aria-hidden
       />
 
-      <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center reveal">
         {/* Was text-camel which fails WCAG AA against espresso (3.8:1).
             Lichen passes (4.5:1+) and stays on-brand. */}
         <div className="eyebrow text-lichen mb-6">A letter from Kallianne</div>
@@ -45,22 +46,13 @@ export function Testimonial() {
           <ReviewWidget />
         </div>
 
-        {/*
-          Canonical Denver Flooring Collective Google Reviews URL,
-          provided by Andre 2026-05-25. Place ID:
-          ChIJyfAeyyh9bIcROn-MDdfKru4. search.google.com/local/reviews
-          drops the visitor directly into the reviews tab of the GBP
-          rather than the generic place page.
-        */}
-        <a
-          href="https://search.google.com/local/reviews?placeid=ChIJyfAeyyh9bIcROn-MDdfKru4"
-          target="_blank"
-          rel="noopener"
+        <Link
+          href="/reviews"
           className="inline-flex items-center gap-2 mt-10 font-body text-[13px] uppercase tracking-caps font-semibold text-camel border-b border-camel pb-1 hover:text-linen hover:border-linen transition-colors"
         >
-          Read every review on Google
+          Read every review
           <ArrowRightIcon />
-        </a>
+        </Link>
       </div>
     </section>
   );

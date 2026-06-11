@@ -73,13 +73,13 @@ export function Footer() {
           { href: '/floors/refinishing', label: 'Refinishing' },
         ]} />
         <FootCol title="Company" links={[
-          { href: '/#manifesto',   label: 'Slow Materials' },
+          { href: '/#manifesto',   label: 'A note from the crew' },
           { href: '/#process',     label: 'The Process' },
-          { href: '/#projects',    label: 'Recent Plates' },
+          { href: '/#projects',    label: 'Recent projects' },
           { href: '/serving',      label: 'Where we serve' },
           { href: '/reviews',      label: 'Reviews' },
           { href: '/work-with-us', label: 'Work with us' },
-          { href: '/#faq',         label: 'Plain Questions' },
+          { href: '/#faq',         label: 'FAQ' },
         ]} />
         <FootCol title="Contact" links={[
           { href: 'tel:7205991664', label: '720-599-1664' },

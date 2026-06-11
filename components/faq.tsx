@@ -1,20 +1,14 @@
-import { FAQS as FALLBACK } from './faq.data';
-import { safeSanityFetch } from '@/lib/sanity-client';
-import { FAQ_QUERY } from '@/lib/queries';
+import { FAQS } from './faq.data';
 
 type FaqItem = { question: string; answer: string };
 
-async function getFaqs(): Promise<FaqItem[]> {
-  const cms = await safeSanityFetch<FaqItem[]>(FAQ_QUERY);
-  if (cms && cms.length > 0) return cms;
-  return FALLBACK.map((f) => ({ question: f.q, answer: f.a }));
-}
+const ITEMS: FaqItem[] = FAQS.map((f) => ({ question: f.q, answer: f.a }));
 
-export async function Faq() {
-  const items = await getFaqs();
+export function Faq() {
+  const items = ITEMS;
   return (
     <section id="faq" className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-36">
-      <header className="mb-12">
+      <header className="mb-12 reveal">
         <div className="eyebrow mb-4">Frequently asked</div>
         <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
           Plain answers to <span className="italic">plain questions</span>.

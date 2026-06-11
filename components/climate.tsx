@@ -75,8 +75,8 @@ export function Climate() {
       <MountainBackdrop />
       <div className="relative max-w-site mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
-          <div>
-            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-lichen mb-4">
+          <div className="reveal">
+            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-heather mb-4">
               Built for Colorado
             </div>
             <h2 className="display text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
@@ -118,7 +118,7 @@ export function Climate() {
                     </svg>
                   )}
                 </dt>
-                <dd className="font-body text-[11px] uppercase tracking-caps text-lichen mt-2">{s.label}</dd>
+                <dd className="font-body text-[11px] uppercase tracking-caps text-heather mt-2">{s.label}</dd>
               </div>
             ))}
           </dl>

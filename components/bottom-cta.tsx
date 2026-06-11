@@ -30,10 +30,13 @@ export function BottomCta() {
             href="/remote-estimate"
             className="inline-flex items-center gap-3 border-2 border-flatiron text-flatiron px-6 py-4 font-body text-[13px] font-semibold tracking-caps uppercase hover:bg-flatiron hover:text-linen transition-all"
           >
-            Send us your floorplan
+            Get an estimate from photos
           </Link>
         </div>
-        <p className="font-body text-[12px] uppercase tracking-caps text-onyx/60 mt-10">
+        <p className="font-body text-sm text-onyx/60 mt-8">
+          Free estimate. Written line-item quote. 1-year workmanship warranty in writing.
+        </p>
+        <p className="font-body text-[12px] uppercase tracking-caps text-onyx/60 mt-4">
           Call or text <a href="tel:7205991664" onClick={trackPhoneClick} className="text-sage-deep border-b border-sage-deep">720-599-1664</a>
           <span className="mx-2 text-walnut-deep/40">·</span>
           Mon&ndash;Fri 8a&ndash;6p

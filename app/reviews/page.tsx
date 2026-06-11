@@ -1,6 +1,7 @@
 import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { ReviewWidget } from '@/components/review-widget';
+import { BottomCta } from '@/components/bottom-cta';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema, buildReviewSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
@@ -59,6 +60,7 @@ export default function ReviewsPage() {
           </a>
         </div>
       </main>
+      <BottomCta />
       <Footer />
     </>
   );

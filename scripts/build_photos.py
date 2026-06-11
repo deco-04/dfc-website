@@ -182,8 +182,7 @@ for name, cfg in PHOTOS.items():
 # different category than their file name suggests, e.g. tile-hapa-sushi is
 # actually LVP, lvp-michael-sage is actually tile, etc). If we auto-generate
 # the manifest from PHOTOS slugs it overwrites the curation. So we leave the
-# manifest alone here. Edit manifest.json by hand, or after Sanity ships
-# (Tasks 35-37), Liza edits categories visually in Sanity Studio.
+# manifest alone here. Edit manifest.json by hand when categories change.
 print("Pipeline: photo processing complete. Manifest left untouched.")
 
 # --------------------------------------------------------------------------

@@ -121,7 +121,7 @@ export function Nav() {
       // closes the visible gap above the nav on iPhones.
       style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
     >
-      <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-4 md:gap-8">
+      <div className="max-w-site mx-auto px-6 lg:px-12 py-4 flex items-center gap-4 md:gap-5 lg:gap-7">
         <Link href="/" aria-label="Denver Flooring Collective home" data-testid="nav-logo" className="shrink-0">
           {/*
             Small rasterized PNG (~5KB) instead of the 170KB brush-ring
@@ -139,18 +139,32 @@ export function Nav() {
           />
         </Link>
 
-        {/* Desktop links */}
-        <nav className="hidden md:flex gap-6 ml-auto">
+        {/* Desktop links. flex-wrap lets the row break on tablets: at
+            768px the seven links plus the phone pill are wider than the
+            viewport and a non-wrapping row pushed the pill 38px off
+            screen. xl:whitespace-nowrap keeps labels on one line only
+            where the full row genuinely fits. */}
+        <nav className="hidden md:flex md:flex-wrap md:justify-end gap-x-4 gap-y-1 lg:gap-x-6 ml-auto">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="font-body text-[12px] uppercase tracking-caps font-medium text-onyx hover:text-sage transition-colors"
+              className="font-body text-[12px] uppercase tracking-caps font-medium text-onyx hover:text-sage transition-colors xl:whitespace-nowrap"
             >
               {l.label}
             </Link>
           ))}
         </nav>
+
+        {/* Desktop "Book estimate" CTA. xl+ only: below 1280px the seven
+            links plus the phone pill already fill the row and the button
+            forces an overflow. */}
+        <Link
+          href="/book"
+          className="hidden xl:inline-flex items-center bg-sage text-linen px-4 py-2.5 font-body text-[12px] font-semibold tracking-caps uppercase hover:bg-sage-deep transition-colors whitespace-nowrap"
+        >
+          Book estimate
+        </Link>
 
         {/* Phone CTA (always visible) */}
         <a
@@ -180,8 +194,8 @@ export function Nav() {
       <div
         id="mobile-nav-drawer"
         className={clsx(
-          'md:hidden overflow-hidden bg-linen border-b border-walnut/10 transition-[max-height,opacity] duration-300',
-          menuOpen ? 'max-h-[640px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none',
+          'md:hidden overflow-hidden bg-linen border-b border-walnut/10 transition-[max-height,opacity,visibility] duration-300',
+          menuOpen ? 'max-h-[640px] opacity-100 visible' : 'max-h-0 opacity-0 invisible pointer-events-none',
         )}
       >
         <nav className="max-w-site mx-auto px-6 py-4 flex flex-col gap-1">

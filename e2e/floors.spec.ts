@@ -35,9 +35,9 @@ test.describe('Floor pages', () => {
       const homeLinks = await page.locator('a[href="/"]').count();
       expect(homeLinks).toBeGreaterThan(0);
 
-      // CTA buttons present
-      await expect(page.locator('a[href="/book"]').first()).toBeVisible();
-      await expect(page.locator('a[href="/remote-estimate"]').first()).toBeVisible();
+      // CTA buttons present (scope to main to avoid the collapsed mobile-nav copy)
+      await expect(page.locator('main a[href="/book"]').first()).toBeVisible();
+      await expect(page.locator('main a[href="/remote-estimate"]').first()).toBeVisible();
     });
   }
 

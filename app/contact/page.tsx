@@ -53,6 +53,13 @@ export default function ContactPage() {
             Talk to <span className="italic">the crew</span>.
           </h1>
         </header>
+        <div className="mb-12 bg-espresso text-linen p-8 border-l-4 border-camel max-w-prose">
+          <h2 className="font-display text-camel text-xl mb-3">Referring a neighbor?</h2>
+          <p className="font-body text-linen/85 leading-relaxed">
+            Mention their name in the message below. You get a $50 gift card when they request an estimate,
+            and another $100 gift card (or 10% credit toward a future project) when their project completes.
+          </p>
+        </div>
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12">
           <aside className="space-y-6">
             <ContactRow icon={<PhoneIcon />} title="Call or text">

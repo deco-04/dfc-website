@@ -3,6 +3,7 @@ import { fraunces, inter } from './fonts';
 import { SITE_URL } from '@/lib/seo';
 import { DeferredAnalytics } from '@/components/deferred-analytics';
 import { DeferredChat } from '@/components/deferred-chat';
+import { StickyCta } from '@/components/sticky-cta';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="grain">
         {children}
+        <StickyCta />
         {/* GTM + GA4 deferred until first user interaction or 3s idle.
             Keeps third-party JS out of the LCP / TBT critical path
             while preserving attribution on >95% of sessions. */}
