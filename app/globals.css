@@ -97,3 +97,11 @@
     }
   }
 }
+
+/* Chromium can print scroll-driven animations at their initial state,
+   which with fill-mode both would print revealed sections invisible. */
+@media print {
+  .reveal {
+    animation: none;
+  }
+}
