@@ -151,7 +151,7 @@ export default async function CityPage({ params }: { params: Promise<{ slug: str
               href="/remote-estimate"
               className="inline-flex items-center gap-3 border-2 border-flatiron text-flatiron px-6 py-4 font-body text-[13px] font-semibold tracking-caps uppercase hover:bg-flatiron hover:text-linen transition-all"
             >
-              Send us your floorplan
+              Get an estimate from photos
             </Link>
           </div>
         </section>

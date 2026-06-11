@@ -50,7 +50,7 @@ export function Hero() {
               href="/remote-estimate"
               className="inline-flex items-center gap-3 border-2 border-flatiron text-flatiron px-6 py-4 font-body text-[13px] font-semibold tracking-caps uppercase hover:bg-flatiron hover:text-linen transition-all"
             >
-              Send us your floorplan
+              Get an estimate from photos
             </Link>
           </div>
           {/*
@@ -69,7 +69,7 @@ export function Hero() {
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-walnut-deep/20">
             {([
               { big: '600+', label: 'Projects' },
-              { big: '14',   label: 'Front Range cities' },
+              { big: '14',   label: 'Front Range cities', href: '/serving' },
               { big: '1 yr', label: 'Warranty' },
               { big: '5.0',  label: 'stars · Google', star: true, href: GOOGLE_REVIEWS_URL },
             ] as { big: string; label: string; star?: boolean; href?: string }[]).map((t) => {
@@ -86,12 +86,19 @@ export function Hero() {
                   <span className="font-body text-[10px] uppercase tracking-caps text-onyx/70 mt-1">{t.label}</span>
                 </>
               );
+              const isExternal = t.href?.startsWith('http');
               return (
                 <li key={t.label} className="flex flex-col">
                   {t.href ? (
-                    <a href={t.href} target="_blank" rel="noopener noreferrer" className="flex flex-col hover:opacity-80 transition-opacity" aria-label="Read our 5.0-star Google reviews">
-                      {stat}
-                    </a>
+                    isExternal ? (
+                      <a href={t.href} target="_blank" rel="noopener noreferrer" className="flex flex-col hover:opacity-80 transition-opacity" aria-label="Read our 5.0-star Google reviews">
+                        {stat}
+                      </a>
+                    ) : (
+                      <Link href={t.href} className="flex flex-col hover:opacity-80 transition-opacity" aria-label="See all 14 Front Range cities we serve">
+                        {stat}
+                      </Link>
+                    )
                   ) : (
                     stat
                   )}

@@ -39,10 +39,10 @@ export function SplitCards() {
           When their project completes you choose another $100 gift card or 10% credit toward a future DFC project.
           No referral limit.
         </p>
-        <a href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-camel border-b border-camel pb-1 hover:text-linen hover:border-linen transition-colors">
+        <Link href="/contact" className="inline-flex items-center gap-2 mt-8 font-body text-[13px] uppercase tracking-caps font-semibold text-camel border-b border-camel pb-1 hover:text-linen hover:border-linen transition-colors">
           See how it works
           <ArrowRightIcon />
-        </a>
+        </Link>
       </article>
     </section>
   );

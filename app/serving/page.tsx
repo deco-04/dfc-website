@@ -141,7 +141,7 @@ export default function ServingPage() {
                 href="/remote-estimate"
                 className="inline-flex items-center gap-3 border-2 border-camel text-camel px-6 py-4 font-body text-[13px] font-semibold tracking-caps uppercase hover:bg-camel hover:text-espresso transition-all"
               >
-                Send us your floorplan
+                Get an estimate from photos
               </Link>
             </div>
           </div>

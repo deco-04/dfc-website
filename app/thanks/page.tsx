@@ -110,6 +110,15 @@ export default async function ThanksPage({ searchParams }: { searchParams: Promi
           ))}
         </ol>
         <div className="flex flex-wrap justify-center gap-3 mt-12">
+          {(key === 'meta' || key === 'google') && (
+            <Link
+              href="/book"
+              className="inline-flex items-center gap-3 bg-sage text-linen px-6 py-4 font-body text-[13px] font-semibold tracking-caps uppercase hover:bg-sage-deep transition-all"
+            >
+              Want to skip the wait? Book your on-site estimate now
+              <ArrowRightIcon />
+            </Link>
+          )}
           <Link href="/#projects" className="inline-flex items-center gap-2 font-body text-[13px] uppercase tracking-caps font-semibold text-sage-deep border-b border-sage-deep pb-1">
             Browse recent floors <ArrowRightIcon />
           </Link>
