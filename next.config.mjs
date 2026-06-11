@@ -1,6 +1,11 @@
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
-initOpenNextCloudflareForDev();
+// Only activate the Cloudflare dev proxy when running `next dev`.
+// Skip when NEXT_CF_DEV=0 (set by the Playwright webServer config) so the
+// production server serves built static chunks without VM-context patching.
+if (process.env.NEXT_CF_DEV !== '0') {
+  initOpenNextCloudflareForDev();
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

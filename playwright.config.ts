@@ -8,9 +8,11 @@ export default defineConfig({
     headless: true,
   },
   webServer: {
-    command: 'pnpm dev',
+    command: 'pnpm start',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
+    timeout: 60_000,
+    env: { NEXT_CF_DEV: '0' },
   },
   projects: [
     { name: 'desktop-chrome', use: { viewport: { width: 1440, height: 900 } } },
