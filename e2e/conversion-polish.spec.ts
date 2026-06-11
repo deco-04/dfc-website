@@ -25,6 +25,23 @@ test.describe('sticky mobile CTA', () => {
     await page.evaluate(() => window.dispatchEvent(new Event('scroll')));
     await expect(page.getByTestId('sticky-cta')).toHaveCount(0);
   });
+
+  test('absent on /remote-estimate', async ({ page }) => {
+    await page.goto('/remote-estimate');
+    await page.evaluate(() => window.scrollTo(0, 1200));
+    await page.evaluate(() => window.dispatchEvent(new Event('scroll')));
+    await expect(page.getByTestId('sticky-cta')).toHaveCount(0);
+  });
+
+  test('call-only mode on /lp/meta', async ({ page }) => {
+    await page.goto('/lp/meta');
+    await page.evaluate(() => window.scrollTo(0, 1200));
+    await page.evaluate(() => window.dispatchEvent(new Event('scroll')));
+    const bar = page.getByTestId('sticky-cta');
+    await expect(bar).toBeVisible();
+    await expect(bar.getByRole('link', { name: /call/i })).toHaveAttribute('href', 'tel:7205991664');
+    await expect(bar.getByRole('link', { name: /book/i })).toHaveCount(0);
+  });
 });
 
 test.describe('gallery lightbox', () => {

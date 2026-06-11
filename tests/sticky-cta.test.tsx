@@ -43,6 +43,40 @@ describe('StickyCta', () => {
     expect(screen.queryByTestId('sticky-cta')).toBeNull();
   });
 
+  it('renders nothing on /remote-estimate', () => {
+    usePathnameMock.mockReturnValue('/remote-estimate');
+    render(<StickyCta />);
+    expect(screen.queryByTestId('sticky-cta')).toBeNull();
+  });
+
+  it('renders nothing on /contact', () => {
+    usePathnameMock.mockReturnValue('/contact');
+    render(<StickyCta />);
+    expect(screen.queryByTestId('sticky-cta')).toBeNull();
+  });
+
+  it('renders nothing on /work-with-us', () => {
+    usePathnameMock.mockReturnValue('/work-with-us');
+    render(<StickyCta />);
+    expect(screen.queryByTestId('sticky-cta')).toBeNull();
+  });
+
+  it('renders call-only (no book link) on /lp/meta', () => {
+    usePathnameMock.mockReturnValue('/lp/meta');
+    render(<StickyCta />);
+    expect(screen.getByTestId('sticky-cta')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /call/i })).toHaveAttribute('href', 'tel:7205991664');
+    expect(screen.queryByRole('link', { name: /book/i })).toBeNull();
+  });
+
+  it('renders call-only (no book link) on /lp/google', () => {
+    usePathnameMock.mockReturnValue('/lp/google');
+    render(<StickyCta />);
+    expect(screen.getByTestId('sticky-cta')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /call/i })).toHaveAttribute('href', 'tel:7205991664');
+    expect(screen.queryByRole('link', { name: /book/i })).toBeNull();
+  });
+
   it('has call and book actions', () => {
     render(<StickyCta />);
     expect(screen.getByRole('link', { name: /call/i })).toHaveAttribute('href', 'tel:7205991664');

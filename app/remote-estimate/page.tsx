@@ -36,10 +36,17 @@ export default function RemoteEstimatePage() {
             <RatingChip />
           </div>
         </header>
+        {/* height raised to 2000 so the submit button is fully visible at
+            375px width before form_embed.js resizes the iframe. The form has
+            ~13 fields (name, phone, email, contact method, address, service
+            type, material, location of work, basement, sq footage,
+            description, file upload, submit), which renders taller than the
+            previous 1583 floor at mobile widths. Needs visual confirmation
+            after deploy. */}
         <GhlForm
           formId={formId}
           formName="Remote Estimate Lead Form"
-          height="1583"
+          height="2000"
         />
 
         {/* Phone fallback and in-person escape hatch */}

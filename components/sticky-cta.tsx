@@ -9,7 +9,10 @@ import { trackPhoneClick } from '@/lib/analytics';
 // competes with the hero on first paint. Fixed overlay animated with
 // transform only: zero layout shift. Hidden on routes where it would be
 // redundant noise.
-const SUPPRESSED = ['/book', '/thanks'];
+//
+// SUPPRESSED: form pages where the bar overlays the GHL form submit button
+// and where "Book Estimate" competes with the in-page form action.
+const SUPPRESSED = ['/book', '/thanks', '/remote-estimate', '/contact', '/work-with-us'];
 
 // The GHL chat bubble positions itself with INLINE styles on elements
 // inside an open shadow root, so page CSS can never move it. While the
@@ -67,6 +70,11 @@ export function StickyCta() {
 
   if (SUPPRESSED.some((p) => pathname.startsWith(p))) return null;
 
+  // On paid landing pages (/lp/*) keep tap-to-call but remove the Book link
+  // so paid traffic stays on the measured funnel and is not redirected off
+  // the landing page mid-session.
+  const lpMode = pathname.startsWith('/lp');
+
   return (
     <div
       data-testid="sticky-cta"
@@ -76,7 +84,7 @@ export function StickyCta() {
       }`}
     >
       <div
-        className="grid grid-cols-2 gap-px bg-walnut-deep/20 border-t border-walnut-deep/20"
+        className={`grid gap-px bg-walnut-deep/20 border-t border-walnut-deep/20 ${lpMode ? 'grid-cols-1' : 'grid-cols-2'}`}
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
         <a
@@ -89,12 +97,14 @@ export function StickyCta() {
           </svg>
           Call
         </a>
-        <Link
-          href="/book"
-          className="flex items-center justify-center gap-2 bg-sage text-linen font-body text-[13px] font-semibold tracking-caps uppercase py-4"
-        >
-          Book estimate
-        </Link>
+        {!lpMode && (
+          <Link
+            href="/book"
+            className="flex items-center justify-center gap-2 bg-sage text-linen font-body text-[13px] font-semibold tracking-caps uppercase py-4"
+          >
+            Book estimate
+          </Link>
+        )}
       </div>
     </div>
   );

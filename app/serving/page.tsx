@@ -122,7 +122,7 @@ export default function ServingPage() {
         {/* Bottom CTA */}
         <section className="bg-forest text-linen py-16 lg:py-24 text-center">
           <div className="max-w-3xl mx-auto px-6 lg:px-12">
-            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-lichen mb-3">Ready when you are</div>
+            <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-heather mb-3">Ready when you are</div>
             <h2 className="display text-4xl lg:text-6xl leading-[1.04]">
               Free estimate, <span className="italic">anywhere on the Front Range</span>.
             </h2>

@@ -179,7 +179,7 @@ export default async function FloorPage({ params }: { params: Promise<{ slug: st
         <section className="bg-forest text-linen py-16 lg:py-24">
           <div className="max-w-site mx-auto px-6 lg:px-12">
             <div className="max-w-3xl mb-10">
-              <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-lichen mb-3">How we install it</div>
+              <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-heather mb-3">How we install it</div>
               <h2 className="display text-3xl lg:text-4xl">
                 The <span className="italic">install</span>, step by step.
               </h2>
@@ -192,7 +192,7 @@ export default async function FloorPage({ params }: { params: Promise<{ slug: st
                 </li>
               ))}
             </ol>
-            <p className="font-body text-lichen text-sm mt-10 max-w-3xl border-t border-camel/20 pt-6">
+            <p className="font-body text-heather text-sm mt-10 max-w-3xl border-t border-camel/20 pt-6">
               <span className="font-display italic text-camel">Timeline:</span> {f.timeline}
             </p>
           </div>
