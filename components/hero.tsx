@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeDiv, FadeFigure } from './motion-fade';
+import { GOOGLE_REVIEWS_URL } from '@/components/rating-chip';
 
 // IMPORTANT: lucide-react@1.x has an SSR/hydration bug in Next 15 (see Task 9 nav.tsx).
 // Use inline SVGs for icons in this project until a downgrade or upstream fix lands.
@@ -66,24 +67,37 @@ export function Hero() {
             <span className="block sm:inline">Built to last.</span>
           </div>
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-walnut-deep/20">
-            {[
+            {([
               { big: '600+', label: 'Projects' },
               { big: '14',   label: 'Front Range cities' },
               { big: '1 yr', label: 'Warranty' },
-              { big: '5.0',  label: 'stars · Google', star: true },
-            ].map((t) => (
-              <li key={t.label} className="flex flex-col">
-                <strong className="display text-sage text-2xl leading-none flex items-center gap-1.5">
-                  {t.big}
-                  {t.star && (
-                    <svg className="w-5 h-5 text-flatiron shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                    </svg>
+              { big: '5.0',  label: 'stars · Google', star: true, href: GOOGLE_REVIEWS_URL },
+            ] as { big: string; label: string; star?: boolean; href?: string }[]).map((t) => {
+              const stat = (
+                <>
+                  <strong className="display text-sage text-2xl leading-none flex items-center gap-1.5">
+                    {t.big}
+                    {t.star && (
+                      <svg className="w-5 h-5 text-flatiron shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                      </svg>
+                    )}
+                  </strong>
+                  <span className="font-body text-[10px] uppercase tracking-caps text-onyx/70 mt-1">{t.label}</span>
+                </>
+              );
+              return (
+                <li key={t.label} className="flex flex-col">
+                  {t.href ? (
+                    <a href={t.href} target="_blank" rel="noopener noreferrer" className="flex flex-col hover:opacity-80 transition-opacity" aria-label="Read our 5.0-star Google reviews">
+                      {stat}
+                    </a>
+                  ) : (
+                    stat
                   )}
-                </strong>
-                <span className="font-body text-[10px] uppercase tracking-caps text-onyx/70 mt-1">{t.label}</span>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         </FadeDiv>
 

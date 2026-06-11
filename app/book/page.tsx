@@ -1,6 +1,7 @@
 import { NavMinimal } from '@/components/nav-minimal';
 import { FooterMinimal } from '@/components/footer-minimal';
 import { GhlCalendar } from '@/components/ghl-calendar';
+import { RatingChip } from '@/components/rating-chip';
 import { JsonLd } from '@/components/json-ld';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '@/lib/schema';
 import { pageMetadata, OG_IMAGES } from '@/lib/seo';
@@ -29,6 +30,9 @@ export default function BookPage() {
             We&rsquo;ll walk your space, take measurements, and send you a written quote within 24 hours.
             Free, no obligation, no pressure.
           </p>
+          <div className="mt-5 flex justify-center">
+            <RatingChip />
+          </div>
         </header>
         <GhlCalendar calendarId={calendarId} />
       </main>
