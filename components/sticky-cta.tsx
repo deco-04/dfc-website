@@ -11,6 +11,25 @@ import { trackPhoneClick } from '@/lib/analytics';
 // redundant noise.
 const SUPPRESSED = ['/book', '/thanks'];
 
+// The GHL chat bubble positions itself with INLINE styles on elements
+// inside an open shadow root, so page CSS can never move it. While the
+// bar shows on phones we lift the bubble above it through the shadow
+// root; when the bar hides we restore the widget's stock offset. If GHL
+// ever renames these classes this silently does nothing and the bubble
+// overlaps the bar again (cosmetic, phone-only).
+const CHAT_STOCK_BOTTOM = '20px';
+const CHAT_LIFTED_BOTTOM = '76px';
+
+function setChatBubbleBottom(bottom: string): boolean {
+  const root = document.querySelector('chat-widget')?.shadowRoot;
+  if (!root) return false;
+  const els = root.querySelectorAll<HTMLElement>('.lc_text-widget, .lc_text-widget--bubble');
+  els.forEach((el) => {
+    el.style.bottom = bottom;
+  });
+  return els.length > 0;
+}
+
 export function StickyCta() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
@@ -29,6 +48,22 @@ export function StickyCta() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!window.matchMedia('(max-width: 767px)').matches) return;
+    if (!visible) {
+      setChatBubbleBottom(CHAT_STOCK_BOTTOM);
+      return;
+    }
+    if (setChatBubbleBottom(CHAT_LIFTED_BOTTOM)) return;
+    // The widget defers loading until interaction or idle, so it may not
+    // exist yet the first time the bar shows. Watch for its injection.
+    const observer = new MutationObserver(() => {
+      if (setChatBubbleBottom(CHAT_LIFTED_BOTTOM)) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true });
+    return () => observer.disconnect();
+  }, [visible]);
 
   if (SUPPRESSED.some((p) => pathname.startsWith(p))) return null;
 

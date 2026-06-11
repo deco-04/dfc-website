@@ -70,16 +70,9 @@
   }
 }
 
-/* Keep the GHL chat bubble above the sticky mobile CTA bar. The widget
-   mounts a top-level <chat-widget> custom element; on phones we lift it
-   by the bar height (56px) plus its default 20px offset. Desktop is
-   untouched (the bar is md:hidden). */
-@media (max-width: 767px) {
-  chat-widget {
-    --chat--widget-bottom: 76px;
-    bottom: 76px !important;
-  }
-}
+/* The GHL chat bubble cannot be moved with page CSS: it is positioned by
+   inline styles inside the widget's shadow root. The sticky CTA bar lifts
+   it via JS instead (see components/sticky-cta.tsx). */
 
 /* Scroll-driven section reveals. Pure CSS: animation-timeline: view()
    plays the same dfc-fade-in used above the fold as each section header
