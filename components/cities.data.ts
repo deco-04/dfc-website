@@ -62,7 +62,7 @@ export const CITY_PAGES: CityPage[] = [
       'Cherry Creek condo: shower tile replacement with proper waterproofing, schluter membrane behind every wet wall',
       'Berkeley basement: LVP throughout the finished lower level, vapor barrier under the foam underlayment',
     ],
-    metaTitle: 'Flooring installation in Denver, CO · DFC',
+    metaTitle: 'Flooring installation in Denver, CO',
     metaDescription:
       'Hardwood, LVP, tile, and refinishing in Denver neighborhoods. Park Hill, Wash Park, RiNo, Stapleton, and beyond. Install-only crew, 1-year warranty.',
   },
@@ -83,7 +83,7 @@ export const CITY_PAGES: CityPage[] = [
       'Murphy Creek master bath: shower tile with Schluter Kerdi waterproofing and DITRA-HEAT under the floor',
       'Tallyn Reach main floor: engineered hardwood replacement after 12 years of the builder-grade original',
     ],
-    metaTitle: 'Flooring installation in Aurora, CO · DFC',
+    metaTitle: 'Flooring installation in Aurora, CO',
     metaDescription:
       'Engineered hardwood, LVP, tile, and refinishing in Aurora. Tallyn Reach, Saddle Rock, Painted Prairie. Denver Metro crew, slab-tested, 1-year warranty.',
   },
@@ -104,7 +104,7 @@ export const CITY_PAGES: CityPage[] = [
       'Federal corridor duplex: LVP throughout for a rental remodel, 20mil wear layer for dog-and-kid traffic',
       'Lakewood mid-century: refinished original fir floors in the dining room and living room, water-based finish for the faster turnaround',
     ],
-    metaTitle: 'Flooring installation in Lakewood, CO · DFC',
+    metaTitle: 'Flooring installation in Lakewood, CO',
     metaDescription:
       'Hardwood refinishing, LVP, engineered, and tile in Lakewood. Mid-century ranches and newer townhomes. 1-year workmanship warranty.',
   },

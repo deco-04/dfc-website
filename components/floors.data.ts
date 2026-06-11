@@ -80,7 +80,7 @@ export const FLOORS: FloorPage[] = [
         a: 'Yes. Commercial dust-containment vacuums on every sander, plastic-zipped doorways, HEPA air filtration. Your house stays livable through the sanding phase.',
       },
     ],
-    metaTitle: 'Hardwood floor installation in Denver · DFC',
+    metaTitle: 'Hardwood floor installation in Denver',
     metaDescription:
       'Solid + site-finished hardwood flooring in the Denver Metro. Oak, walnut, hickory, maple. Acclimated on site for Colorado humidity. 1-year workmanship warranty.',
     photo: '/photos/staircases-walnut-after--landscape_16x9.jpg',
@@ -133,7 +133,7 @@ export const FLOORS: FloorPage[] = [
         a: 'Yes, engineered is the recommended hardwood for radiant. We follow the manufacturer maximum surface temperature (usually 81-84°F) and the gradual ramp-up requirements. We do not install solid hardwood over radiant.',
       },
     ],
-    metaTitle: 'Engineered hardwood installation in Denver · DFC',
+    metaTitle: 'Engineered hardwood installation in Denver',
     metaDescription:
       'Engineered hardwood flooring for Denver basements, slabs, and wide-plank looks. Slab-safe, radiant-heat compatible. Manufacturer-spec installation, 1-year warranty.',
     photo: '/photos/hardwood-jason-entry--landscape_16x9.jpg',
@@ -186,7 +186,7 @@ export const FLOORS: FloorPage[] = [
         a: 'Sometimes. The tile has to be solid (no cracked or loose pieces) and the grout lines have to be filled and feathered with a leveling compound. If the tile is more than 1/4" thick total install height, transitions to other rooms get awkward. We measure first.',
       },
     ],
-    metaTitle: 'LVP (luxury vinyl plank) installation in Denver · DFC',
+    metaTitle: 'LVP (luxury vinyl plank) installation in Denver',
     metaDescription:
       'Waterproof, pet-friendly luxury vinyl plank flooring in Denver, Aurora, and the Front Range. Click-lock or glue-down, proper subfloor prep, 1-year warranty.',
     photo: '/photos/basement-david-bathroom--landscape_16x9.jpg',
@@ -239,7 +239,7 @@ export const FLOORS: FloorPage[] = [
         a: 'No. The padding compresses unevenly under the planks and the click-lock joints fail within months. Carpet has to come up. Pad and tack strip too.',
       },
     ],
-    metaTitle: 'Laminate floor installation in Denver · DFC',
+    metaTitle: 'Laminate floor installation in Denver',
     metaDescription:
       'Budget-friendly laminate flooring installation in the Denver Metro. AC-rated planks, proper expansion gaps, no warped seams. 1-year workmanship warranty.',
     photo: '/photos/laminate-irena-stairs--landscape_16x9.jpg',
@@ -292,7 +292,7 @@ export const FLOORS: FloorPage[] = [
         a: 'Grout needs 24 hours before light use, 72 hours before sealing (for natural stone) and full water exposure. Showers: 7 days minimum before regular use after a full tile install.',
       },
     ],
-    metaTitle: 'Tile and shower installation in Denver · DFC',
+    metaTitle: 'Tile and shower installation in Denver',
     metaDescription:
       'Porcelain, ceramic, and stone tile installation in the Denver Metro. Proper waterproofing, isolation membranes, and pattern alignment. 1-year workmanship warranty.',
     photo: '/photos/basement-kallie-shower--landscape_16x9.jpg',
@@ -345,9 +345,9 @@ export const FLOORS: FloorPage[] = [
         a: '3/4" solid hardwood: 6-8 times over the life of the floor. Engineered with 4-6mm wear layer: 2-3 times. Engineered with under 3mm wear layer: we recommend a screen-and-recoat (light surface refresh, no full sanding) instead.',
       },
     ],
-    metaTitle: 'Hardwood sanding and refinishing in Denver · DFC',
+    metaTitle: 'Hardwood sanding and refinishing in Denver',
     metaDescription:
-      'Dustless hardwood refinishing and refinishing in the Denver Metro. Custom stain matching, water-based or oil finish, 1-year workmanship warranty.',
+      'Dustless hardwood sanding and refinishing in the Denver Metro. Custom stain matching, water-based or oil finish, 1-year workmanship warranty.',
     photo: '/photos/hardwood-petra-stairs--landscape_16x9.jpg',
     photoAlt: 'Refinished hardwood staircase in a Denver-area home',
     ogImage: '/og/dfc-floor-refinishing-1200x630.jpg',
