@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import manifest from '../public/photos/manifest.json';
+import lqip from '../public/photos/lqip.json';
 
 type Item = { slug: string; src_3x4: string; src_4x3: string; src_16x9: string; alt: string };
 type Category = { label: string; items: Item[] };
 
 const CATEGORIES = manifest as Record<string, Category>;
+const LQIP = lqip as Record<string, string>;
 
 export function Gallery() {
   return (
@@ -42,6 +44,8 @@ export function Gallery() {
                       height={900}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      placeholder={LQIP[it.src_4x3] ? 'blur' : 'empty'}
+                      blurDataURL={LQIP[it.src_4x3]}
                     />
                   </figure>
                 ))}
