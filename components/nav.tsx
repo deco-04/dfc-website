@@ -54,13 +54,17 @@ function HamburgerIcon({ open, className = 'w-6 h-6' }: { open: boolean; classNa
   );
 }
 
-const links = [
+// mobileOnly: shown in the drawer (and the footer carries it sitewide)
+// but kept out of the desktop row, which fits six links plus the Book
+// CTA and phone pill on one line. Work with us is partner/recruiting
+// traffic, not the primary nav's job.
+const links: { href: string; label: string; mobileOnly?: boolean }[] = [
   { href: '/#services',     label: 'Install' },
   { href: '/#process',      label: 'Process' },
   { href: '/#projects',     label: 'Projects' },
   { href: '/reviews',       label: 'Reviews' },
   { href: '/serving',       label: 'Where we serve' },
-  { href: '/work-with-us',  label: 'Work with us' },
+  { href: '/work-with-us',  label: 'Work with us', mobileOnly: true },
   { href: '/#faq',          label: 'FAQ' },
 ];
 
@@ -140,12 +144,13 @@ export function Nav() {
         </Link>
 
         {/* Desktop links. flex-wrap lets the row break on tablets: at
-            768px the seven links plus the phone pill are wider than the
+            768px the links plus the phone pill are wider than the
             viewport and a non-wrapping row pushed the pill 38px off
-            screen. xl:whitespace-nowrap keeps labels on one line only
-            where the full row genuinely fits. */}
-        <nav className="hidden md:flex md:flex-wrap md:justify-end gap-x-4 gap-y-1 lg:gap-x-6 ml-auto">
-          {links.map((l) => (
+            screen. At xl the row is pinned to one line (six links + Book
+            CTA + pill fit) so no link ever drops to a second row on
+            desktop. */}
+        <nav className="hidden md:flex md:flex-wrap xl:flex-nowrap md:justify-end gap-x-4 gap-y-1 lg:gap-x-6 ml-auto">
+          {links.filter((l) => !l.mobileOnly).map((l) => (
             <Link
               key={l.href}
               href={l.href}
