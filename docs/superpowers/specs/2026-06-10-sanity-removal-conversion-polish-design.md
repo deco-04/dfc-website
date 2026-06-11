@@ -81,13 +81,14 @@ Out of band (Andre, later): unpublish the hosted Studio at `denverflooringcollec
 ### SDR-4: Proof at the point of decision
 
 - New small component `components/rating-chip.tsx`: "★ 5.0 on Google · 600+ floors installed", linking to the canonical reviews URL (`search.google.com/local/reviews?placeid=ChIJyfAeyyh9bIcROn-MDdfKru4`), opening in a new tab.
-- Placed directly under the hero CTA pair on `/` and above the calendar embed on `/book`.
+- Placed above the calendar embed on `/book`.
+- On `/`, the hero already shows a "5.0 stars · Google" stat in its stats row directly under the CTAs; adding a chip would duplicate it. Instead, that existing stat becomes a link to the same canonical reviews URL so the proof is verifiable in one tap. (Amended 2026-06-10 during planning recon; replaces the original "chip under hero CTAs" placement.)
 - Follows the standing copy rule: star icon next to the 5.0.
 
 ### SDR-5: Motion polish
 
-- View Transitions API for cross-page navigation via the documented Next.js progressive-enhancement approach; browsers without support get current behavior. Zero new JS for unsupported browsers.
-- Audit existing `motion-fade.tsx` usage and apply consistent reveal timing (same duration/easing/threshold) across home sections that currently animate inconsistently or not at all.
+- CSS scroll-driven reveals (`animation-timeline: view()`) on section headers, wrapped in `@supports (animation-timeline: view())` so unsupported browsers get current behavior. Zero JS. (Amended 2026-06-10: the original View Transitions idea requires React 19 + a Next experimental flag; this repo is React 18 and a framework upgrade is out of scope for motion polish.)
+- Reveal timing reuses the existing `dfc-fade-in` duration/easing so above-fold and scroll-reveal motion feel like one system.
 - All motion respects `prefers-reduced-motion`.
 
 ## User stories
