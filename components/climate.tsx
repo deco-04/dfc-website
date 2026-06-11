@@ -75,7 +75,7 @@ export function Climate() {
       <MountainBackdrop />
       <div className="relative max-w-site mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
-          <div>
+          <div className="reveal">
             <div className="font-body text-[12px] uppercase tracking-caps font-semibold text-lichen mb-4">
               Built for Colorado
             </div>

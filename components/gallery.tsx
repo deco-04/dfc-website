@@ -21,7 +21,7 @@ export function Gallery() {
   return (
     <section id="projects" className="bg-linen-warm py-24 lg:py-36">
       <div className="max-w-site mx-auto px-6 lg:px-12">
-        <header className="max-w-prose mb-12">
+        <header className="max-w-prose mb-12 reveal">
           <div className="eyebrow mb-4">Recently installed</div>
           {/* Headline + copy refreshed 2026-05-23 per Liza's brief. */}
           <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">

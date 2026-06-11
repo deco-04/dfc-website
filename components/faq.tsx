@@ -8,7 +8,7 @@ export function Faq() {
   const items = ITEMS;
   return (
     <section id="faq" className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-36">
-      <header className="mb-12">
+      <header className="mb-12 reveal">
         <div className="eyebrow mb-4">Frequently asked</div>
         <h2 className="display text-sage text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.04]">
           Plain answers to <span className="italic">plain questions</span>.

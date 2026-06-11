@@ -5,7 +5,7 @@ export function Services() {
   return (
     <section id="services" className="bg-linen-warm py-24 lg:py-36">
       <div className="max-w-site mx-auto px-6 lg:px-12">
-        <header className="mb-12 lg:mb-16">
+        <header className="mb-12 lg:mb-16 reveal">
           <div className="eyebrow mb-4">What we install</div>
           {/*
             Headline + sub-deck refreshed 2026-05-23 per Liza's brief:

@@ -21,7 +21,7 @@ export function Testimonial() {
         aria-hidden
       />
 
-      <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center reveal">
         {/* Was text-camel which fails WCAG AA against espresso (3.8:1).
             Lichen passes (4.5:1+) and stays on-brand. */}
         <div className="eyebrow text-lichen mb-6">A letter from Kallianne</div>
