@@ -14,16 +14,13 @@ anything that materially impacts site visitors.
   forms are GoHighLevel iframe embeds and submit directly to GHL.
 - **GHL** is the lead store: CRM contact records, calendar appointments,
   estimate request payloads.
-- **Sanity** (`denverflooringcollective.sanity.studio`) holds editorial
-  content (FAQ, future homepage sections).
 - **Cloudflare Workers** hosts the static + server-rendered site, no
   persistent storage attached.
 
 ## Threat model
 
 - **Lead leakage**: lead data lives in GHL; protect with GHL login
-  hygiene, 2FA on the Sanity account, principle of least privilege on
-  any added team members.
+  hygiene and principle of least privilege on any added team members.
 - **Site defacement / spoofing**: protected by Cloudflare ACL and CSP
   (see `public/_headers`).
 - **Phishing emails using the dfc brand**: outside the scope of this
@@ -70,8 +67,8 @@ last green build.
 
 - Renovate or Dependabot are NOT currently configured. Run `pnpm
   outdated` quarterly and review major bumps. Patch+minor bumps from
-  trusted publishers (`@opennextjs/cloudflare`, `next`, `react`,
-  `@sanity/client`) are safe to apply in bulk.
+  trusted publishers (`@opennextjs/cloudflare`, `next`, `react`) are
+  safe to apply in bulk.
 - `lucide-react` is intentionally NOT a dependency (v1 has an SSR
   hydration bug). Do not re-introduce it. Use inline SVGs.
 

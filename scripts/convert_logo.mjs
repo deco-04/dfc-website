@@ -8,8 +8,8 @@
 //   scripts/og-assets/logo-mark-1024.png   (transparent background, sage tint)
 //   scripts/og-assets/logo-white-1024.png  (transparent background, linen tint)
 //
-// Sharp is already in node_modules (pulled in by Sanity for image processing
-// on the studio side). No new dependency needed.
+// Sharp is a devDependency (used by Next.js image optimisation). No new
+// dependency needed.
 
 import sharp from 'sharp';
 import { readFileSync, mkdirSync } from 'node:fs';
